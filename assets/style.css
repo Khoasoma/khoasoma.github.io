@@ -347,7 +347,25 @@ footer {
   transition: background 0.18s;
 }
 .discord-join-mini:hover { background: #4752C4; }
+.discord-list {
+  background: #23243a;
+  border: 2px solid #44465c;
+  border-radius: 15px;
+  box-shadow: 0 2px 12px #0002;
+  padding: 16px 14px;
+  margin-top: 10px;
+}
 
+.discord-server-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.discord-server-card:last-child {
+  margin-bottom: 0;
+}
 /* Feedback feed right side */
 .feedback-list-horizontal {
   display: flex;
