@@ -1,12 +1,14 @@
+/* Đặt font và nền tổng thể */
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
-  color: #333;
+  background: linear-gradient(135deg, #A7D3E0 0%, #00FFF0 100%);
+  color: #2C3E50;
   margin: 0;
   padding: 0;
   min-height: 100vh;
 }
 
+/* Container chính */
 .container {
   max-width: 640px;
   width: 90%;
@@ -17,12 +19,14 @@ body {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
+/* Tiêu đề */
 h1, h2 {
-  color: #2c3e50;
+  color: #2C3E50;
 }
 
+/* Liên kết */
 a {
-  color: #005AB5; /* Màu xanh lam đậm, dễ phân biệt */
+  color: #00FFF0;
   text-decoration: none;
 }
 
@@ -30,6 +34,7 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Danh sách */
 ul {
   list-style: none;
   padding-left: 0;
