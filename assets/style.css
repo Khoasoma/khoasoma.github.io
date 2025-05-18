@@ -202,17 +202,26 @@ h1 {
   display: inline-block;
   margin: 0 13px;
   vertical-align: middle;
-  transition: transform 0.14s;
+  transition: transform 0.18s cubic-bezier(.4,2,.6,1);
 }
 .socials img {
   width: 36px;
   height: 36px;
   transition: filter 0.17s, transform 0.17s;
   filter: grayscale(0.2) brightness(1.1);
+  will-change: transform;
 }
-.socials a:hover img {
-  filter: drop-shadow(0 0 8px var(--accent)) brightness(1.2);
-  transform: scale(1.18);
+.socials a:hover img,
+.socials a:focus img {
+  filter: drop-shadow(0 0 10px var(--accent)) brightness(1.18);
+  transform: scale(1.23) rotate(-10deg);
+  animation: bounce 0.4s;
+}
+@keyframes bounce {
+  0% { transform: scale(1.23) rotate(-10deg) translateY(0);}
+  30% { transform: scale(1.1) rotate(-10deg) translateY(-9px);}
+  60% { transform: scale(1.23) rotate(-10deg) translateY(2px);}
+  100% { transform: scale(1.23) rotate(-10deg) translateY(0);}
 }
 footer {
   text-align: center;
@@ -227,4 +236,29 @@ footer {
   .skills-projects { flex-direction: column; gap: 16px; }
   .card { padding: 16px 9px; }
   .info-list { flex-direction: column; gap: 9px; }
+}
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  transition: opacity 0.8s cubic-bezier(.35,.7,.54,1), transform 0.8s cubic-bezier(.35,.7,.54,1);
+}
+.scroll-fade.show {
+  opacity: 1;
+  transform: none;
+}
+.skills li img {
+  cursor: pointer;
+  transition: transform 0.19s, filter 0.18s;
+}
+.skills li img:hover,
+.skills li img:focus {
+  filter: brightness(1.5) drop-shadow(0 0 6px var(--accent));
+  transform: scale(1.15) rotate(8deg);
+  animation: wiggle 0.36s;
+}
+@keyframes wiggle {
+  0% { transform: scale(1.15) rotate(8deg);}
+  30% { transform: scale(1.03) rotate(-6deg);}
+  60% { transform: scale(1.14) rotate(10deg);}
+  100% { transform: scale(1.15) rotate(8deg);}
 }
