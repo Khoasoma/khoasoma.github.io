@@ -168,22 +168,6 @@ h1 {
   border: 1.5px solid var(--card-border);
   transition: filter 0.2s, border 0.2s;
 }
-.skills li img {
-  cursor: pointer;
-  transition: transform 0.19s, filter 0.18s;
-}
-.skills li img:hover,
-.skills li img:focus {
-  filter: brightness(1.5) drop-shadow(0 0 6px var(--accent));
-  transform: scale(1.15) rotate(8deg);
-  animation: wiggle 0.36s;
-}
-@keyframes wiggle {
-  0% { transform: scale(1.15) rotate(8deg);}
-  30% { transform: scale(1.03) rotate(-6deg);}
-  60% { transform: scale(1.14) rotate(10deg);}
-  100% { transform: scale(1.15) rotate(8deg);}
-}
 .projects a {
   color: var(--accent);
   font-weight: 600;
@@ -214,6 +198,22 @@ h1 {
   transition: background 0.3s, border 0.3s;
 }
 
+footer {
+  text-align: center;
+  color: #a3acc7;
+  font-size: 1em;
+  margin-top: 14px;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 900px) {
+  .container { padding: 12px; }
+  .skills-projects { flex-direction: column; gap: 16px; }
+  .card { padding: 16px 9px; }
+  .info-list { flex-direction: column; gap: 9px; }
+}
+
+/* Icon tương tác socials */
 .socials a {
   display: inline-block;
   margin: 0 13px;
@@ -239,26 +239,21 @@ h1 {
   60% { transform: scale(1.23) rotate(-10deg) translateY(2px);}
   100% { transform: scale(1.23) rotate(-10deg) translateY(0);}
 }
-footer {
-  text-align: center;
-  color: #a3acc7;
-  font-size: 1em;
-  margin-top: 14px;
-  letter-spacing: 0.03em;
-}
 
-@media (max-width: 900px) {
-  .container { padding: 12px; }
-  .skills-projects { flex-direction: column; gap: 16px; }
-  .card { padding: 16px 9px; }
-  .info-list { flex-direction: column; gap: 9px; }
+/* Icon kỹ năng tương tác */
+.skills li img {
+  cursor: pointer;
+  transition: transform 0.19s, filter 0.18s;
 }
-.scroll-fade {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s, transform 0.8s;
+.skills li img:hover,
+.skills li img:focus {
+  filter: brightness(1.5) drop-shadow(0 0 6px var(--accent));
+  transform: scale(1.15) rotate(8deg);
+  animation: wiggle 0.36s;
 }
-.scroll-fade.show {
-  opacity: 1;
-  transform: none;
+@keyframes wiggle {
+  0% { transform: scale(1.15) rotate(8deg);}
+  30% { transform: scale(1.03) rotate(-6deg);}
+  60% { transform: scale(1.14) rotate(10deg);}
+  100% { transform: scale(1.15) rotate(8deg);}
 }

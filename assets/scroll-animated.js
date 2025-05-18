@@ -10,5 +10,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   window.addEventListener('scroll', checkScroll);
-  checkScroll();
+  checkScroll(); // Gọi lần đầu để hiển thị các phần trên màn hình ngay khi tải trang
 });
