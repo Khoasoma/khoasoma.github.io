@@ -316,6 +316,65 @@ footer {
 .discord-join:hover {
   background: #4752C4;
 }
+.discord-list-horizontal {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding-bottom: 6px;
+  scroll-snap-type: x mandatory;
+}
+.discord-mini-box {
+  min-width: 210px;
+  max-width: 230px;
+  background: #23272a;
+  border-radius: 14px;
+  border: 2px solid #373b40;
+  padding: 12px 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  box-shadow: 0 3px 12px #0002;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  margin-bottom: 5px;
+  transition: border-color 0.18s, box-shadow 0.18s;
+}
+.discord-mini-box:hover {
+  border-color: #5865F2;
+  box-shadow: 0 6px 18px #5865F288;
+}
+.discord-icon-mini {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: #181921;
+}
+.discord-mini-box strong {
+  font-size: 1em;
+  color: #fff;
+  display: block;
+  margin-bottom: 2px;
+}
+.discord-mini-box p {
+  font-size: 0.93em;
+  color: #e0e0e0;
+  margin: 4px 0 0 0;
+  line-height: 1.4;
+}
+.discord-join-mini {
+  display: inline-block;
+  background: #5865F2;
+  color: #fff;
+  padding: 2px 11px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95em;
+  margin: 4px 0 0 0;
+  transition: background 0.18s;
+}
+.discord-join-mini:hover { background: #4752C4; }
 
 /* Feedback feed right side */
 .feedback-list-horizontal {
