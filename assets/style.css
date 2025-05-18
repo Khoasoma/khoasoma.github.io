@@ -1,16 +1,21 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #f8f9fa;
+  background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
   color: #333;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
 }
-
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.9); /* Làm mờ để nhìn nền vẫn đẹp */
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  margin-top: 3rem;
 }
+
 
 header {
   text-align: center;
