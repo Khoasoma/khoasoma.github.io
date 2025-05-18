@@ -82,6 +82,30 @@ h1 {
   font-size: 1.13em;
   margin-bottom: 0.6em;
 }
+.info-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 32px;
+  justify-content: center;
+  margin: 18px 0 10px 0;
+  font-size: 1.07em;
+}
+.info-list div {
+  background: var(--card-bg);
+  border: 1.5px solid var(--card-border);
+  border-radius: 9px;
+  padding: 7px 18px 7px 12px;
+  color: #b7bfde;
+  box-shadow: 0 1px 5px var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.info-list span {
+  color: var(--accent);
+  font-weight: 600;
+  margin-right: 5px;
+}
 .about {
   margin-top: 16px;
   color: #acb4cf;
@@ -202,4 +226,5 @@ footer {
   .container { padding: 12px; }
   .skills-projects { flex-direction: column; gap: 16px; }
   .card { padding: 16px 9px; }
+  .info-list { flex-direction: column; gap: 9px; }
 }
