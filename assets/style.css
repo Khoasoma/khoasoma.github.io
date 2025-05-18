@@ -247,10 +247,11 @@ footer {
   30% { transform: scale(1.03) rotate(-6deg);}
   60% { transform: scale(1.14) rotate(10deg);}
   100% { transform: scale(1.15) rotate(8deg);}
+}
 .discord-feedback-wrapper {
   background: #23243a;
   border-radius: 18px;
-  padding: 26px 18px 22px 18px;
+  padding: 28px 18px 22px 18px;
   margin-bottom: 30px;
   box-shadow: 0 2px 18px #0003;
   border: 1.5px solid #373b40;
@@ -267,44 +268,19 @@ footer {
 }
 .df-left { padding-right: 18px; border-right: 1.3px solid #30313f; }
 .df-right { padding-left: 18px; }
-.df-left h2, .df-right h2 {
-  margin-bottom: 14px;
-  font-size: 1.16em;
-  color: #fff;
-  font-weight: bold;
-  text-align: left;
-}
-.discord-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.discord-row {
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
-  justify-content: flex-start;
-}
-.discord-row.center {
-  justify-content: center;
-  margin-top: 5px;
-}
+.discord-grid { display: flex; flex-direction: column; gap: 14px; }
+.discord-row { display: flex; flex-direction: row; gap: 16px; }
 .discord-card {
   background: #22242a;
   border-radius: 14px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 13px 14px 13px 10px;
+  gap: 14px;
+  padding: 13px 14px;
   min-width: 180px;
   max-width: 250px;
   box-shadow: 0 2px 8px #0004;
   border: 1.5px solid #323448;
-  transition: border-color 0.18s, box-shadow 0.18s;
-}
-.discord-card:hover {
-  border-color: #5865F2;
-  box-shadow: 0 6px 18px #5865F288;
 }
 .discord-icon {
   width: 38px;
@@ -388,17 +364,4 @@ footer {
   display: flex;
   gap: 1.5px;
   margin-bottom: 1px;
-}
-@media (max-width: 900px) {
-  .df-flex {
-    flex-direction: column;
-    gap: 16px;
-  }
-  .df-left, .df-right {
-    padding: 0;
-    border: none;
-  }
-  .feedback-list-horizontal {
-    max-height: 220px;
-  }
 }
