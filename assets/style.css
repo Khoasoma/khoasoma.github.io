@@ -1,45 +1,33 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: 
-    linear-gradient(135deg, rgba(116, 235, 213, 0.6), rgba(172, 182, 229, 0.6)),
-    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') no-repeat center center fixed;
-  background-size: cover;
+  background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
   color: #333;
   margin: 0;
   padding: 0;
   min-height: 100vh;
 }
+
 .container {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 640px;
+  width: 90%;
+  margin: 3rem auto;
   padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.9); /* Làm mờ để nhìn nền vẫn đẹp */
+  background-color: rgba(255, 255, 255, 0.95);
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  margin-top: 3rem;
 }
 
-
-header {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-h1 {
-  font-size: 2.5rem;
+h1, h2 {
   color: #2c3e50;
 }
 
-.highlight {
-  color: #3498db;
+a {
+  color: #005AB5; /* Màu xanh lam đậm, dễ phân biệt */
+  text-decoration: none;
 }
 
-section {
-  background: #fff;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+a:hover {
+  text-decoration: underline;
 }
 
 ul {
@@ -49,20 +37,4 @@ ul {
 
 li {
   margin: 0.5rem 0;
-}
-
-a {
-  color: #2980b9;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-footer {
-  text-align: center;
-  margin-top: 2rem;
-  font-size: 0.9rem;
-  color: #777;
 }
