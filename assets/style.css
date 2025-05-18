@@ -205,15 +205,6 @@ footer {
   margin-top: 14px;
   letter-spacing: 0.03em;
 }
-
-@media (max-width: 900px) {
-  .container { padding: 12px; }
-  .skills-projects { flex-direction: column; gap: 16px; }
-  .card { padding: 16px 9px; }
-  .info-list { flex-direction: column; gap: 9px; }
-}
-
-/* Icon tương tác socials */
 .socials a {
   display: inline-block;
   margin: 0 13px;
@@ -256,89 +247,158 @@ footer {
   30% { transform: scale(1.03) rotate(-6deg);}
   60% { transform: scale(1.14) rotate(10deg);}
   100% { transform: scale(1.15) rotate(8deg);}
+.discord-feedback-wrapper {
+  background: #23243a;
+  border-radius: 18px;
+  padding: 26px 18px 22px 18px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 18px #0003;
+  border: 1.5px solid #373b40;
 }
-.feedback-list-horizontal {
+.df-flex {
   display: flex;
-  overflow-x: auto;
-  gap: 14px;
-  padding-bottom: 6px;
-  scroll-snap-type: x mandatory;
+  gap: 34px;
 }
-.feedback-mini {
-  min-width: 170px;
-  max-width: 180px;
-  background: #23272a;
-  border-radius: 10px;
-  padding: 9px 12px;
+.df-left, .df-right {
+  flex: 1 1 0;
+  min-width: 0;
   display: flex;
-  align-items: center;
-  gap: 12px;
-  box-shadow: 0 2px 8px #0001;
-  flex-shrink: 0;
-  scroll-snap-align: start;
+  flex-direction: column;
 }
-.feedback-avatar-mini {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #5865F2;
-}
-.feedback-mini strong {
-  font-size: 0.96em;
+.df-left { padding-right: 18px; border-right: 1.3px solid #30313f; }
+.df-right { padding-left: 18px; }
+.df-left h2, .df-right h2 {
+  margin-bottom: 14px;
+  font-size: 1.16em;
   color: #fff;
+  font-weight: bold;
+  text-align: left;
 }
-.feedback-mini p {
-  font-size: 0.93em;
-  color: #e0e0e0;
-  margin: 2px 0 0 0;
-}
-.feedbacks h2 {
-  margin-bottom: 10px;
-}
-.discord-servers .servers-list {
+.discord-grid {
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
-}
-.server {
-  display: flex;
-  align-items: center;
-  background: #23272a;
-  border-radius: 10px;
-  padding: 12px 18px;
-  min-width: 210px;
-  max-width: 260px;
-  box-shadow: 0 2px 8px #0002;
-  margin: 6px 0;
+  flex-direction: column;
   gap: 12px;
 }
-.server-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 14px;
-  box-shadow: 0 2px 8px #0002;
+.discord-row {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: flex-start;
 }
-.join-btn {
+.discord-row.center {
+  justify-content: center;
+  margin-top: 5px;
+}
+.discord-card {
+  background: #22242a;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 14px 13px 10px;
+  min-width: 180px;
+  max-width: 250px;
+  box-shadow: 0 2px 8px #0004;
+  border: 1.5px solid #323448;
+  transition: border-color 0.18s, box-shadow 0.18s;
+}
+.discord-card:hover {
+  border-color: #5865F2;
+  box-shadow: 0 6px 18px #5865F288;
+}
+.discord-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: #181921;
+}
+.discord-card strong {
+  color: #fff;
+  font-size: 1.01em;
+  display: block;
+  margin-bottom: 1px;
+}
+.discord-card p {
+  font-size: 0.95em;
+  color: #d6d9e0;
+  margin: 5px 0 0 0;
+  line-height: 1.35;
+}
+.discord-join {
   display: inline-block;
   background: #5865F2;
   color: #fff;
-  padding: 3px 12px;
+  padding: 2.5px 11px;
   border-radius: 7px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.97em;
-  margin: 6px 0 0 0;
+  font-size: 0.96em;
+  margin: 5px 0 0 0;
   transition: background 0.18s;
 }
-.join-btn:hover { background: #4752C4; }
-.server h3 {
-  margin: 0 0 2px 0;
-  font-size: 1.07em;
+.discord-join:hover {
+  background: #4752C4;
 }
-.server p {
-  margin: 4px 0 0 0;
+
+/* Feedback feed right side */
+.feedback-list-horizontal {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  max-height: 330px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+.feedback-mini-box {
+  background: #22242a;
+  border-radius: 14px;
+  border: 2px solid #373b40;
+  padding: 11px 13px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  box-shadow: 0 3px 12px #0002;
+  transition: border-color 0.18s, box-shadow 0.18s;
+}
+.feedback-mini-box:hover {
+  border-color: #5865F2;
+  box-shadow: 0 6px 18px #5865F288;
+}
+.feedback-avatar-mini {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid #5865F2;
+  margin-top: 3px;
+}
+.feedback-content strong {
   font-size: 0.98em;
-  color: #ccc;
+  color: #fff;
+  display: block;
+  margin-bottom: 2px;
+}
+.feedback-content p {
+  font-size: 0.93em;
+  color: #e0e0e0;
+  margin: 5px 0 0 0;
+}
+.feedback-stars {
+  display: flex;
+  gap: 1.5px;
+  margin-bottom: 1px;
+}
+@media (max-width: 900px) {
+  .df-flex {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .df-left, .df-right {
+    padding: 0;
+    border: none;
+  }
+  .feedback-list-horizontal {
+    max-height: 220px;
+  }
 }
