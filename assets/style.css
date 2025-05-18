@@ -20,7 +20,10 @@ body {
   width: 120px;
   height: 120px;
   border-radius: 50%;
+<<<<<<< HEAD
   object-fit: cover;
+=======
+>>>>>>> 9800e939b7810512b76537ce6cf932bfe7ad987d
   box-shadow: 0 4px 16px rgba(60,72,100,0.10);
   margin-bottom: 16px;
 }
@@ -90,6 +93,20 @@ footer {
   text-align: center;
   color: #888;
   font-size: 0.95em;
+<<<<<<< HEAD
+=======
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .container {
+    padding: 14px;
+  }
+  .skills-projects {
+    flex-direction: column;
+    gap: 10px;
+  }
+>>>>>>> 9800e939b7810512b76537ce6cf932bfe7ad987d
 }
 
 /* Responsive */
