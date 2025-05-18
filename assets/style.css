@@ -168,6 +168,22 @@ h1 {
   border: 1.5px solid var(--card-border);
   transition: filter 0.2s, border 0.2s;
 }
+.skills li img {
+  cursor: pointer;
+  transition: transform 0.19s, filter 0.18s;
+}
+.skills li img:hover,
+.skills li img:focus {
+  filter: brightness(1.5) drop-shadow(0 0 6px var(--accent));
+  transform: scale(1.15) rotate(8deg);
+  animation: wiggle 0.36s;
+}
+@keyframes wiggle {
+  0% { transform: scale(1.15) rotate(8deg);}
+  30% { transform: scale(1.03) rotate(-6deg);}
+  60% { transform: scale(1.14) rotate(10deg);}
+  100% { transform: scale(1.15) rotate(8deg);}
+}
 .projects a {
   color: var(--accent);
   font-weight: 600;
@@ -239,26 +255,10 @@ footer {
 }
 .scroll-fade {
   opacity: 0;
-  transform: translateY(40px) scale(0.98);
-  transition: opacity 0.8s cubic-bezier(.35,.7,.54,1), transform 0.8s cubic-bezier(.35,.7,.54,1);
+  transform: translateY(40px);
+  transition: opacity 0.8s, transform 0.8s;
 }
 .scroll-fade.show {
   opacity: 1;
   transform: none;
-}
-.skills li img {
-  cursor: pointer;
-  transition: transform 0.19s, filter 0.18s;
-}
-.skills li img:hover,
-.skills li img:focus {
-  filter: brightness(1.5) drop-shadow(0 0 6px var(--accent));
-  transform: scale(1.15) rotate(8deg);
-  animation: wiggle 0.36s;
-}
-@keyframes wiggle {
-  0% { transform: scale(1.15) rotate(8deg);}
-  30% { transform: scale(1.03) rotate(-6deg);}
-  60% { transform: scale(1.14) rotate(10deg);}
-  100% { transform: scale(1.15) rotate(8deg);}
 }
