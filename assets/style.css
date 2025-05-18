@@ -6,6 +6,8 @@ body {
   padding: 0;
   min-height: 100vh;
 }
+background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') no-repeat center center fixed;
+background-size: cover;
 .container {
   max-width: 800px;
   margin: 0 auto;
