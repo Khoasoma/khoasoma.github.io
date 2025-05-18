@@ -3,37 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Giới thiệu bản thân - Tên bạn</title>
+  <title>Khoa Soma - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <div class="container">
-    <header>
-      <h1>👋 Xin chào, mình là <span class="highlight">Tên bạn</span></h1>
-      <p>Lập trình viên đam mê phát triển Web và Plugin Minecraft.</p>
+    <header class="header">
+      <img src="assets/avatar.jpg" alt="Avatar" class="avatar">
+      <h1>Khoa Soma</h1>
+      <p class="tagline">Lập trình viên Web & Minecraft Plugin</p>
+      <p class="about">
+        Xin chào! Mình là Khoa, đam mê phát triển phần mềm, thích xây dựng sản phẩm sáng tạo và chia sẻ kiến thức công nghệ.
+      </p>
     </header>
 
-    <section>
-      <h2>💼 Kỹ năng</h2>
-      <ul>
-        <li>Java, JavaScript, HTML/CSS</li>
-        <li>Spring Boot, Node.js</li>
-        <li>Plugin Minecraft: Paper, Folia, Spigot</li>
-        <li>Git, CI/CD cơ bản</li>
-      </ul>
+    <section class="skills-projects">
+      <div class="skills">
+        <h2>Kỹ năng</h2>
+        <ul>
+          <li><strong>Ngôn ngữ:</strong> Java, JavaScript, HTML/CSS</li>
+          <li><strong>Framework:</strong> Spring Boot, Node.js</li>
+          <li><strong>Plugin Minecraft:</strong> Paper, Folia, Spigot</li>
+          <li><strong>Công cụ:</strong> Git, CI/CD, Docker</li>
+        </ul>
+      </div>
+      <div class="projects">
+        <h2>Dự án tiêu biểu</h2>
+        <ul>
+          <li>
+            <a href="https://github.com/Khoasoma/xenonfolia" target="_blank">
+              Minecraft Plugin <span>→</span>
+            </a>
+            <p>Folia Core tối ưu cho server, Hiệu năng hơn 20% so với folia thường</p>
+          </li>
+          <li>
+            <a href="https://github.com/Khoasoma/web-portfolio" target="_blank">
+              Web Portfolio <span>→</span>
+            </a>
+            <p>Trang cá nhân hiện đại, responsive, dùng HTML/CSS thuần.</p>
+          </li>
+        </ul>
+      </div>
     </section>
 
-    <section>
-      <h2>📬 Liên hệ</h2>
-      <ul>
-        <li>Email: <a href="mailto:ban@example.com">ban@example.com</a></li>
-        <li>GitHub: <a href="https://github.com/tenban" target="_blank">github.com/tenban</a></li>
-        <li>Discord: yourname#1234</li>
-      </ul>
+    <section class="contact">
+      <h2>Liên hệ</h2>
+      <div class="socials">
+        <a href="mailto:khoasoma@example.com" title="Email"><img src="assets/mail.svg" alt="Email"></a>
+        <a href="https://github.com/Khoasoma" target="_blank" title="GitHub"><img src="assets/github.svg" alt="GitHub"></a>
+        <a href="https://discordapp.com/users/yourdiscordid" target="_blank" title="Discord"><img src="assets/discord.svg" alt="Discord"></a>
+      </div>
     </section>
 
     <footer>
-      <p>© 2025 - Được thiết kế bởi bạn ❤️</p>
+      <p>&copy; 2025 Khoa Soma &hearts; Thiết kế bởi chính mình</p>
     </footer>
   </div>
 </body>
