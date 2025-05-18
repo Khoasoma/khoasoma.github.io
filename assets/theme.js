@@ -1,7 +1,6 @@
 const toggle = document.getElementById('theme-toggle');
 const icon = document.getElementById('theme-icon');
 
-// Áp dụng trạng thái theme từ localStorage nếu có
 function setTheme(theme) {
   if (theme === 'dark') {
     document.body.classList.add('dark');
@@ -13,12 +12,11 @@ function setTheme(theme) {
   localStorage.setItem('theme', theme);
 }
 
-// Đọc trạng thái theme khi load trang
+// Mặc định dark mode nếu chưa từng chọn
 const userTheme = localStorage.getItem('theme');
-if (userTheme === 'dark') setTheme('dark');
+if (!userTheme || userTheme === 'dark') setTheme('dark');
 else setTheme('light');
 
-// Xử lý khi bấm nút
 toggle.addEventListener('click', () => {
   const isDark = document.body.classList.contains('dark');
   setTheme(isDark ? 'light' : 'dark');
