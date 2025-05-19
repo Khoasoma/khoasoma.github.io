@@ -361,11 +361,65 @@ footer {
     max-height: 170px;
   }
 }
-.main-spotify-flex {
+.spotify-skills-flex {
   display: flex;
-  gap: 32px;
-  margin-bottom: 36px;
+  gap: 24px;
   align-items: flex-start;
+  background: linear-gradient(135deg, #ff82c1 0%, #ffa4ec 60%, #f0b6ff 100%);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px #ffb8ef44, 0 2px 16px #fff5;
+  padding: 24px 22px 18px 22px;
+  margin: 16px 0;
+  width: 100%;
+  max-width: 420px;
+}
+.skills-box-left {
+  min-width: 180px;
+  max-width: 210px;
+  flex: 1 1 180px;
+}
+.skills-box-left h3 {
+  margin-top: 0;
+  color: #fff;
+  font-size: 1.07em;
+  font-weight: 700;
+}
+.skills-box-left ul {
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+}
+.skills-box-left li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.97em;
+  color: #fff;
+  margin-bottom: 7px;
+}
+.skills-box-left img {
+  width: 21px;
+  height: 21px;
+}
+.spotify-box-right {
+  flex: 2 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.spotify-embed-wrapper {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+@media (max-width: 700px) {
+  .spotify-skills-flex {
+    flex-direction: column;
+    max-width: 100vw;
+    padding: 14px 6vw;
+  }
+  .skills-box-left { max-width: unset; }
 }
 .main-section {
   flex: 1 1 0;
