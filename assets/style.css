@@ -21,6 +21,7 @@ body {
   /* Có thể thêm chữ sắc nét hơn: */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--text);
 }
 
 @keyframes gradientMove {
