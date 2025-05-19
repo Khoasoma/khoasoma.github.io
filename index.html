@@ -29,7 +29,30 @@
       </p>
       <a href="assets/CV.pdf" class="cv-btn" download>Tải CV</a>
     </header>
-
+<div class="main-spotify-flex">
+  <div class="main-section">
+    <button onclick="changeMood()" class="mood-btn">Đổi mood</button>
+  </div>
+  <div class="spotify-nitro card scroll-fade" id="spotify-nitro">
+    <div class="spotify-header">
+      <img src="assets/spotify-nitro.svg" class="spotify-nitro-icon" alt="Nitro Icon">
+      <h2>
+        <span class="emoji" id="mood-emoji">🎵</span> Spotify Playlist của tôi
+      </h2>
+      <span class="playlist-mood" id="playlist-mood">Mood: <span id="playlist-mood-text">Pink Cloud ☁️</span></span>
+    </div>
+    <div class="spotify-body">
+      <img src="assets/your-playlist-cover.jpg" class="playlist-cover" alt="Playlist Cover">
+      <div class="playlist-info">
+        <strong class="playlist-title">Chill & Code</strong>
+        <p class="playlist-desc">Những bài chill nhất cho dân code, cập nhật theo ngày.</p>
+        <a href="https://open.spotify.com/playlist/your-playlist-id" class="spotify-btn" target="_blank">
+          <img src="assets/spotify-logo.svg" alt="Spotify" class="spotify-logo"> Nghe trên Spotify
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
     <section class="skills-projects">
       <div class="skills card scroll-fade">
         <h2>Kỹ năng</h2>
@@ -152,5 +175,6 @@
   </div>
   <script src="assets/theme.js"></script>
   <script src="assets/scroll-animated.js"></script>
+  <script src="assets/autochangemood.js"></script>
 </body>
 </html>
