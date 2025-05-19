@@ -11,11 +11,28 @@
   --section-gap: 40px;
   --card-radius: 16px;
 }
+body {
+  min-height: 100vh;
+  /* Gradient nhiều màu, chuyển động */
+  background: linear-gradient(120deg, #ff82c1, #82e0ff, #b6f0ff, #ffb3de, #a1c4fd, #ff82c1);
+  background-size: 400% 400%;
+  animation: gradientMove 18s ease-in-out infinite;
+  font-family: 'Inter', Arial, sans-serif; 
+  /* Có thể thêm chữ sắc nét hơn: */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 100%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 0%; }
+  100% { background-position: 0% 50%; }
+}
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Montserrat', Arial, sans-serif;
   margin: 0;
   transition: background 0.3s, color 0.3s;
 }
