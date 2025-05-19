@@ -537,8 +537,8 @@ h1 {
   transition: transform 0.17s cubic-bezier(.4,2,.6,1);
 }
 .socials img {
-  width: 25px;
-  height: 25px;
+  width: 50px;
+  height: 50px;
   transition: filter 0.13s, transform 0.13s;
   filter: grayscale(0.2) brightness(1.05);
   will-change: transform;
