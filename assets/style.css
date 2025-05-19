@@ -34,7 +34,7 @@ body {
 }
 
 .container {
-  max-width: 980px;
+  max-width: 1000px;
   margin: 48px auto;
   background: var(--bg);
   border-radius: 24px;
