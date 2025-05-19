@@ -413,7 +413,7 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-height: 210px;
+  max-height: 500px;
   min-height: 110px;
   overflow-y: auto;
   padding-right: 0;
@@ -426,7 +426,7 @@ h1 {
 }
 /* Modern scrollbar (Firefox & standards) */
 .feedback-list-horizontal::-webkit-scrollbar {
-  height: 9px;
+  height: 70px;
   width: 11px;
   background: #23243a;
   border-radius: 10px;
@@ -434,7 +434,7 @@ h1 {
 .feedback-list-horizontal::-webkit-scrollbar-thumb {
   background: linear-gradient(90deg, #ff82c1 50%, #7f98fb 100%);
   border-radius: 8px;
-  min-height: 36px;
+  min-height: 70px;
   box-shadow: 0 0 8px #ff82c1aa;
 }
 .feedback-list-horizontal::-webkit-scrollbar-thumb:hover {
