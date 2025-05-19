@@ -32,7 +32,10 @@ body {
   100% { background-position: 0% 50%; }
 }
 
+/* Luôn để frame chính tự cao lên theo nội dung */
 .container {
+  min-height: 100vh;         /* Đảm bảo luôn đủ cao full màn hình, hơn nữa thì tự kéo dài */
+  height: auto;              /* Không giới hạn chiều cao */
   max-width: 980px;
   margin: 38px auto;
   background: var(--bg);
@@ -41,7 +44,11 @@ body {
   padding: 32px 18px 18px 18px;
   transition: background 0.3s;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;     /* giữ các phần tử trên xuống dưới */
 }
+
 
 .header {
   text-align: center;
