@@ -29,37 +29,42 @@
       </p>
       <a href="assets/CV.pdf" class="cv-btn" download>Tải CV</a>
     </header>
-<div class="main-spotify-flex">
-  <div class="main-section">
-    <button onclick="changeMood()" class="mood-btn">Đổi trạng thái</button>
-  </div>
-<div class="spotify-nitro" id="spotify-nitro">
-  <div class="spotify-header">
-    <span class="spotify-nitro-icon" aria-label="Nitro Boost">
-      <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
-        <rect width="40" height="40" rx="12" fill="#fff"/>
-        <path d="M26.48 13.43c-1.43-1.43-3.34-2.23-5.38-2.23-2.04 0-3.95.8-5.38 2.23-2.97 2.97-2.97 7.78 0 10.75 1.43 1.43 3.34 2.23 5.38 2.23 2.04 0 3.95-.8 5.38-2.23 2.97-2.97 2.97-7.78 0-10.75zm-5.38 11.27c-2.3 0-4.46-.89-6.08-2.52-3.36-3.36-3.36-8.8 0-12.16s8.8-3.36 12.16 0c3.36 3.36 3.36 8.8 0 12.16-1.62 1.63-3.78 2.52-6.08 2.52z" fill="#FF73FA"/>
-        <path d="M27.88 18.09a.75.75 0 0 0-1.06-1.06l-7.07 7.07a.75.75 0 1 0 1.06 1.06l7.07-7.07z" fill="#FF73FA"/>
-      </svg>
-    </span>
-    <span class="spotify-title"><span id="mood-emoji">🎵</span> Spotify Playlist của tôi</span>
-    <span class="playlist-mood" id="playlist-mood">
-      Mood: <span id="playlist-mood-text">Pink Cloud ☁️</span>
-    </span>
-  </div>
-  <div class="spotify-embed-wrapper">
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1E8MPCOWeXCNRI?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-  </div>
-</div>
-</div>
-        </a>
-      </div>
+<section class="main-row-flex">
+  <div class="main-left">
+    <div class="projects card scroll-fade">
+      <h2>Dự án tiêu biểu</h2>
+      <ul>
+        <li>
+          <a href="https://github.com/Khoasoma/xenonfolia" target="_blank">
+            <img src="assets/cube.svg" alt="Plugin"> Minecraft Software
+          </a>
+          <p>Folia Core tối ưu cho máy chủ minecraft, Hiệu năng +20%</p>
+        </li>
+        <li>
+          <a href="https://asakamc.vn" target="_blank">
+            <img src="assets/code.svg" alt="Asakamc"> Minecraft Server
+          </a>
+          <p>Dự án máy chủ minecraft do asakacloud tài trợ, chức vụ Headadmin.</p>
+        </li>
+      </ul>
     </div>
   </div>
-</div>
-    <section class="skills-projects">
-      <div class="skills card scroll-fade">
-        <h2>Kỹ năng</h2>
+  <div class="main-right">
+    <div class="spotify-nitro card scroll-fade" id="spotify-nitro">
+      <div class="spotify-header">
+        <span class="spotify-nitro-icon" aria-label="Nitro Boost">
+        </span>
+        <span class="spotify-title"><span id="mood-emoji">🎵</span> Spotify Playlist của tôi</span>
+        <span class="playlist-mood" id="playlist-mood">
+          Mood: <span id="playlist-mood-text">Pink Cloud ☁️</span>
+          <button onclick="changeMood()" class="mood-btn">Đổi mood</button>
+        </span>
+      </div>
+      <div class="spotify-embed-wrapper">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1E8MPCOWeXCNRI?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+      <div class="skills-box-in-spotify">
+        <h3>Kỹ năng</h3>
         <ul>
           <li><img src="assets/code.svg" alt="Code"> Java, Python</li>
           <li><img src="assets/rocket.svg" alt="Framework"> Spring Boot, Node.js</li>
@@ -67,15 +72,11 @@
           <li><img src="assets/git.svg" alt="Git"> Git, CI/CD, Docker</li>
         </ul>
       </div>
-      <div class="spotify-embed-wrapper">
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1E8MPCOWeXCNRI?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      </div>
     </div>
   </div>
 </section>
 <section class="discord-feedback-wrapper card scroll-fade">
   <div class="df-flex">
-    <!-- Cột trái: Máy chủ Discord -->
     <div class="df-left">
       <h2>Máy chủ Discord</h2>
       <div class="discord-grid">

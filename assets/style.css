@@ -30,12 +30,6 @@ body {
   75% { background-position: 50% 0%; }
   100% { background-position: 0% 50%; }
 }
-body {
-  background: var(--bg);
-  color: var(--text);
-  margin: 0;
-  transition: background 0.3s, color 0.3s;
-}
 
 .container {
   max-width: 880px;
