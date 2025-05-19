@@ -31,23 +31,27 @@
     </header>
 <div class="main-spotify-flex">
   <div class="main-section">
-    <button onclick="changeMood()" class="mood-btn">Đổi mood</button>
+    <button onclick="changeMood()" class="mood-btn">Đổi trạng thái</button>
   </div>
   <div class="spotify-nitro card scroll-fade" id="spotify-nitro">
     <div class="spotify-header">
-      <img src="assets/spotify-nitro.svg" class="spotify-nitro-icon" alt="Nitro Icon">
+      <span class="spotify-nitro-icon" aria-label="Nitro Boost">
+        <svg width="42" height="42" viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="12" fill="#fff"/>
+          <path d="M26.48 13.43c-1.43-1.43-3.34-2.23-5.38-2.23-2.04 0-3.95.8-5.38 2.23-2.97 2.97-2.97 7.78 0 10.75 1.43 1.43 3.34 2.23 5.38 2.23 2.04 0 3.95-.8 5.38-2.23 2.97-2.97 2.97-7.78 0-10.75zm-5.38 11.27c-2.3 0-4.46-.89-6.08-2.52-3.36-3.36-3.36-8.8 0-12.16s8.8-3.36 12.16 0c3.36 3.36 3.36 8.8 0 12.16-1.62 1.63-3.78 2.52-6.08 2.52z" fill="#FF73FA"/>
+          <path d="M27.88 18.09a.75.75 0 0 0-1.06-1.06l-7.07 7.07a.75.75 0 1 0 1.06 1.06l7.07-7.07z" fill="#FF73FA"/>
+        </svg>
+      </span>
       <h2>
         <span class="emoji" id="mood-emoji">🎵</span> Spotify Playlist của tôi
       </h2>
       <span class="playlist-mood" id="playlist-mood">Mood: <span id="playlist-mood-text">Pink Cloud ☁️</span></span>
     </div>
-    <div class="spotify-body">
-      <img src="assets/your-playlist-cover.jpg" class="playlist-cover" alt="Playlist Cover">
-      <div class="playlist-info">
-        <strong class="playlist-title">Chill & Code</strong>
-        <p class="playlist-desc">Những bài chill nhất cho dân code, cập nhật theo ngày.</p>
-        <a href="https://open.spotify.com/playlist/your-playlist-id" class="spotify-btn" target="_blank">
-          <img src="assets/spotify-logo.svg" alt="Spotify" class="spotify-logo"> Nghe trên Spotify
+    <div class="spotify-embed-wrapper">
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1E8MPCOWeXCNRI?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+  </div>
+</div>
         </a>
       </div>
     </div>
