@@ -226,9 +226,9 @@ h1 {
   border: 1.5px solid #fff3;
   padding: 18px 15px 13px 15px;
   margin: 0 0 12px 0;
-  min-width: 220px;
-  max-width: 370px;
-  width: 100%;
+  min-width: 200px;
+  max-width: 350px;
+  width: 90%;
   transition: box-shadow 0.2s, background 0.4s;
 }
 .spotify-nitro:hover {
@@ -279,12 +279,12 @@ h1 {
   box-shadow: 0 1px 4px #ffb8ef22 inset;
 }
 .spotify-embed-wrapper {
-  width: 100%;
+  width: 90%;
   border-radius: 9px;
   overflow: hidden;
 }
 .spotify-embed-wrapper iframe {
-  width: 100%;
+  width: 90%;
   min-width: 200px;
   height: 240px;
 }
