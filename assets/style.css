@@ -255,10 +255,9 @@ footer {
   margin-bottom: 30px;
   box-shadow: 0 2px 18px #0003;
   border: 1.5px solid #373b40;
-}
-.df-flex {
+}.df-flex {
   display: flex;
-  gap: 34px;
+  gap: 26px; /* giảm gap */
 }
 .df-left, .df-right {
   flex: 1 1 0;
@@ -266,153 +265,89 @@ footer {
   display: flex;
   flex-direction: column;
 }
-.discord-icon {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  object-fit: cover;
-  background: #181921;
-}
-.discord-join {
-  display: inline-block;
-  background: #5865F2;
-  color: #fff;
-  padding: 2.5px 11px;
-  border-radius: 7px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.96em;
-  margin: 5px 0 0 0;
-  transition: background 0.18s;
-}
-.discord-join:hover {
-  background: #4752C4;
-}
-.discord-list-horizontal {
-  display: flex;
-  overflow-x: auto;
-  gap: 16px;
-  padding-bottom: 6px;
-  scroll-snap-type: x mandatory;
-}
-.discord-mini-box {
-  min-width: 210px;
-  max-width: 230px;
-  background: #23272a;
-  border-radius: 14px;
-  border: 2px solid #373b40;
-  padding: 12px 14px;
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  box-shadow: 0 3px 12px #0002;
-  flex-shrink: 0;
-  scroll-snap-align: start;
-  margin-bottom: 5px;
-  transition: border-color 0.18s, box-shadow 0.18s;
-}
-.discord-mini-box:hover {
-  border-color: #5865F2;
-  box-shadow: 0 6px 18px #5865F288;
-}
-.discord-icon-mini {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  object-fit: cover;
-  background: #181921;
-}
-.discord-mini-box strong {
-  font-size: 1em;
-  color: #fff;
-  display: block;
-  margin-bottom: 2px;
-}
-.discord-mini-box p {
-  font-size: 0.93em;
-  color: #e0e0e0;
-  margin: 4px 0 0 0;
-  line-height: 1.4;
-}
-.discord-join-mini {
-  display: inline-block;
-  background: #5865F2;
-  color: #fff;
-  padding: 2px 11px;
-  border-radius: 7px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95em;
-  margin: 4px 0 0 0;
-  transition: background 0.18s;
-}
-.discord-join-mini:hover { background: #4752C4; }
+
+/* Discord list, card chỉnh lại spacing */
 .discord-list {
   background: #23243a;
   border: 2px solid #44465c;
-  border-radius: 15px;
+  border-radius: 13px;
   box-shadow: 0 2px 12px #0002;
-  padding: 16px 14px;
-  margin-top: 10px;
+  padding: 10px 10px 8px 10px; /* giảm padding */
+  margin-top: 8px;
 }
 
 .discord-server-card {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 18px;
+  gap: 8px; /* giảm gap */
+  margin-bottom: 9px; /* giảm margin */
+  padding: 7px 8px; /* thêm padding cho đều, giảm cao */
+  border-radius: 9px;
+  background: none;
+  box-shadow: none;
 }
-
 .discord-server-card:last-child {
   margin-bottom: 0;
 }
+.discord-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+}
+.discord-join {
+  padding: 2px 9px;
+  font-size: 0.94em;
+  border-radius: 6px;
+  margin: 3px 0 0 0;
+}
+
 /* Feedback feed right side */
 .feedback-list-horizontal {
   display: flex;
   flex-direction: column;
-  gap: 13px;
-  max-height: 330px;
+  gap: 8px; /* giảm gap */
+  max-height: 220px; /* giảm height tổng */
   overflow-y: auto;
-  padding-right: 6px;
+  padding-right: 3px;
 }
 .feedback-mini-box {
   background: #22242a;
-  border-radius: 14px;
-  border: 2px solid #373b40;
-  padding: 11px 13px;
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  box-shadow: 0 3px 12px #0002;
-  transition: border-color 0.18s, box-shadow 0.18s;
-}
-.feedback-mini-box:hover {
-  border-color: #5865F2;
-  box-shadow: 0 6px 18px #5865F288;
+  border-radius: 10px;
+  border: 1.5px solid #373b40;
+  padding: 7px 9px;
+  gap: 7px;
+  box-shadow: 0 2px 8px #0001;
 }
 .feedback-avatar-mini {
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  object-fit: cover;
-  border: 1.5px solid #5865F2;
-  margin-top: 3px;
+  border: 1px solid #5865F2;
+  margin-top: 1px;
 }
 .feedback-content strong {
-  font-size: 0.98em;
-  color: #fff;
-  display: block;
-  margin-bottom: 2px;
+  font-size: 0.95em;
+  margin-bottom: 1px;
 }
 .feedback-content p {
-  font-size: 0.93em;
-  color: #e0e0e0;
-  margin: 5px 0 0 0;
+  font-size: 0.90em;
+  margin: 2px 0 0 0;
 }
 .feedback-stars {
-  display: flex;
-  gap: 1.5px;
-  margin-bottom: 1px;
+  gap: 1px;
+  margin-bottom: 0;
+}
+@media (max-width: 800px) {
+  .df-flex {
+    flex-direction: column;
+    gap: 11px;
+  }
+  .discord-list, .feedback-list-horizontal {
+    padding: 7px 2vw;
+  }
+  .feedback-list-horizontal {
+    max-height: 170px;
+  }
 }
 .main-spotify-flex {
   display: flex;
