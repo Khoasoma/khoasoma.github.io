@@ -469,3 +469,33 @@ footer {
 .dmca-badge:hover {
   opacity: 1;
 }
+.main-row-flex {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+.main-left {
+  flex: 2 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.main-right {
+  flex: 1 1 320px;
+  min-width: 280px;
+  max-width: 410px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.spotify-nitro {
+  width: 100%;
+  max-width: 410px;
+  box-sizing: border-box;
+}
+@media (max-width: 900px) {
+  .main-row-flex { flex-direction: column; gap: 18px; }
+  .main-left, .main-right { max-width: 100vw; }
+}
