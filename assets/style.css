@@ -211,7 +211,7 @@ h1 {
   color: #e6e8ef;
 }
 .skills li img, .projects li img {
-  width: 22px;
+  width: 44px;
   height: 22px;
   filter: grayscale(0.3) brightness(1.1);
   background: #23243a;
