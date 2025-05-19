@@ -11,6 +11,13 @@
   --card-radius: 18px;
 }
 
+html, body {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
 body {
   min-height: 100vh;
   background: linear-gradient(120deg, #ff82c1, #82e0ff, #b6f0ff, #ffb3de, #a1c4fd, #ff82c1);
@@ -22,6 +29,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background 0.3s, color 0.3s;
+  box-sizing: border-box;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 @keyframes gradientMove {
@@ -32,10 +42,7 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Luôn để frame chính tự cao lên theo nội dung */
 .container {
-  min-height: 100vh;         /* Đảm bảo luôn đủ cao full màn hình, hơn nữa thì tự kéo dài */
-  height: auto;              /* Không giới hạn chiều cao */
   max-width: 980px;
   margin: 38px auto;
   background: var(--bg);
@@ -44,11 +51,13 @@ body {
   padding: 32px 18px 18px 18px;
   transition: background 0.3s;
   box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;     /* giữ các phần tử trên xuống dưới */
+  position: relative;
+  overflow: visible;
 }
-
 
 .header {
   text-align: center;
@@ -156,6 +165,8 @@ h1 {
   gap: 24px;
   align-items: flex-start;
   margin-bottom: 18px;
+  width: 100%;
+  box-sizing: border-box;
 }
 .main-left {
   flex: 1 1 0;
@@ -183,9 +194,9 @@ h1 {
   transition: background 0.3s, border 0.3s;
   max-width: 100%;
   box-sizing: border-box;
+  overflow: visible;
 }
 
-/* Skills & Projects */
 .skills ul, .projects ul {
   padding-left: 0;
   list-style: none;
@@ -227,97 +238,6 @@ h1 {
   font-size: 0.92em;
 }
 
-/* Spotify Card (small, neat) */
-.spotify-nitro {
-  background: linear-gradient(135deg, #ff82c1 0%, #ffa4ec 60%, #f0b6ff 100%);
-  border-radius: 14px;
-  box-shadow: 0 4px 16px #ffb8ef33, 0 1px 4px #fff4;
-  border: 1.5px solid #fff3;
-  padding: 18px 15px 13px 15px;
-  margin: 0 0 12px 0;
-  min-width: 220px;
-  max-width: 370px;
-  width: 100%;
-  transition: box-shadow 0.2s, background 0.4s;
-  box-sizing: border-box;
-}
-.spotify-nitro:hover {
-  box-shadow: 0 8px 22px #ffb8ef55, 0 2px 8px #fff6, 0 0 0 3px #fff3 inset;
-}
-.spotify-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  position: relative;
-  margin-bottom: 10px;
-  justify-content: flex-start;
-}
-.spotify-nitro-icon {
-  width: 20px;
-  height: 20px;
-  min-width: 20px;
-  border-radius: 5px;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 1px 4px #ffb8ef33;
-}
-.spotify-title {
-  font-family: 'Inter', Arial, sans-serif;
-  font-size: 1em;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: 0.01em;
-  flex: 1 1 auto;
-  text-align: left;
-  margin-left: 4px;
-  text-shadow: 0 1px 4px #c61d7c33;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.emoji { font-size: 1.09em; vertical-align: -1px; }
-.playlist-mood {
-  background: rgba(255,255,255,0.12);
-  border-radius: 6px;
-  padding: 2px 7px;
-  color: #fff;
-  font-size: 0.97em;
-  margin-left: 4px;
-  font-weight: 500;
-  box-shadow: 0 1px 4px #ffb8ef22 inset;
-}
-.spotify-embed-wrapper {
-  width: 100%;
-  border-radius: 9px;
-  overflow: hidden;
-}
-.spotify-embed-wrapper iframe {
-  width: 100%;
-  min-width: 200px;
-  height: 240px;
-}
-
-/* Mood Button */
-.mood-btn {
-  margin-left: 7px;
-  background: linear-gradient(90deg, #ff82c1 60%, #ffa4ec 100%);
-  color: #fff;
-  border: none;
-  border-radius: 7px;
-  padding: 4px 12px;
-  font-weight: 600;
-  font-size: 0.96em;
-  cursor: pointer;
-  box-shadow: 0 1px 4px #ff82c199;
-  transition: background 0.2s, box-shadow 0.2s;
-}
-.mood-btn:hover {
-  background: linear-gradient(90deg, #ffa4ec 60%, #ff82c1 100%);
-  box-shadow: 0 3px 10px #ffa4ec88;
-}
-
 /* --- Discord & Feedback Section Modern Redesign --- */
 .discord-feedback-wrapper {
   background: #23243a;
@@ -329,6 +249,9 @@ h1 {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  overflow: visible;
 }
 .df-flex {
   display: flex;
@@ -336,6 +259,7 @@ h1 {
   gap: 30px;
   width: 100%;
   box-sizing: border-box;
+  overflow: visible;
 }
 .df-left, .df-right {
   flex: 1 1 0;
@@ -376,6 +300,7 @@ h1 {
   width: 100%;
   box-sizing: border-box;
   max-width: 100%;
+  overflow: visible;
 }
 .discord-card:hover {
   box-shadow: 0 8px 32px #7f98fb31;
@@ -453,6 +378,7 @@ h1 {
   width: 100%;
   max-width: 380px;
   box-sizing: border-box;
+  overflow: visible;
 }
 .discord-embed-box h3 {
   margin-bottom: 10px;
@@ -469,6 +395,7 @@ h1 {
   background: transparent;
   box-sizing: border-box;
   display: block;
+  overflow: hidden;
 }
 
 /* --- Feedback Modern Scrollbar & Layout --- */
@@ -484,14 +411,12 @@ h1 {
   overflow-y: auto;
   overflow-x: hidden;
   padding-right: 0;
-  scrollbar-width: thin;
-  scrollbar-color: #ff82c1 #22243a;
-  background: transparent;
-  border-radius: 12px;
-  box-shadow: none;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
+  background: transparent;
+  border-radius: 12px;
+  box-shadow: none;
 }
 .feedback-list-horizontal::-webkit-scrollbar {
   height: 11px;
@@ -517,7 +442,6 @@ h1 {
   scrollbar-color: #ff82c1 #23243a;
 }
 
-/* Feedback box modern, stretch to fill */
 .feedback-mini-box {
   background: #20223a;
   border-radius: 10px;
@@ -530,6 +454,7 @@ h1 {
   width: 100%;
   min-width: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 .feedback-avatar-mini {
   width: 36px;
@@ -569,7 +494,6 @@ h1 {
   .container { max-width: 99vw; }
   .main-row-flex { flex-direction: column; gap: 12px; }
   .main-left, .main-right { max-width: 100vw; }
-  .spotify-nitro { max-width: 98vw; }
 }
 @media (max-width: 800px) {
   .df-flex {
@@ -584,7 +508,6 @@ h1 {
 @media (max-width: 600px) {
   .container { padding: 7vw 1vw 5vw 1vw; }
   .main-row-flex { gap: 7px; }
-  .spotify-nitro { padding: 10px 6px 7px 6px; }
   .card { padding: 9px 5px 6px 7px; }
   .discord-feedback-wrapper { padding: 10px 2vw 8px 2vw; }
   .discord-card { padding: 12px 7px 10px 9px; }
@@ -594,23 +517,7 @@ h1 {
   .discord-embed-box iframe { height: 210px; }
   .feedback-mini-box { padding: 7px 7px; }
 }
-.df-flex, .df-left, .df-right, .feedback-list-horizontal {
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-}
-.feedback-list-horizontal {
-  max-height: 340px;       /* hoặc lớn hơn nếu feedback dài */
-  min-height: 110px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding-right: 0;
-  width: 100%;
-}
-@media (max-width: 900px) {
-  .container { min-height: 100vh; }
-}
+
 .contact {
   text-align: center;
   margin-bottom: 14px;
@@ -620,6 +527,8 @@ h1 {
   box-shadow: 0 1px 4px var(--shadow);
   padding: 10px 0 9px 0;
   transition: background 0.3s, border 0.3s;
+  width: 100%;
+  box-sizing: border-box;
 }
 .socials a {
   display: inline-block;
@@ -645,4 +554,6 @@ footer {
   font-size: 0.95em;
   margin-top: 6px;
   letter-spacing: 0.01em;
+  width: 100%;
+  box-sizing: border-box;
 }
