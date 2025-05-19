@@ -286,7 +286,7 @@ h1 {
 .spotify-embed-wrapper iframe {
   width: 90%;
   min-width: 200px;
-  height: 240px;
+  height: 400px;
 }
 
 .mood-btn {
