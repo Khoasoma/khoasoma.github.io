@@ -32,8 +32,40 @@ body {
   box-sizing: border-box;
   width: 100vw;
   overflow-x: hidden;
+  position: relative;
 }
-
+.bg-side-decor {
+  position: fixed;
+  top: 0; bottom: 0;
+  left: 0;
+  width: 92px;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(220deg, #a7bfff 0%, #f8ceec 90%);
+  opacity: 0.7;
+  filter: blur(38px);
+  animation: moveLeftBg 18s linear infinite alternate;
+}
+.bg-side-decor-right {
+  position: fixed;
+  top: 0; bottom: 0;
+  right: 0;
+  width: 92px;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(140deg, #fbc2eb 0%, #a6c1ee 90%);
+  opacity: 0.7;
+  filter: blur(38px);
+  animation: moveRightBg 18s linear infinite alternate;
+}
+@keyframes moveLeftBg {
+  0%   { transform: translateY(0) scaleX(1); }
+  100% { transform: translateY(60px) scaleX(1.08); }
+}
+@keyframes moveRightBg {
+  0%   { transform: translateY(0) scaleX(1); }
+  100% { transform: translateY(-60px) scaleX(0.93); }
+}
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
   25% { background-position: 50% 100%; }
