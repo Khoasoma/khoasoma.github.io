@@ -341,7 +341,7 @@ h1 {
 /* --- Modern Discord "Tham gia" Button --- */
 .discord-join {
   display: inline-block;
-  margin-left: 16px;
+  margin-top: 10px;
   padding: 10px 34px;
   font-size: 1.09em;
   font-weight: 700;
@@ -356,6 +356,7 @@ h1 {
   transition: background 0.25s, box-shadow 0.19s, color 0.2s;
   min-width: 120px;
   text-align: center;
+  align-self: flex-start;
   white-space: nowrap;
 }
 .discord-join:hover, .discord-join:focus {
