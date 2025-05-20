@@ -256,29 +256,28 @@ h1 {
 }
 .df-flex {
   display: flex;
-  flex-wrap: wrap;
   gap: 30px;
   width: 100%;
   box-sizing: border-box;
-  overflow: visible;
 }
-.df-left, .df-right {
+.df-left,
+.df-right {
   flex: 1 1 0;
-  min-width: 280px;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 22px;
-  box-sizing: border-box;
-  max-width: 100%;
 }
-@media (max-width: 950px) {
+
+/* RESPONSIVE: stack dọc khi màn nhỏ */
+@media (max-width: 900px) {
   .df-flex {
     flex-direction: column;
-    gap: 22px;
+    gap: 12px;
   }
 }
 
-/* --- Discord Server Card Modern --- */
+/* Discord Card Fix Layout */
 .discord-list {
   display: flex;
   flex-direction: column;
@@ -296,7 +295,7 @@ h1 {
   margin-bottom: 0;
   transition: box-shadow 0.18s, border 0.18s;
   display: flex;
-  align-items: flex-start; /* CHỈNH SỬA: đổi từ center sang flex-start */
+  align-items: flex-start; /* FIX: không dùng center để không bị dính ngang */
   gap: 18px;
   width: 100%;
   box-sizing: border-box;
@@ -319,8 +318,8 @@ h1 {
 .discord-server-info {
   flex: 1 1 0;
   display: flex;
-  flex-direction: column;
-  gap: 6px; /* CHỈNH SỬA: tăng khoảng cách giữa các dòng bên trong */
+  flex-direction: column; /* FIX: đảm bảo mọi thứ xếp dọc, kể cả nút */
+  gap: 6px;
   min-width: 0;
 }
 .discord-server-info strong {
@@ -340,7 +339,7 @@ h1 {
 
 .discord-join {
   display: inline-block;
-  margin-top: 12px; /* CHỈNH SỬA: tạo khoảng cách rõ ràng phía trên nút */
+  margin-top: 12px;  /* FIX: đảm bảo nút cách mô tả bên trên */
   padding: 10px 34px;
   font-size: 1.09em;
   font-weight: 700;
@@ -355,7 +354,7 @@ h1 {
   transition: background 0.25s, box-shadow 0.19s, color 0.2s;
   min-width: 120px;
   text-align: center;
-  align-self: flex-start; /* CHỈNH SỬA: căn nút về bên trái khối mô tả */
+  align-self: flex-start; /* FIX: nút nằm về bên trái */
   white-space: nowrap;
 }
 .discord-join:hover, .discord-join:focus {
