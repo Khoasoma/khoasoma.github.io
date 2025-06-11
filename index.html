@@ -3,167 +3,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Khoasoma - Developer & Minecraft Plugin Creator">
-    <title>Khoasoma | Developer Portfolio</title>
+    <meta name="description" content="Khoasoma - Creative Developer & Minecraft Plugin Creator">
+    <title>Khoasoma | Creative Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="gradient-overlay"></div>
+    </div>
+
     <div class="container">
         <header class="header">
-            <button class="theme-toggle" id="theme-toggle" aria-label="Chuyển chế độ sáng/tối">
-                <span id="theme-icon">☀️</span>
-            </button>
-            <div class="profile-section">
-                <img src="assets/avatar.jpg" alt="Khoasoma" class="avatar">
-                <h1>Khoasoma</h1>
-                <div class="badges">
-                    <span class="badge">Developer</span>
-                    <span class="badge">Minecraft Plugin Creator</span>
-                </div>
-                <p class="tagline">Building the future of Minecraft servers, one plugin at a time</p>
-            </div>
+            <nav class="nav-bar">
+                <div class="logo">K<span class="highlight">.</span></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Chuyển chế độ sáng/tối">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
 
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-icon">💻</span>
-                    <div class="stat-info">
-                        <h3>Development</h3>
-                        <p>Plugin & Server Developer</p>
+            <div class="hero-section">
+                <div class="profile-card">
+                    <div class="profile-image">
+                        <img src="assets/avatar.jpg" alt="Khoasoma" class="avatar">
+                        <div class="status-badge">
+                            <span class="status-dot"></span>
+                            Available for projects
+                        </div>
+                    </div>
+                    
+                    <div class="profile-info">
+                        <h1 class="glitch-text" data-text="Khoasoma">Khoasoma</h1>
+                        <div class="typing-text">
+                            <span id="typed-text"></span>
+                            <span class="cursor">|</span>
+                        </div>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-badge">
+                                <i class="fab fa-java"></i> Java
+                            </span>
+                            <span class="tech-badge">
+                                <i class="fab fa-python"></i> Python
+                            </span>
+                            <span class="tech-badge">
+                                <i class="fab fa-node-js"></i> Node.js
+                            </span>
+                            <span class="tech-badge">
+                                <i class="fab fa-docker"></i> Docker
+                            </span>
+                        </div>
                     </div>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-icon">🎮</span>
-                    <div class="stat-info">
-                        <h3>Gaming</h3>
-                        <p>Minecraft Expert</p>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-icon">🌟</span>
-                    <div class="stat-info">
-                        <h3>Experience</h3>
-                        <p>3+ Years</p>
-                    </div>
-                </div>
-            </div>
 
-            <div class="about-section">
-                <p>Passionate developer focused on creating high-performance Minecraft plugins and optimizing server infrastructure. Currently working on innovative solutions for the Minecraft community.</p>
-                <div class="cta-buttons">
-                    <a href="assets/CV.pdf" class="primary-btn" download>Download CV</a>
-                    <a href="#contact" class="secondary-btn">Contact Me</a>
+                <div class="stats-showcase">
+                    <div class="stat-item" data-value="3">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item" data-value="50">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-item" data-value="1000">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Happy Users</div>
+                    </div>
                 </div>
             </div>
         </header>
 
         <main>
-            <section class="skills-section">
-                <h2>Technical Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <img src="assets/java.svg" alt="Java">
-                        <h3>Java</h3>
-                        <p>Core Development</p>
+            <section class="featured-work">
+                <h2 class="section-title">Featured Work</h2>
+                <div class="work-grid">
+                    <div class="work-card spotlight">
+                        <div class="work-image">
+                            <img src="assets/xenonfolia.jpg" alt="XenonFolia">
+                            <div class="work-overlay">
+                                <div class="work-links">
+                                    <a href="https://github.com/Khoasoma/xenonfolia" class="work-link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="#" class="work-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="work-content">
+                            <h3>XenonFolia</h3>
+                            <p>High-performance Minecraft server core with advanced optimizations</p>
+                            <div class="tech-used">
+                                <span>Java</span>
+                                <span>Performance</span>
+                                <span>Optimization</span>
+                            </div>
+                            <div class="work-stats">
+                                <span><i class="fas fa-star"></i> 120</span>
+                                <span><i class="fas fa-code-branch"></i> 45</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="skill-card">
-                        <img src="assets/python.png" alt="Python">
-                        <h3>Python</h3>
-                        <p>Automation</p>
-                    </div>
-                    <div class="skill-card">
-                        <img src="assets/node.png" alt="Node.js">
-                        <h3>Node.js</h3>
-                        <p>Backend</p>
-                    </div>
-                    <div class="skill-card">
-                        <img src="assets/docker.png" alt="Docker">
-                        <h3>Docker</h3>
-                        <p>Containerization</p>
+
+                    <div class="work-card">
+                        <div class="work-image">
+                            <img src="assets/asakamc.jpg" alt="AsakaMC">
+                            <div class="work-overlay">
+                                <div class="work-links">
+                                    <a href="https://asakamc.vn" class="work-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="work-content">
+                            <h3>AsakaMC</h3>
+                            <p>Premium Minecraft gaming community & server network</p>
+                            <div class="tech-used">
+                                <span>Server</span>
+                                <span>Community</span>
+                                <span>Gaming</span>
+                            </div>
+                            <div class="server-stats">
+                                <span><i class="fas fa-users"></i> 500+ Players</span>
+                                <span><i class="fas fa-clock"></i> 99.9% Uptime</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <section class="projects-section">
-                <h2>Featured Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-header">
-                            <img src="assets/cube.svg" alt="XenonFolia">
-                            <h3>XenonFolia</h3>
+            <section class="skills-section">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <div class="skills-container">
+                    <div class="skills-category">
+                        <h3>Development</h3>
+                        <div class="skill-bars">
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span>Java Development</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="progress-line java">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span>Plugin Creation</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="progress-line plugins">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span>Server Optimization</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress-line optimization">
+                                    <span></span>
+                                </div>
+                            </div>
                         </div>
-                        <p>High-performance Minecraft server core with 20% performance boost</p>
-                        <div class="project-tags">
-                            <span class="tag">Java</span>
-                            <span class="tag">Performance</span>
-                            <span class="tag">Optimization</span>
-                        </div>
-                        <a href="https://github.com/Khoasoma/xenonfolia" class="project-link" target="_blank">View Project</a>
                     </div>
-                    <div class="project-card">
-                        <div class="project-header">
-                            <img src="assets/code.svg" alt="AsakaMC">
-                            <h3>AsakaMC</h3>
+
+                    <div class="skills-showcase">
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h4>Server Management</h4>
+                            <p>Expert in server configuration and maintenance</p>
                         </div>
-                        <p>Premium Minecraft server with custom plugins and optimizations</p>
-                        <div class="project-tags">
-                            <span class="tag">Server</span>
-                            <span class="tag">Plugins</span>
-                            <span class="tag">Management</span>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h4>Custom Development</h4>
+                            <p>Specialized in creating tailored solutions</p>
                         </div>
-                        <a href="https://asakamc.vn" class="project-link" target="_blank">Visit Server</a>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-users-cog"></i>
+                            </div>
+                            <h4>Community Management</h4>
+                            <p>Building and managing gaming communities</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <section class="communities-section">
-                <h2>My Communities</h2>
-                <div class="communities-grid">
-                    <div class="community-card">
-                        <img src="assets/asakamc.png" alt="AsakaMC" class="community-icon">
-                        <div class="community-info">
-                            <h3>AsakaMC</h3>
-                            <p>Premium Minecraft gaming community</p>
-                            <a href="https://discord.gg/asakamc" class="community-join" target="_blank">Join Discord</a>
+                <h2 class="section-title">Gaming Communities</h2>
+                <div class="communities-showcase">
+                    <div class="community-card premium">
+                        <div class="community-header">
+                            <img src="assets/asakamc.png" alt="AsakaMC" class="community-logo">
+                            <div class="community-status">
+                                <span class="status-indicator online"></span>
+                                Online - 150 Players
+                            </div>
+                        </div>
+                        <div class="community-content">
+                            <h3>AsakaMC Network</h3>
+                            <p>Premium Minecraft server with unique gameplay experiences</p>
+                            <div class="community-features">
+                                <span><i class="fas fa-gamepad"></i> Custom Games</span>
+                                <span><i class="fas fa-users"></i> Active Community</span>
+                                <span><i class="fas fa-shield-alt"></i> Anti-Cheat</span>
+                            </div>
+                            <a href="https://discord.gg/asakamc" class="join-button">
+                                <i class="fab fa-discord"></i> Join Discord
+                            </a>
                         </div>
                     </div>
+
                     <div class="community-card">
-                        <img src="assets/asakacloud.png" alt="AsakaCloud" class="community-icon">
-                        <div class="community-info">
-                            <h3>AsakaCloud</h3>
-                            <p>Professional Minecraft hosting service</p>
-                            <a href="https://discord.gg/asakacloud" class="community-join" target="_blank">Join Discord</a>
+                        <div class="community-header">
+                            <img src="assets/asakacloud.png" alt="AsakaCloud" class="community-logo">
+                            <div class="community-status">
+                                <span class="status-indicator online"></span>
+                                Active Services
+                            </div>
+                        </div>
+                        <div class="community-content">
+                            <h3>AsakaCloud Hosting</h3>
+                            <p>Professional Minecraft server hosting solution</p>
+                            <div class="community-features">
+                                <span><i class="fas fa-server"></i> 24/7 Support</span>
+                                <span><i class="fas fa-bolt"></i> High Performance</span>
+                                <span><i class="fas fa-shield-alt"></i> DDoS Protection</span>
+                            </div>
+                            <a href="https://discord.gg/asakacloud" class="join-button">
+                                <i class="fab fa-discord"></i> Join Community
+                            </a>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
 
-        <footer id="contact">
-            <h2>Connect With Me</h2>
-            <div class="social-links">
-                <a href="mailto:khoa@kh0a.site" title="Email" class="social-link">
-                    <img src="assets/mail.svg" alt="Email">
-                </a>
-                <a href="https://github.com/Khoasoma" target="_blank" title="GitHub" class="social-link">
-                    <img src="assets/github.svg" alt="GitHub">
-                </a>
-                <a href="https://discordapp.com/users/808974657994752050" target="_blank" title="Discord" class="social-link">
-                    <img src="assets/discord.svg" alt="Discord">
-                </a>
-                <a href="https://facebook.com/profile.php?id=100092492700502" target="_blank" title="Facebook" class="social-link">
-                    <img src="assets/facebook.svg" alt="Facebook">
-                </a>
-                <a href="https://youtube.com/@khoabuhlmao" target="_blank" title="YouTube" class="social-link">
-                    <img src="assets/youtube.svg" alt="YouTube">
-                </a>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Connect With Me</h3>
+                    <div class="social-grid">
+                        <a href="https://github.com/Khoasoma" class="social-item" target="_blank">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://discordapp.com/users/808974657994752050" class="social-item" target="_blank">
+                            <i class="fab fa-discord"></i>
+                            <span>Discord</span>
+                        </a>
+                        <a href="https://facebook.com/profile.php?id=100092492700502" class="social-item" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://youtube.com/@khoabuhlmao" class="social-item" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <div class="contact-card">
+                        <h3>Get in Touch</h3>
+                        <a href="mailto:khoa@kh0a.site" class="contact-button">
+                            <i class="fas fa-envelope"></i>
+                            Send Message
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="copyright">
-                &copy; 2025 Khoasoma. All rights reserved.
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Khoasoma. All rights reserved.</p>
+                <p class="credits">Crafted with <i class="fas fa-heart"></i> by Khoasoma</p>
             </div>
         </footer>
     </div>
 
-    <script src="assets/theme.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="assets/main.js"></script>
 </body>
 </html>
