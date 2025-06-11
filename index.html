@@ -1,203 +1,169 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name='dmca-site-verification' content='aXgrRmJENzdXNHo1NFJsL2NNWExkT3ExaUJ5eVpJL3hDWTB4RTdxc3d3Zz01' />
-  <title>Khoasoma - kh0a</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Khoasoma - Developer & Minecraft Plugin Creator">
+    <title>Khoasoma | Developer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <div class="bg-side-decor"></div>
-<div class="bg-side-decor-right"></div>
-  <div class="container">
-    <header class="header">
-      <button class="theme-toggle" id="theme-toggle" aria-label="Chuyển chế độ sáng/tối">
-        <span id="theme-icon">☀️</span>
-      </button>
-      <img src="assets/avatar.jpg" alt="Avatar" class="avatar">
-      <h1>Khoasoma</h1>
-      <p class="tagline">Lập trình viên Máy chủ & Minecraft Plugin</p>
-      <div class="info-list">
-        <div><span>🎓 Học tại:</span> Trường THCS Vũng Tàu</div>
-        <div><span>🗺 Hiện đang ở :</span> Vũng Tàu (TP HCM)</div>
-        <div><span>🌏 Đến từ:</span> Việt Nam</div>
-        <div><span>🚻 Giới tính:</span> Nam (trung tính)</div>
-        <div><span>🎂 Năm sinh:</span> 2011 (14 tuổi)</div>
-        <div><span>💼 Đang làm tại:</span> Freelancer, Developer, Supporter asakacloud, HeadAdmin tại asakamc</div>
-      </div>
-      <p class="about">
-        Xin chào! Mình là Khoa, đam mê phát triển phần mềm, Fork mọi repo mình thích, recode và skid xD
-      </p>
-      <a href="assets/CV.pdf" class="cv-btn" download>Tải CV</a>
-    </header>
+    <div class="container">
+        <header class="header">
+            <button class="theme-toggle" id="theme-toggle" aria-label="Chuyển chế độ sáng/tối">
+                <span id="theme-icon">☀️</span>
+            </button>
+            <div class="profile-section">
+                <img src="assets/avatar.jpg" alt="Khoasoma" class="avatar">
+                <h1>Khoasoma</h1>
+                <div class="badges">
+                    <span class="badge">Developer</span>
+                    <span class="badge">Minecraft Plugin Creator</span>
+                </div>
+                <p class="tagline">Building the future of Minecraft servers, one plugin at a time</p>
+            </div>
 
-    <section class="main-row-flex">
-      <!-- Cột trái: Kỹ năng + Dự án tiêu biểu -->
-      <div class="main-left">
-    <section class="skills card">
-      <h2>Kỹ năng</h2>
-      <ul>
-        <li><img src="assets/java.svg" alt="Java"> Java</li>
-        <li><img src="assets/python.png" alt="Python"> Python</li>
-        <li><img src="assets/node.png" alt="Node.js"> Node.js</li>
-        <li><img src="assets/system.png" alt="SystemCtl"> SystemCtl</li>
-        <li><img src="assets/docker.png" alt="Docker"> Docker</li>
-  </ul>
-    </section>
-        <div class="projects card scroll-fade">
-          <h2>My projects</h2>
-          <ul>
-            <li>
-              <a href="https://github.com/Khoasoma/xenonfolia" target="_blank">
-                <img src="assets/cube.svg" alt="Plugin"> Minecraft Software
-              </a>
-              <p>Folia Core tối ưu cho máy chủ minecraft, Hiệu năng +20%</p>
-            </li>
-            <li>
-              <a href="https://asakamc.vn" target="_blank">
-                <img src="assets/code.svg" alt="Asakamc"> Minecraft Server
-              </a>
-              <p>Dự án máy chủ minecraft do asakacloud tài trợ</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- Cột phải: Spotify + Mood -->
-      <div class="main-right">
-        <div class="spotify-nitro card scroll-fade" id="spotify-nitro">
-          <div class="spotify-header">
-            <span class="spotify-nitro-icon" aria-label="Nitro Boost">
-              <!-- SVG Nitro/Spotify icon (optional) -->
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                <circle cx="14" cy="14" r="14" fill="#fff" />
-                <circle cx="14" cy="14" r="11" fill="#1ED760"/>
-                <ellipse cx="14" cy="14" rx="7" ry="3" fill="#fff" opacity="0.5"/>
-              </svg>
-            </span>
-            <span class="spotify-title"><span id="mood-emoji">🎵</span> Spotify Playlist của tôi</span>
-            </span>
-          </div>
-          <div class="spotify-embed-wrapper">
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6Wnrzv3PZYvnaVnTzfzN06?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-<section class="discord-feedback-wrapper card scroll-fade">
-  <div class="df-flex">
-    <!-- Discord Column -->
-    <div class="df-left">
-      <h2>Máy chủ Discord</h2>
-      <div class="discord-list">
-        <div class="discord-card">
-          <img src="assets/asakamc.png" alt="AsakaMC" class="discord-icon">
-          <div class="discord-server-info">
-            <strong>AsakaMC</strong>
-            <p>Máy chủ Minecraft Đa gamemode, dự án được tài trợ bởi asakacloud.</p>
-            <!-- FIX: Nút "Tham gia" ĐẶT TRONG .discord-server-info, dưới <p> -->
-            <a href="https://discord.gg/asakamc" class="discord-join">Tham gia</a>
-          </div>
-        </div>
-        <div class="discord-card">
-          <img src="assets/asakacloud.png" alt="AsakaCloud" class="discord-icon">
-          <div class="discord-server-info">
-            <strong>AsakaCloud</strong>
-            <p>Hosting Minecraft Server, Dedicated Server 300+ customer.</p>
-            <!-- FIX: Nút "Tham gia" ĐẶT TRONG .discord-server-info, dưới <p> -->
-            <a href="https://discord.gg/asakacloud" class="discord-join">Tham gia</a>
-          </div>
-        </div>
-        <div class="discord-card">
-          <img src="assets/khoaserver.png" alt="Khoa's development" class="discord-icon">
-          <div class="discord-server-info">
-            <strong>Khoa's development</strong>
-            <p>Khu tự trị của khoasoma.</p>
-            <!-- FIX: Nút "Tham gia" ĐẶT TRONG .discord-server-info, dưới <p> -->
-            <a href="https://discord.gg/TfEN72AguT" class="discord-join">Tham gia</a>
-          </div>
-        </div>
-      </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-icon">💻</span>
+                    <div class="stat-info">
+                        <h3>Development</h3>
+                        <p>Plugin & Server Developer</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🎮</span>
+                    <div class="stat-info">
+                        <h3>Gaming</h3>
+                        <p>Minecraft Expert</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🌟</span>
+                    <div class="stat-info">
+                        <h3>Experience</h3>
+                        <p>3+ Years</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <p>Passionate developer focused on creating high-performance Minecraft plugins and optimizing server infrastructure. Currently working on innovative solutions for the Minecraft community.</p>
+                <div class="cta-buttons">
+                    <a href="assets/CV.pdf" class="primary-btn" download>Download CV</a>
+                    <a href="#contact" class="secondary-btn">Contact Me</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="skills-section">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <img src="assets/java.svg" alt="Java">
+                        <h3>Java</h3>
+                        <p>Core Development</p>
+                    </div>
+                    <div class="skill-card">
+                        <img src="assets/python.png" alt="Python">
+                        <h3>Python</h3>
+                        <p>Automation</p>
+                    </div>
+                    <div class="skill-card">
+                        <img src="assets/node.png" alt="Node.js">
+                        <h3>Node.js</h3>
+                        <p>Backend</p>
+                    </div>
+                    <div class="skill-card">
+                        <img src="assets/docker.png" alt="Docker">
+                        <h3>Docker</h3>
+                        <p>Containerization</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="projects-section">
+                <h2>Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <img src="assets/cube.svg" alt="XenonFolia">
+                            <h3>XenonFolia</h3>
+                        </div>
+                        <p>High-performance Minecraft server core with 20% performance boost</p>
+                        <div class="project-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Performance</span>
+                            <span class="tag">Optimization</span>
+                        </div>
+                        <a href="https://github.com/Khoasoma/xenonfolia" class="project-link" target="_blank">View Project</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <img src="assets/code.svg" alt="AsakaMC">
+                            <h3>AsakaMC</h3>
+                        </div>
+                        <p>Premium Minecraft server with custom plugins and optimizations</p>
+                        <div class="project-tags">
+                            <span class="tag">Server</span>
+                            <span class="tag">Plugins</span>
+                            <span class="tag">Management</span>
+                        </div>
+                        <a href="https://asakamc.vn" class="project-link" target="_blank">Visit Server</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="communities-section">
+                <h2>My Communities</h2>
+                <div class="communities-grid">
+                    <div class="community-card">
+                        <img src="assets/asakamc.png" alt="AsakaMC" class="community-icon">
+                        <div class="community-info">
+                            <h3>AsakaMC</h3>
+                            <p>Premium Minecraft gaming community</p>
+                            <a href="https://discord.gg/asakamc" class="community-join" target="_blank">Join Discord</a>
+                        </div>
+                    </div>
+                    <div class="community-card">
+                        <img src="assets/asakacloud.png" alt="AsakaCloud" class="community-icon">
+                        <div class="community-info">
+                            <h3>AsakaCloud</h3>
+                            <p>Professional Minecraft hosting service</p>
+                            <a href="https://discord.gg/asakacloud" class="community-join" target="_blank">Join Discord</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer id="contact">
+            <h2>Connect With Me</h2>
+            <div class="social-links">
+                <a href="mailto:khoa@kh0a.site" title="Email" class="social-link">
+                    <img src="assets/mail.svg" alt="Email">
+                </a>
+                <a href="https://github.com/Khoasoma" target="_blank" title="GitHub" class="social-link">
+                    <img src="assets/github.svg" alt="GitHub">
+                </a>
+                <a href="https://discordapp.com/users/808974657994752050" target="_blank" title="Discord" class="social-link">
+                    <img src="assets/discord.svg" alt="Discord">
+                </a>
+                <a href="https://facebook.com/profile.php?id=100092492700502" target="_blank" title="Facebook" class="social-link">
+                    <img src="assets/facebook.svg" alt="Facebook">
+                </a>
+                <a href="https://youtube.com/@khoabuhlmao" target="_blank" title="YouTube" class="social-link">
+                    <img src="assets/youtube.svg" alt="YouTube">
+                </a>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Khoasoma. All rights reserved.
+            </div>
+        </footer>
     </div>
-    <!-- Feedback Column -->
-    <div class="df-right">
-      <h2>Feedback từ cộng đồng</h2>
-      <div class="feedback-list-horizontal">
-        <div class="feedback-mini-box">
-          <img src="assets/user.svg" alt="Nam Nguyễn" class="feedback-avatar-mini">
-          <div class="feedback-content">
-            <strong>N** Ngu**</strong>
-            <span class="feedback-stars">★★★★☆</span>
-            <p>Plugin chạy ổn, support nhanh!</p>
-          </div>
-        </div>
-        <div class="feedback-mini-box">
-          <img src="assets/user.svg" alt="khang" class="feedback-avatar-mini">
-          <div class="feedback-content">
-            <strong>khang</strong>
-            <span class="feedback-stars">★★★★★</span>
-            <p>Ngon Như mẹ bạn....</p>
-          </div>
-        </div>
-        <div class="feedback-mini-box">
-          <img src="assets/user.svg" alt="Li" class="feedback-avatar-mini">
-          <div class="feedback-content">
-            <strong>Li**</strong>
-            <span class="feedback-stars">★★★★★</span>
-            <p>Hosting yếu nhưng tối ưu ngon, server ổn định!</p>
-          </div>
-        </div>
-        <div class="feedback-mini-box">
-          <img src="assets/user.svg" alt="tr***" class="feedback-avatar-mini">
-          <div class="feedback-content">
-            <strong>tr***</strong>
-            <span class="feedback-stars">★★★★☆</span>
-            <p>Múp , Đáng tiền nhưng hơi lâu</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-    <section class="contact card">
-      <h2>Liên hệ</h2>
-      <div class="socials scroll-fade">
-        <a href="mailto:khoa@kh0a.site" title="Email"><img src="assets/mail.svg" alt="Email"></a>
-        <a href="https://github.com/Khoasoma" target="_blank" title="GitHub"><img src="assets/github.svg" alt="GitHub"></a>
-        <a href="https://discordapp.com/users/808974657994752050" target="_blank" title="Discord"><img src="assets/discord.svg" alt="Discord"></a>
-        <a href="https://facebook.com/profile.php?id=100092492700502" target="_blank" title="Facebook"><img src="assets/facebook.svg" alt="Facebook"></a>
-        <a href="https://youtube.com/@khoabuhlmao" target="_blank" title="YouTube"><img src="assets/youtube.svg" alt="YouTube"></a>
-      </div>
-      </div>
-    </section>
-<footer>
-  &copy; 2025 KhoaSoma. All rights reserved.
-  <br>
-  <a href="//www.dmca.com/Protection/Status.aspx?ID=ae768607-cede-4276-9a34-f421e16347ab" title="DMCA.com Protection Status" class="dmca-badge">
-    <img src="https://images.dmca.com/Badges/dmca_protected_sml_120m.png?ID=ae768607-cede-4276-9a34-f421e16347ab" alt="DMCA.com Protection Status" />
-  </a>
-  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script>
-</footer>
-  </div>
-  <script src="assets/theme.js"></script>
-  <script src="assets/scroll-animated.js"></script>
-  <script>
-    // Mood đổi màu (ví dụ, bạn có thể mở rộng)
-    const moods = [
-      {emoji: "☁️", text: "Pink Cloud", color: "#ff82c1"},
-      {emoji: "🌊", text: "Blue Chill", color: "#82e0ff"},
-      {emoji: "🔥", text: "Hot Vibes", color: "#ffb3de"},
-      {emoji: "🌿", text: "Green Peace", color: "#b6f0ff"},
-      {emoji: "🌙", text: "Night Mode", color: "#a1c4fd"}
-    ];
-    let moodIdx = 0;
-    function changeMood() {
-      moodIdx = (moodIdx + 1) % moods.length;
-      document.getElementById('playlist-mood-text').innerText = moods[moodIdx].text + " " + moods[moodIdx].emoji;
-      document.getElementById('mood-emoji').innerText = moods[moodIdx].emoji;
-      document.getElementById('spotify-nitro').style.background = `linear-gradient(135deg, ${moods[moodIdx].color} 0%, #fff6 100%)`;
-    }
-  </script>
+
+    <script src="assets/theme.js"></script>
 </body>
 </html>
