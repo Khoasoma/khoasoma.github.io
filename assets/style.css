@@ -47,10 +47,12 @@ body {
     overflow-x: hidden;
     padding: var(--space-xl) 0;
 }
-
+section {
+    margin: 3rem 0; /* Giảm margin giữa các section */
+}
 /* Layout & Container */
 .container {
-    max-width: 1400px;
+    max-width: 1000px;
     width: 85%;
     margin: 0 auto;
     padding: var(--space-xl) var(--space-xl);
@@ -193,6 +195,8 @@ body {
     overflow: hidden;
     transition: var(--transition-normal);
     margin-bottom: var(--space-md);
+    max-width: 100%;
+    margin-bottom: 1.5rem;
 }
 
 .work-content {
@@ -227,6 +231,8 @@ body {
     text-align: center;
     transition: var(--transition-normal);
     margin: var(--space-sm) auto;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
 }
 
 /* Communities Section */
@@ -244,6 +250,8 @@ body {
     border-radius: var(--border-md);
     overflow: hidden;
     transition: var(--transition-normal);
+    max-width: 100%;
+    margin-bottom: 1.5rem;
 }
 
 .community-header {
@@ -375,4 +383,54 @@ footer {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary-glow);
+}
+/* Điều chỉnh card sizes */
+.work-card, 
+.skill-card, 
+.community-card {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+/* Điều chỉnh grid layouts */
+.work-grid,
+.skills-grid,
+.communities-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* Điều chỉnh padding cho cards */
+.card-content,
+.work-content,
+.community-content {
+    padding: 1.25rem;
+}
+
+/* Điều chỉnh hình ảnh */
+.avatar {
+    width: 110px; /* Giảm kích thước avatar */
+    height: 110px;
+}
+
+.work-image img,
+.community-logo {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 1rem;
+    }
+    
+    .work-grid,
+    .skills-grid,
+    .communities-showcase {
+        grid-template-columns: 1fr;
+    }
 }
