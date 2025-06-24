@@ -3,27 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Khoasoma - Creative Developer với liquid glass interface">
+    <meta name="description" content="Khoasoma - Creative Developer với liquid glass interface hiện đại">
+    <meta name="keywords" content="Khoasoma, Developer, Minecraft, Plugin, Java, Creative, Portfolio">
+    <meta name="author" content="Khoasoma">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Khoasoma | Liquid Glass Portfolio">
+    <meta property="og:description" content="Creative Developer với liquid glass interface hiện đại">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kh0a.site">
+    <meta property="og:image" content="assets/avatar.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Khoasoma | Liquid Glass Portfolio">
+    <meta name="twitter:description" content="Creative Developer với liquid glass interface hiện đại">
+    <meta name="twitter:image" content="assets/avatar.jpg">
+    
     <title>Khoasoma | Liquid Glass Portfolio</title>
     
-    <!-- Fonts -->
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/avatar.jpg">
     
     <!-- Styles -->
     <link rel="stylesheet" href="assets/liquid-style.css">
     
-    <!-- Cache busting -->
+    <!-- Cache Control -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="assets/avatar.jpg" as="image">
+    <link rel="preload" href="assets/liquid-style.css" as="style">
 </head>
 <body>
-    <!-- Animated Liquid Background -->
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-container">
+            <div class="loading-logo">
+                <div class="loading-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="loading-text">Khoasoma</div>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress" id="loadingProgress"></div>
+            </div>
+            <div class="loading-status" id="loadingStatus">Initializing liquid interface...</div>
+        </div>
+    </div>
+
+    <!-- Liquid Background Animation -->
     <div class="liquid-container">
         <div class="liquid-shape shape-1"></div>
         <div class="liquid-shape shape-2"></div>
@@ -33,13 +76,13 @@
         <canvas id="liquidCanvas"></canvas>
     </div>
 
-    <!-- Glassmorphism Overlay -->
+    <!-- Glass Overlay -->
     <div class="glass-overlay"></div>
 
-    <!-- Main Content -->
+    <!-- Main Container -->
     <div class="main-container">
-        <!-- Floating Navigation -->
-        <nav class="liquid-nav">
+        <!-- Liquid Navigation -->
+        <nav class="liquid-nav" id="liquidNav">
             <div class="nav-glass">
                 <div class="nav-brand">
                     <div class="brand-icon">
@@ -55,7 +98,7 @@
                     <a href="#about" class="nav-item" data-text="About">
                         <i class="fas fa-user"></i>
                     </a>
-                    <a href="#work" class="nav-item" data-text="Work">
+                    <a href="#projects" class="nav-item" data-text="Projects">
                         <i class="fas fa-briefcase"></i>
                     </a>
                     <a href="#contact" class="nav-item" data-text="Contact">
@@ -64,11 +107,14 @@
                 </div>
 
                 <div class="nav-controls">
-                    <button class="control-btn theme-btn" id="themeToggle">
+                    <button class="control-btn theme-btn" id="themeToggle" aria-label="Toggle theme">
                         <i class="fas fa-moon"></i>
                     </button>
-                    <button class="control-btn sound-btn" id="soundToggle">
+                    <button class="control-btn sound-btn" id="soundToggle" aria-label="Toggle sound">
                         <i class="fas fa-volume-up"></i>
+                    </button>
+                    <button class="control-btn menu-btn" id="mobileMenu" aria-label="Mobile menu">
+                        <i class="fas fa-bars"></i>
                     </button>
                 </div>
             </div>
@@ -83,8 +129,7 @@
                     <div class="card-content">
                         <div class="profile-header">
                             <div class="avatar-liquid">
-                                <!-- Sử dụng avatar có sẵn trong repo -->
-                                <img src="assets/avatar.jpg" alt="Khoasoma Avatar" class="avatar-img">
+                                <img src="assets/avatar.jpg" alt="Khoasoma Avatar" class="avatar-img" loading="eager">
                                 <div class="avatar-glow"></div>
                                 <div class="status-bubble">
                                     <div class="status-dot animate-pulse"></div>
@@ -97,16 +142,17 @@
                                     <span class="name-liquid">Khoasoma</span>
                                 </h1>
                                 <div class="profile-role">
-                                    <span class="typing-text" id="roleText"></span>
+                                    <span class="typing-text" id="roleText">Creative Developer</span>
                                     <span class="cursor-blink">|</span>
                                 </div>
                                 <p class="profile-desc">
-                                    Crafting digital experiences with modern technology
+                                    Crafting digital experiences with modern technology and liquid-smooth interfaces. 
+                                    Specializing in Minecraft plugin development and server optimization.
                                 </p>
                             </div>
                         </div>
 
-                        <!-- Tech Stack Floating Pills -->
+                        <!-- Tech Stack Pills -->
                         <div class="tech-pills">
                             <div class="pill" data-tech="java">
                                 <i class="fab fa-java"></i>
@@ -123,6 +169,29 @@
                             <div class="pill" data-tech="docker">
                                 <i class="fab fa-docker"></i>
                                 <span>Docker</span>
+                            </div>
+                            <div class="pill" data-tech="git">
+                                <i class="fab fa-git-alt"></i>
+                                <span>Git</span>
+                            </div>
+                        </div>
+
+                        <!-- Quick Stats -->
+                        <div class="quick-stats">
+                            <div class="quick-stat">
+                                <div class="stat-value" data-target="3">0</div>
+                                <div class="stat-unit">Years</div>
+                                <div class="stat-desc">Experience</div>
+                            </div>
+                            <div class="quick-stat">
+                                <div class="stat-value" data-target="47">0</div>
+                                <div class="stat-unit">+</div>
+                                <div class="stat-desc">Projects</div>
+                            </div>
+                            <div class="quick-stat">
+                                <div class="stat-value" data-target="1247">0</div>
+                                <div class="stat-unit">+</div>
+                                <div class="stat-desc">Users</div>
                             </div>
                         </div>
                     </div>
@@ -144,8 +213,7 @@
                     <div class="discord-content">
                         <div class="discord-user">
                             <div class="discord-avatar">
-                                <!-- Sử dụng avatar có sẵn -->
-                                <img src="assets/avatar.jpg" alt="Discord Avatar">
+                                <img src="assets/avatar.jpg" alt="Discord Avatar" loading="lazy">
                                 <div class="presence-ring online"></div>
                             </div>
                             <div class="discord-info">
@@ -167,11 +235,12 @@
                         <!-- Discord Rich Presence -->
                         <div class="rich-presence">
                             <div class="presence-image">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" loading="lazy">
                             </div>
                             <div class="presence-details">
-                                <div class="presence-title">Editing main.js</div>
+                                <div class="presence-title">Editing index.html</div>
                                 <div class="presence-subtitle">🚀 Building something amazing</div>
+                                <div class="presence-timestamp">Started <span id="presenceTime">2 hours ago</span></div>
                             </div>
                         </div>
                     </div>
@@ -195,38 +264,40 @@
                     <div class="spotify-content">
                         <div class="track-info">
                             <div class="album-art">
-                                <!-- Ảnh từ Spotify album bạn cung cấp -->
-                                <img src="https://i.scdn.co/image/ab67616d0000b273e319baafd16e84f0408af2a0" alt="Album Cover" id="albumCover">
+                                <img src="https://i.scdn.co/image/ab67616d0000b273e319baafd16e84f0408af2a0" alt="Eyes Open Album Cover" id="albumCover" loading="lazy">
                                 <div class="vinyl-spin"></div>
                             </div>
                             
                             <div class="track-details">
-                                <div class="track-name" id="trackName">Lofi Hip Hop Radio</div>
-                                <div class="artist-name" id="artistName">ChilledCow</div>
-                                <div class="album-name" id="albumName">Study & Chill</div>
+                                <div class="track-name" id="trackName">Chasing Cars</div>
+                                <div class="artist-name" id="artistName">Snow Patrol</div>
+                                <div class="album-name" id="albumName">Eyes Open</div>
                             </div>
                         </div>
                         
                         <!-- Progress Bar -->
                         <div class="player-controls">
                             <div class="progress-container">
-                                <div class="progress-time start" id="currentTime">1:23</div>
+                                <div class="progress-time start" id="currentTime">1:27</div>
                                 <div class="progress-bar">
                                     <div class="progress-fill" id="progressFill"></div>
                                     <div class="progress-thumb" id="progressThumb"></div>
                                 </div>
-                                <div class="progress-time end" id="totalTime">3:47</div>
+                                <div class="progress-time end" id="totalTime">4:47</div>
                             </div>
                             
                             <div class="player-buttons">
-                                <button class="player-btn" id="prevBtn">
+                                <button class="player-btn" id="prevBtn" aria-label="Previous track">
                                     <i class="fas fa-step-backward"></i>
                                 </button>
-                                <button class="player-btn play-btn" id="playBtn">
+                                <button class="player-btn play-btn" id="playBtn" aria-label="Play/Pause">
                                     <i class="fas fa-pause"></i>
                                 </button>
-                                <button class="player-btn" id="nextBtn">
+                                <button class="player-btn" id="nextBtn" aria-label="Next track">
                                     <i class="fas fa-step-forward"></i>
+                                </button>
+                                <button class="player-btn" id="shuffleBtn" aria-label="Shuffle">
+                                    <i class="fas fa-random"></i>
                                 </button>
                             </div>
                         </div>
@@ -236,7 +307,7 @@
                 <!-- Live Stats Dashboard -->
                 <div class="stats-dashboard">
                     <div class="dashboard-header">
-                        <h3>Live Stats</h3>
+                        <h3>Live Analytics</h3>
                         <div class="refresh-icon" id="statsRefresh">
                             <i class="fas fa-sync-alt"></i>
                         </div>
@@ -250,9 +321,10 @@
                             <div class="stat-info">
                                 <div class="stat-number" data-target="47">0</div>
                                 <div class="stat-label">Projects</div>
+                                <div class="stat-change positive">+3 this month</div>
                             </div>
                             <div class="stat-chart">
-                                <canvas id="projectsChart"></canvas>
+                                <canvas id="projectsChart" width="100" height="40"></canvas>
                             </div>
                         </div>
                         
@@ -263,9 +335,10 @@
                             <div class="stat-info">
                                 <div class="stat-number" data-target="1247">0</div>
                                 <div class="stat-label">Active Users</div>
+                                <div class="stat-change positive">+127 today</div>
                             </div>
                             <div class="stat-chart">
-                                <canvas id="usersChart"></canvas>
+                                <canvas id="usersChart" width="100" height="40"></canvas>
                             </div>
                         </div>
                         
@@ -276,155 +349,575 @@
                             <div class="stat-info">
                                 <div class="stat-number" data-target="99">0</div>
                                 <div class="stat-label">Uptime %</div>
+                                <div class="stat-change stable">Stable</div>
                             </div>
                             <div class="stat-chart">
-                                <canvas id="uptimeChart"></canvas>
+                                <canvas id="uptimeChart" width="100" height="40"></canvas>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Floating Action Button -->
-            <div class="fab-container">
-                <button class="fab-main" id="fabMain">
-                    <i class="fas fa-plus"></i>
-                </button>
-                <div class="fab-menu" id="fabMenu">
-                    <button class="fab-item" data-action="email">
-                        <i class="fas fa-envelope"></i>
-                        <span class="fab-tooltip">Email Me</span>
-                    </button>
-                    <button class="fab-item" data-action="github">
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator">
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+                <div class="scroll-text">Scroll to explore</div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="section-content">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">Passionate about creating innovative digital solutions</p>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-text">
+                        <div class="about-intro">
+                            <p>Hello! I'm Khoasoma, a passionate developer specializing in Minecraft plugin development and server optimization. With 3+ years of experience, I create high-performance solutions that enhance gaming experiences for thousands of users.</p>
+                            
+                            <p>My journey began with a simple curiosity about how games work, which evolved into a deep passion for creating efficient, scalable solutions. I believe in writing clean, maintainable code that not only works but performs exceptionally.</p>
+                        </div>
+                        
+                        <div class="skills-container">
+                            <h3>Technical Skills</h3>
+                            <div class="skills-grid">
+                                <div class="skill-category">
+                                    <h4>Languages</h4>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag java">Java</span>
+                                        <span class="skill-tag python">Python</span>
+                                        <span class="skill-tag javascript">JavaScript</span>
+                                        <span class="skill-tag typescript">TypeScript</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-category">
+                                    <h4>Frameworks & Tools</h4>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag node">Node.js</span>
+                                        <span class="skill-tag docker">Docker</span>
+                                        <span class="skill-tag git">Git</span>
+                                        <span class="skill-tag linux">Linux</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-category">
+                                    <h4>Specializations</h4>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag minecraft">Minecraft Development</span>
+                                        <span class="skill-tag performance">Performance Optimization</span>
+                                        <span class="skill-tag server">Server Management</span>
+                                        <span class="skill-tag api">API Development</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-visualization">
+                        <h3>Proficiency Levels</h3>
+                        <div class="skill-bars">
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span class="skill-name">Java Development</span>
+                                    <span class="skill-percentage">95%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-fill" data-width="95"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span class="skill-name">Plugin Architecture</span>
+                                    <span class="skill-percentage">92%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-fill" data-width="92"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span class="skill-name">Server Optimization</span>
+                                    <span class="skill-percentage">88%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-fill" data-width="88"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span class="skill-name">System Administration</span>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-fill" data-width="85"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span class="skill-name">Web Development</span>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-fill" data-width="80"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="section-content">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">Liquid-powered digital experiences that make a difference</p>
+                </div>
+                
+                <div class="projects-liquid-grid">
+                    <!-- XenonFolia Project -->
+                    <div class="project-liquid-card featured">
+                        <div class="project-liquid-bg"></div>
+                        <div class="project-content">
+                            <div class="project-image">
+                                <img src="assets/xenonfolia.png" alt="XenonFolia - High-performance Minecraft server core" loading="lazy">
+                                <div class="project-overlay">
+                                    <div class="project-links">
+                                        <a href="https://github.com/Khoasoma/xenonfolia" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View XenonFolia on GitHub">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                        <a href="#" class="project-link" aria-label="View XenonFolia demo">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                        <a href="#" class="project-link" aria-label="View XenonFolia documentation">
+                                            <i class="fas fa-book"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="project-info">
+                                <div class="project-header">
+                                    <h3 class="project-title">XenonFolia</h3>
+                                    <div class="project-status">
+                                        <span class="status-badge active">Active Development</span>
+                                        <span class="status-badge featured">Featured</span>
+                                    </div>
+                                </div>
+                                
+                                <p class="project-description">
+                                    High-performance Minecraft server core with revolutionary liquid-smooth optimizations. 
+                                    Built from the ground up with modern Java practices, featuring advanced memory management, 
+                                    multi-threading capabilities, and seamless plugin integration for maximum server performance.
+                                </p>
+                                
+                                <div class="project-features">
+                                    <h4>Key Features:</h4>
+                                    <ul>
+                                        <li>Advanced performance optimizations</li>
+                                        <li>Multi-threaded chunk loading</li>
+                                        <li>Memory-efficient entity management</li>
+                                        <li>Plugin compatibility layer</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="project-tech">
+                                    <span class="tech-tag java">Java 17+</span>
+                                    <span class="tech-tag performance">Performance</span>
+                                    <span class="tech-tag optimization">Optimization</span>
+                                    <span class="tech-tag multithreading">Multi-threading</span>
+                                </div>
+                                
+                                <div class="project-metrics">
+                                    <div class="metric">
+                                        <i class="fas fa-star"></i>
+                                        <span>120 Stars</span>
+                                    </div>
+                                    <div class="metric">
+                                        <i class="fas fa-code-branch"></i>
+                                        <span>45 Forks</span>
+                                    </div>
+                                    <div class="metric">
+                                        <i class="fas fa-download"></i>
+                                        <span>2.3k Downloads</span>
+                                    </div>
+                                    <div class="metric">
+                                        <i class="fas fa-bug"></i>
+                                        <span>3 Issues</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AsakaMC Project -->
+                    <div class="project-liquid-card">
+                        <div class="project-liquid-bg"></div>
+                        <div class="project-content">
+                            <div class="project-image">
+                                <img src="assets/asakamc.png" alt="AsakaMC - Premium Minecraft gaming community" loading="lazy">
+                                <div class="project-overlay">
+                                    <div class="project-links">
+                                        <a href="https://asakamc.vn" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="Visit AsakaMC website">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                        <a href="https://discord.gg/asakamc" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="Join AsakaMC Discord">
+                                            <i class="fab fa-discord"></i>
+                                        </a>
+                                        <a href="#" class="project-link" aria-label="View AsakaMC statistics">
+                                            <i class="fas fa-chart-line"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="project-info">
+                                <div class="project-header">
+                                    <h3 class="project-title">AsakaMC Network</h3>
+                                    <div class="project-status">
+                                        <span class="status-badge online">Online</span>
+                                        <span class="status-badge premium">Premium</span>
+                                    </div>
+                                </div>
+                                
+                                <p class="project-description">
+                                    Premium Minecraft gaming community with liquid-glass interface and modern UX. 
+                                    Features custom game modes, advanced anti-cheat systems, and a thriving community 
+                                    of 500+ active players with 99.9% uptime reliability.
+                                </p>
+                                
+                                <div class="project-features">
+                                    <h4>Server Features:</h4>
+                                    <ul>
+                                        <li>Custom survival & creative modes</li>
+                                        <li>Advanced anti-cheat protection</li>
+                                        <li>Economy & shop systems</li>
+                                        <li>24/7 community support</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="project-tech">
+                                    <span class="tech-tag server">Server Management</span>
+                                    <span class="tech-tag community">Community</span>
+                                    <span class="tech-tag gaming">Gaming</span>
+                                    <span class="tech-tag anticheat">Anti-Cheat</span>
+                                </div>
+                                
+                                <div class="project-metrics">
+                                    <div class="metric">
+                                        <i class="fas fa-users"></i>
+                                        <span>500+ Players</span>
+                                    </div>
+                                    <div class="metric">
+                                        <i class="fas fa-clock"></i>
+                                        <span>99.9% Uptime</span>
+                                    </div>
+                                    <div class="metric">
+                                        <i class="fas fa-heart"></i>
+                                        <span>4.9 Rating</span>
+                                    </div>
+                                    <div class="metric">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span>Secure</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Project Placeholder -->
+                    <div class="project-liquid-card">
+                        <div class="project-liquid-bg"></div>
+                        <div class="project-content">
+                            <div class="project-image">
+                                <img src="assets/khoaserver.png" alt="KhoaServer - Custom server management" loading="lazy">
+                                <div class="project-overlay">
+                                    <div class="project-links">
+                                        <a href="#" class="project-link" aria-label="View project">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                        <a href="#" class="project-link" aria-label="View source code">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="project-info">
+                                <div class="project-header">
+                                    <h3 class="project-title">Custom Solutions</h3>
+                                    <div class="project-status">
+                                        <span class="status-badge development">In Development</span>
+                                    </div>
+                                </div>
+                                
+                                <p class="project-description">
+                                    Collection of custom server management tools and plugins designed for optimal 
+                                    performance and user experience. Features automated backups, performance monitoring, 
+                                    and intelligent resource allocation.
+                                </p>
+                                
+                                <div class="project-tech">
+                                    <span class="tech-tag automation">Automation</span>
+                                    <span class="tech-tag monitoring">Monitoring</span>
+                                    <span class="tech-tag tools">Tools</span>
+                                </div>
+                                
+                                <div class="project-metrics">
+                                    <div class="metric">
+                                        <i class="fas fa-tools"></i>
+                                        <span>15+ Tools</span>
+                                    </div>
+                                    <div class="metric">
+                                        <i class="fas fa-server"></i>
+                                        <span>5 Servers</span>
+                                    </div>
+                                    <div class="metric">
+                                        <i class="fas fa-cogs"></i>
+                                        <span>Automated</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- View All Projects Button -->
+                <div class="projects-cta">
+                    <a href="https://github.com/Khoasoma" class="cta-button" target="_blank" rel="noopener noreferrer">
+                        <span>View All Projects</span>
                         <i class="fab fa-github"></i>
-                        <span class="fab-tooltip">GitHub</span>
-                    </button>
-                    <button class="fab-item" data-action="discord">
-                        <i class="fab fa-discord"></i>
-                        <span class="fab-tooltip">Discord</span>
-                    </button>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Showcase -->
-        <section id="work" class="projects-section">
-            <div class="section-header">
-                <h2 class="section-title">Featured Work</h2>
-                <p class="section-subtitle">Liquid-powered digital experiences</p>
-            </div>
-            
-            <div class="projects-liquid-grid">
-                <div class="project-liquid-card featured">
-                    <div class="project-liquid-bg"></div>
-                    <div class="project-content">
-                        <div class="project-image">
-                            <img src="assets/xenonfolia.png" alt="XenonFolia" loading="lazy">
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="https://github.com/Khoasoma/xenonfolia" class="project-link" target="_blank" rel="noopener">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                    <a href="#" class="project-link">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="project-info">
-                            <div class="project-header">
-                                <h3 class="project-title">XenonFolia</h3>
-                                <div class="project-status">
-                                    <span class="status-badge active">Active</span>
-                                </div>
-                            </div>
-                            
-                            <p class="project-description">
-                                High-performance Minecraft server core with revolutionary liquid-smooth optimizations
-                            </p>
-                            
-                            <div class="project-tech">
-                                <span class="tech-tag java">Java</span>
-                                <span class="tech-tag performance">Performance</span>
-                                <span class="tech-tag optimization">Optimization</span>
-                            </div>
-                            
-                            <div class="project-metrics">
-                                <div class="metric">
-                                    <i class="fas fa-star"></i>
-                                    <span>120</span>
-                                </div>
-                                <div class="metric">
-                                    <i class="fas fa-code-branch"></i>
-                                    <span>45</span>
-                                </div>
-                                <div class="metric">
-                                    <i class="fas fa-download"></i>
-                                    <span>2.3k</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="section-content">
+                <div class="section-header">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Let's work together on your next project</p>
                 </div>
-
-                <div class="project-liquid-card">
-                    <div class="project-liquid-bg"></div>
-                    <div class="project-content">
-                        <div class="project-image">
-                            <img src="assets/asakamc.png" alt="AsakaMC" loading="lazy">
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="https://asakamc.vn" class="project-link" target="_blank" rel="noopener">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
+                
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-intro">
+                            <h3>Ready to collaborate?</h3>
+                            <p>I'm always open to discussing new opportunities, creative ideas, or potential collaborations. Whether you need a custom Minecraft plugin, server optimization, or want to chat about technology trends, feel free to reach out!</p>
+                        </div>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method primary">
+                                <div class="method-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="method-info">
+                                    <h4>Email</h4>
+                                    <a href="mailto:khoa@kh0a.site">khoa@kh0a.site</a>
+                                    <span class="method-note">Best for detailed discussions</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fab fa-discord"></i>
+                                </div>
+                                <div class="method-info">
+                                    <h4>Discord</h4>
+                                    <a href="https://discordapp.com/users/808974657994752050" target="_blank" rel="noopener noreferrer">Khoasoma#1337</a>
+                                    <span class="method-note">Quick chat & real-time collaboration</span>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="project-info">
-                            <div class="project-header">
-                                <h3 class="project-title">AsakaMC Network</h3>
-                                <div class="project-status">
-                                    <span class="status-badge online">Online</span>
+                        <div class="availability">
+                            <h4>Availability</h4>
+                            <div class="availability-status">
+                                <div class="status-indicator">
+                                    <div class="status-dot online"></div>
+                                    <span>Available for new projects</span>
                                 </div>
-                            </div>
-                            
-                            <p class="project-description">
-                                Premium gaming community with liquid-glass interface and modern UX
-                            </p>
-                            
-                            <div class="project-tech">
-                                <span class="tech-tag server">Server</span>
-                                <span class="tech-tag community">Community</span>
-                                <span class="tech-tag gaming">Gaming</span>
-                            </div>
-                            
-                            <div class="project-metrics">
-                                <div class="metric">
-                                    <i class="fas fa-users"></i>
-                                    <span>500+</span>
-                                </div>
-                                <div class="metric">
+                                <div class="timezone">
                                     <i class="fas fa-clock"></i>
-                                    <span>99.9%</span>
-                                </div>
-                                <div class="metric">
-                                    <i class="fas fa-heart"></i>
-                                    <span>4.9</span>
+                                    <span>UTC+7 (Vietnam)</span>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-connect">
+                        <h3>Connect & Follow</h3>
+                        <div class="social-links">
+                            <a href="https://github.com/Khoasoma" class="social-link github" target="_blank" rel="noopener noreferrer">
+                                <div class="social-icon">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div class="social-info">
+                                    <span class="social-name">GitHub</span>
+                                    <span class="social-handle">@Khoasoma</span>
+                                    <span class="social-desc">Open source projects & code</span>
+                                </div>
+                            </a>
+                            
+                            <a href="https://facebook.com/profile.php?id=100092492700502" class="social-link facebook" target="_blank" rel="noopener noreferrer">
+                                <div class="social-icon">
+                                    <i class="fab fa-facebook"></i>
+                                </div>
+                                <div class="social-info">
+                                    <span class="social-name">Facebook</span>
+                                    <span class="social-handle">Khoasoma</span>
+                                    <span class="social-desc">Updates & community</span>
+                                </div>
+                            </a>
+                            
+                            <a href="https://youtube.com/@khoabuhlmao" class="social-link youtube" target="_blank" rel="noopener noreferrer">
+                                <div class="social-icon">
+                                    <i class="fab fa-youtube"></i>
+                                </div>
+                                <div class="social-info">
+                                    <span class="social-name">YouTube</span>
+                                    <span class="social-handle">@khoabuhlmao</span>
+                                    <span class="social-desc">Tutorials & gaming content</span>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <!-- Quick Contact Form -->
+                        <div class="quick-contact">
+                            <h4>Quick Message</h4>
+                            <form class="contact-form" id="contactForm">
+                                <div class="form-group">
+                                    <input type="text" id="contactName" placeholder="Your Name" required>
+                                    <label for="contactName">Name</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="contactEmail" placeholder="your@email.com" required>
+                                    <label for="contactEmail">Email</label>
+                                </div>
+                                <div class="form-group">
+                                    <textarea id="contactMessage" placeholder="Your message..." required></textarea>
+                                    <label for="contactMessage">Message</label>
+                                </div>
+                                <button type="submit" class="submit-btn">
+                                    <span>Send Message</span>
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <div class="logo-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <span class="logo-text">Khoasoma</span>
+                        </div>
+                        <p class="footer-tagline">Crafting liquid-smooth digital experiences</p>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <div class="footer-section">
+                            <h4>Navigation</h4>
+                            <ul>
+                                <li><a href="#home">Home</a></li>
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#projects">Projects</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-section">
+                            <h4>Projects</h4>
+                            <ul>
+                                <li><a href="https://github.com/Khoasoma/xenonfolia" target="_blank" rel="noopener noreferrer">XenonFolia</a></li>
+                                <li><a href="https://asakamc.vn" target="_blank" rel="noopener noreferrer">AsakaMC</a></li>
+                                <li><a href="https://github.com/Khoasoma" target="_blank" rel="noopener noreferrer">All Projects</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-section">
+                            <h4>Connect</h4>
+                            <ul>
+                                <li><a href="mailto:khoa@kh0a.site">Email</a></li>
+                                <li><a href="https://github.com/Khoasoma" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                                <li><a href="https://discordapp.com/users/808974657994752050" target="_blank" rel="noopener noreferrer">Discord</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <div class="footer-copyright">
+                        <p>&copy; 2025 Khoasoma. Crafted with passion and modern web technologies.</p>
+                        <p class="last-updated">Last updated: <span id="lastUpdated">June 24, 2025</span></p>
+                    </div>
+                    
+                    <div class="footer-tech">
+                        <span>Built with</span>
+                        <div class="tech-icons">
+                            <i class="fab fa-html5" title="HTML5"></i>
+                            <i class="fab fa-css3-alt" title="CSS3"></i>
+                            <i class="fab fa-js-square" title="JavaScript"></i>
+                            <i class="fas fa-heart" title="Love"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Floating Action Button -->
+    <div class="fab-container">
+        <button class="fab-main" id="fabMain" aria-label="Floating action menu">
+            <i class="fas fa-plus"></i>
+        </button>
+        <div class="fab-menu" id="fabMenu">
+            <button class="fab-item" data-action="email" aria-label="Send email">
+                <i class="fas fa-envelope"></i>
+                <span class="fab-tooltip">Email Me</span>
+            </button>
+            <button class="fab-item" data-action="github" aria-label="View GitHub">
+                <i class="fab fa-github"></i>
+                <span class="fab-tooltip">GitHub</span>
+            </button>
+            <button class="fab-item" data-action="discord" aria-label="Chat on Discord">
+                <i class="fab fa-discord"></i>
+                <span class="fab-tooltip">Discord</span>
+            </button>
+            <button class="fab-item" data-action="top" aria-label="Back to top">
+                <i class="fas fa-arrow-up"></i>
+                <span class="fab-tooltip">Back to Top</span>
+            </button>
+        </div>
     </div>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="assets/liquid-effects.js"></script>
-    <script src="assets/liquid-main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="assets/liquid-main.js" defer></script>
+    
+    <!-- Analytics (if needed) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script> -->
 </body>
 </html>
