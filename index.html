@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khoasoma | Simple Liquid Glass Portfolio</title>
+    <title>Khoasoma | Liquid Glass Portfolio</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Khoasoma - Creative Developer với giao diện liquid glass tối ưu và hiện đại">
+    <meta name="description" content="Khoasoma - Creative Developer với liquid glass interface tối ưu và hiện đại">
     <meta name="keywords" content="Khoasoma, Developer, Minecraft, Plugin, Java, Portfolio, Liquid Glass">
     <meta name="author" content="Khoasoma">
     
@@ -15,29 +15,37 @@
     <meta property="og:description" content="Creative Developer với liquid glass interface">
     <meta property="og:type" content="website">
     
+    <!-- Critical CSS Preload -->
+    <link rel="preload" href="./assets/style.css" as="style">
+    <link rel="preload" href="./assets/main.js" as="script">
+    
     <!-- Optimized Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Icons (Optimized) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="./assets/style.css">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="./assets/style.css" as="style">
-    <link rel="preload" href="./assets/main.js" as="script">
 </head>
 <body>
+    <!-- Enhanced Liquid Background -->
+    <div class="liquid-bg">
+        <div class="liquid-orb orb-1"></div>
+        <div class="liquid-orb orb-2"></div>
+        <div class="liquid-orb orb-3"></div>
+        <div class="liquid-orb orb-4"></div>
+        <div class="gradient-overlay"></div>
+    </div>
 
     <!-- Navigation -->
     <nav id="navbar" class="navbar">
-        <div class="nav-container">
+        <div class="nav-container glass-morphism">
             <div class="nav-brand">
                 <span class="brand-icon">🌊</span>
                 <span class="brand-text">Khoasoma</span>
@@ -90,10 +98,10 @@
         <section id="home" class="hero-section">
             <div class="container">
                 <div class="hero-content">
-                    <div class="hero-text">
+                    <div class="hero-text fade-in-up">
                         <h1 class="hero-title">
                             <span class="wave">🌊</span>
-                            <span class="text-gradient">Khoasoma</span>
+                            <span class="text-gradient shimmer">Khoasoma</span>
                         </h1>
                         
                         <p class="hero-subtitle">
@@ -107,48 +115,44 @@
                         </p>
                         
                         <div class="hero-actions">
-                            <a href="#projects" class="btn btn-primary">
+                            <a href="#projects" class="btn btn-primary ripple-effect">
                                 <i class="fas fa-rocket"></i>
                                 View Projects
                             </a>
-                            <a href="#contact" class="btn btn-outline">
+                            <a href="#contact" class="btn btn-outline ripple-effect">
                                 <i class="fas fa-envelope"></i>
                                 Get In Touch
                             </a>
                         </div>
                     </div>
                     
-                    <!-- Quick Stats -->
+                    <!-- Enhanced Stats -->
                     <div class="stats-grid">
-                        <div class="stat-card glass-card">
+                        <div class="stat-card glass-morphism shimmer-card">
                             <div class="stat-number" data-target="3">0</div>
                             <div class="stat-label">Years Experience</div>
+                            <div class="stat-glow"></div>
                         </div>
-                        <div class="stat-card glass-card">
+                        <div class="stat-card glass-morphism shimmer-card">
                             <div class="stat-number" data-target="47">0</div>
                             <div class="stat-label">Projects Completed</div>
+                            <div class="stat-glow"></div>
                         </div>
-                        <div class="stat-card glass-card">
+                        <div class="stat-card glass-morphism shimmer-card">
                             <div class="stat-number" data-target="1247">0</div>
                             <div class="stat-label">Happy Users</div>
+                            <div class="stat-glow"></div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Background Elements -->
-            <div class="liquid-bg">
-                <div class="liquid-orb orb-1"></div>
-                <div class="liquid-orb orb-2"></div>
-                <div class="liquid-orb orb-3"></div>
             </div>
         </section>
 
         <!-- About Section -->
         <section id="about" class="about-section">
             <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">
+                <div class="section-header fade-in-up">
+                    <h2 class="section-title shimmer">
                         <i class="fas fa-user"></i>
                         About Me
                     </h2>
@@ -158,7 +162,7 @@
                 </div>
                 
                 <div class="about-content">
-                    <div class="about-text glass-card">
+                    <div class="about-text glass-morphism shimmer-card">
                         <p>
                             Hello! I'm Khoasoma, a passionate developer specializing in Minecraft plugin development 
                             and server optimization. With 3+ years of experience, I create high-performance solutions 
@@ -173,41 +177,41 @@
                     </div>
                     
                     <div class="skills-grid">
-                        <div class="skill-card glass-card">
+                        <div class="skill-card glass-morphism shimmer-card">
                             <div class="skill-icon">
                                 <i class="fab fa-java"></i>
                             </div>
                             <h3>Languages</h3>
                             <div class="skill-list">
-                                <span class="skill-tag">Java</span>
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">JavaScript</span>
-                                <span class="skill-tag">TypeScript</span>
+                                <span class="skill-tag glass-tag">Java</span>
+                                <span class="skill-tag glass-tag">Python</span>
+                                <span class="skill-tag glass-tag">JavaScript</span>
+                                <span class="skill-tag glass-tag">TypeScript</span>
                             </div>
                         </div>
                         
-                        <div class="skill-card glass-card">
+                        <div class="skill-card glass-morphism shimmer-card">
                             <div class="skill-icon">
                                 <i class="fas fa-tools"></i>
                             </div>
                             <h3>Tools & Frameworks</h3>
                             <div class="skill-list">
-                                <span class="skill-tag">Node.js</span>
-                                <span class="skill-tag">Docker</span>
-                                <span class="skill-tag">Git</span>
-                                <span class="skill-tag">Linux</span>
+                                <span class="skill-tag glass-tag">Node.js</span>
+                                <span class="skill-tag glass-tag">Docker</span>
+                                <span class="skill-tag glass-tag">Git</span>
+                                <span class="skill-tag glass-tag">Linux</span>
                             </div>
                         </div>
                         
-                        <div class="skill-card glass-card">
+                        <div class="skill-card glass-morphism shimmer-card">
                             <div class="skill-icon">
                                 <i class="fas fa-server"></i>
                             </div>
                             <h3>Specializations</h3>
                             <div class="skill-list">
-                                <span class="skill-tag">Minecraft Development</span>
-                                <span class="skill-tag">Server Optimization</span>
-                                <span class="skill-tag">Performance Tuning</span>
+                                <span class="skill-tag glass-tag">Minecraft Development</span>
+                                <span class="skill-tag glass-tag">Server Optimization</span>
+                                <span class="skill-tag glass-tag">Performance Tuning</span>
                             </div>
                         </div>
                     </div>
@@ -218,8 +222,8 @@
         <!-- Projects Section -->
         <section id="projects" class="projects-section">
             <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">
+                <div class="section-header fade-in-up">
+                    <h2 class="section-title shimmer">
                         <i class="fas fa-code"></i>
                         Featured Projects
                     </h2>
@@ -229,7 +233,7 @@
                 </div>
                 
                 <div class="projects-grid">
-                    <div class="project-card glass-card">
+                    <div class="project-card glass-morphism shimmer-card ripple-container">
                         <div class="project-header">
                             <div class="project-icon">🔥</div>
                             <h3>XenonFolia</h3>
@@ -241,20 +245,20 @@
                         </p>
                         
                         <div class="project-tags">
-                            <span class="tag tag-blue">Java</span>
-                            <span class="tag tag-blue">Performance</span>
-                            <span class="tag tag-blue">Minecraft</span>
+                            <span class="tag tag-blue glass-tag">Java</span>
+                            <span class="tag tag-blue glass-tag">Performance</span>
+                            <span class="tag tag-blue glass-tag">Minecraft</span>
                         </div>
                         
                         <div class="project-actions">
-                            <a href="https://github.com/Khoasoma/xenonfolia" target="_blank" class="project-link">
+                            <a href="https://github.com/Khoasoma/xenonfolia" target="_blank" class="project-link ripple-effect">
                                 <i class="fab fa-github"></i>
                                 View on GitHub
                             </a>
                         </div>
                     </div>
                     
-                    <div class="project-card glass-card">
+                    <div class="project-card glass-morphism shimmer-card ripple-container">
                         <div class="project-header">
                             <div class="project-icon">🎮</div>
                             <h3>AsakaMC Network</h3>
@@ -266,20 +270,20 @@
                         </p>
                         
                         <div class="project-tags">
-                            <span class="tag tag-green">Community</span>
-                            <span class="tag tag-green">Gaming</span>
-                            <span class="tag tag-green">Network</span>
+                            <span class="tag tag-green glass-tag">Community</span>
+                            <span class="tag tag-green glass-tag">Gaming</span>
+                            <span class="tag tag-green glass-tag">Network</span>
                         </div>
                         
                         <div class="project-actions">
-                            <a href="https://asakamc.vn" target="_blank" class="project-link">
+                            <a href="https://asakamc.vn" target="_blank" class="project-link ripple-effect">
                                 <i class="fas fa-external-link-alt"></i>
                                 Visit Website
                             </a>
                         </div>
                     </div>
                     
-                    <div class="project-card glass-card">
+                    <div class="project-card glass-morphism shimmer-card ripple-container">
                         <div class="project-header">
                             <div class="project-icon">🛠️</div>
                             <h3>Development Tools</h3>
@@ -291,13 +295,13 @@
                         </p>
                         
                         <div class="project-tags">
-                            <span class="tag tag-yellow">Tools</span>
-                            <span class="tag tag-yellow">Automation</span>
-                            <span class="tag tag-yellow">DevOps</span>
+                            <span class="tag tag-yellow glass-tag">Tools</span>
+                            <span class="tag tag-yellow glass-tag">Automation</span>
+                            <span class="tag tag-yellow glass-tag">DevOps</span>
                         </div>
                         
                         <div class="project-actions">
-                            <a href="https://github.com/Khoasoma" target="_blank" class="project-link">
+                            <a href="https://github.com/Khoasoma" target="_blank" class="project-link ripple-effect">
                                 <i class="fab fa-github"></i>
                                 View Repository
                             </a>
@@ -306,7 +310,7 @@
                 </div>
                 
                 <div class="projects-cta">
-                    <a href="https://github.com/Khoasoma" target="_blank" class="btn btn-outline">
+                    <a href="https://github.com/Khoasoma" target="_blank" class="btn btn-outline ripple-effect">
                         <i class="fab fa-github"></i>
                         View All Projects
                     </a>
@@ -317,8 +321,8 @@
         <!-- Contact Section -->
         <section id="contact" class="contact-section">
             <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">
+                <div class="section-header fade-in-up">
+                    <h2 class="section-title shimmer">
                         <i class="fas fa-envelope"></i>
                         Get In Touch
                     </h2>
@@ -330,30 +334,30 @@
                 <div class="contact-content">
                     <!-- Contact Form -->
                     <div class="contact-form-wrapper">
-                        <form id="contact-form" class="contact-form glass-card">
+                        <form id="contact-form" class="contact-form glass-morphism shimmer-card">
                             <h3>📝 Send Message</h3>
                             
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="text" id="name" name="name" required>
+                                <input type="text" id="name" name="name" class="glass-input" required>
                             </div>
                             
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required>
+                                <input type="email" id="email" name="email" class="glass-input" required>
                             </div>
                             
                             <div class="form-group">
                                 <label for="subject">Subject</label>
-                                <input type="text" id="subject" name="subject">
+                                <input type="text" id="subject" name="subject" class="glass-input">
                             </div>
                             
                             <div class="form-group">
                                 <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <textarea id="message" name="message" rows="5" class="glass-input" required></textarea>
                             </div>
                             
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary ripple-effect">
                                 <i class="fas fa-paper-plane"></i>
                                 Send Message
                             </button>
@@ -362,7 +366,7 @@
                     
                     <!-- Contact Info -->
                     <div class="contact-info">
-                        <div class="contact-card glass-card">
+                        <div class="contact-card glass-morphism shimmer-card">
                             <div class="contact-icon">
                                 <i class="fas fa-envelope"></i>
                             </div>
@@ -371,7 +375,7 @@
                             <p>Best for detailed discussions</p>
                         </div>
                         
-                        <div class="contact-card glass-card">
+                        <div class="contact-card glass-morphism shimmer-card">
                             <div class="contact-icon">
                                 <i class="fab fa-discord"></i>
                             </div>
@@ -382,7 +386,7 @@
                             <p>Quick chat & collaboration</p>
                         </div>
                         
-                        <div class="contact-card glass-card">
+                        <div class="contact-card glass-morphism shimmer-card">
                             <div class="contact-icon">
                                 <i class="fas fa-clock"></i>
                             </div>
@@ -391,7 +395,7 @@
                             <p>Usually available 9AM - 11PM</p>
                         </div>
                         
-                        <div class="status-card">
+                        <div class="status-card glass-morphism">
                             <div class="status-indicator"></div>
                             <span>Available for new projects</span>
                         </div>
@@ -402,7 +406,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer glass-morphism">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
@@ -443,13 +447,13 @@
             
             <div class="footer-bottom">
                 <p>&copy; 2025 Khoasoma. All rights reserved.</p>
-                <p>Made with ❤️ and modern web technologies</p>
+                <p>Made with ❤️ and liquid glass technology</p>
             </div>
         </div>
     </footer>
 
     <!-- Scroll to Top Button -->
-    <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+    <button id="scroll-top" class="scroll-top glass-morphism" aria-label="Scroll to top">
         <i class="fas fa-chevron-up"></i>
     </button>
 
