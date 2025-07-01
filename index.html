@@ -3,197 +3,405 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khoasoma | Liquid Glass Portfolio</title>
+    <title>Khoasoma | Simple Liquid Glass Portfolio</title>
     
-    <!-- Meta Tags -->
-    <meta name="description" content="Khoasoma - Creative Developer với liquid glass interface hiện đại">
-    <meta name="keywords" content="Khoasoma, Developer, Minecraft, Plugin, Java, Creative, Portfolio">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Khoasoma - Creative Developer với giao diện liquid glass tối ưu và hiện đại">
+    <meta name="keywords" content="Khoasoma, Developer, Minecraft, Plugin, Java, Portfolio, Liquid Glass">
     <meta name="author" content="Khoasoma">
     
-    <!-- Fonts -->
+    <!-- Open Graph -->
+    <meta property="og:title" content="Khoasoma | Portfolio">
+    <meta property="og:description" content="Creative Developer với liquid glass interface">
+    <meta property="og:type" content="website">
+    
+    <!-- Optimized Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Icons (Optimized) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="./assets/liquid-style.css">
+    <link rel="stylesheet" href="./assets/style.css">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="./assets/style.css" as="style">
+    <link rel="preload" href="./assets/main.js" as="script">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div id="loading" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>Loading liquid experience...</p>
+        </div>
+    </div>
+
     <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-            <li><a href="#projects"><i class="fas fa-briefcase"></i> Projects</a></li>
-            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-        </ul>
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-icon">🌊</span>
+                <span class="brand-text">Khoasoma</span>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">
+                        <i class="fas fa-user"></i>
+                        <span>About</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">
+                        <i class="fas fa-code"></i>
+                        <span>Projects</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <!-- Theme Toggle -->
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+            
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </nav>
 
     <!-- Main Content -->
-    <main>
+    <main class="main-content">
         <!-- Hero Section -->
-        <section id="home">
-            <h1>🌊 Khoasoma</h1>
-            <p class="text-center" style="font-size: 1.2rem; color: #38bdf8;">
-                Creative Developer | Liquid Glass Designer
-            </p>
-            <p class="text-center">
-                Crafting digital experiences with modern technology and liquid-smooth interfaces. 
-                Specializing in Minecraft plugin development and server optimization.
-            </p>
+        <section id="home" class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="wave">🌊</span>
+                            <span class="text-gradient">Khoasoma</span>
+                        </h1>
+                        
+                        <p class="hero-subtitle">
+                            <span id="typing-text">Creative Developer</span>
+                            <span class="cursor">|</span>
+                        </p>
+                        
+                        <p class="hero-description">
+                            Crafting digital experiences with modern technology and liquid-smooth interfaces. 
+                            Specializing in Minecraft plugin development and server optimization.
+                        </p>
+                        
+                        <div class="hero-actions">
+                            <a href="#projects" class="btn btn-primary">
+                                <i class="fas fa-rocket"></i>
+                                View Projects
+                            </a>
+                            <a href="#contact" class="btn btn-outline">
+                                <i class="fas fa-envelope"></i>
+                                Get In Touch
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Stats -->
+                    <div class="stats-grid">
+                        <div class="stat-card glass-card">
+                            <div class="stat-number" data-target="3">0</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-card glass-card">
+                            <div class="stat-number" data-target="47">0</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-card glass-card">
+                            <div class="stat-number" data-target="1247">0</div>
+                            <div class="stat-label">Happy Users</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
-            <!-- Quick Stats -->
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem;">
-                <div class="glass-effect" style="padding: 2rem; text-align: center;">
-                    <h3 style="color: #38bdf8; font-size: 2rem; margin: 0;">3+</h3>
-                    <p style="margin: 0; color: #cbd5e1;">Years Experience</p>
-                </div>
-                <div class="glass-effect" style="padding: 2rem; text-align: center;">
-                    <h3 style="color: #38bdf8; font-size: 2rem; margin: 0;">47+</h3>
-                    <p style="margin: 0; color: #cbd5e1;">Projects</p>
-                </div>
-                <div class="glass-effect" style="padding: 2rem; text-align: center;">
-                    <h3 style="color: #38bdf8; font-size: 2rem; margin: 0;">1247+</h3>
-                    <p style="margin: 0; color: #cbd5e1;">Users</p>
-                </div>
+            <!-- Background Elements -->
+            <div class="liquid-bg">
+                <div class="liquid-orb orb-1"></div>
+                <div class="liquid-orb orb-2"></div>
+                <div class="liquid-orb orb-3"></div>
             </div>
         </section>
 
         <!-- About Section -->
-        <section id="about">
-            <h2><i class="fas fa-user"></i> About Me</h2>
-            <p>
-                Hello! I'm Khoasoma, a passionate developer specializing in Minecraft plugin development 
-                and server optimization. With 3+ years of experience, I create high-performance solutions 
-                that deliver exceptional user experiences.
-            </p>
-            
-            <h3>🚀 Technical Skills</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
-                <div class="glass-effect" style="padding: 1.5rem;">
-                    <h4 style="color: #38bdf8;">Languages</h4>
-                    <p>Java, Python, JavaScript, TypeScript</p>
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-user"></i>
+                        About Me
+                    </h2>
+                    <p class="section-subtitle">
+                        Passionate developer creating high-performance solutions
+                    </p>
                 </div>
-                <div class="glass-effect" style="padding: 1.5rem;">
-                    <h4 style="color: #38bdf8;">Tools</h4>
-                    <p>Node.js, Docker, Git, Linux</p>
-                </div>
-                <div class="glass-effect" style="padding: 1.5rem;">
-                    <h4 style="color: #38bdf8;">Specializations</h4>
-                    <p>Minecraft Development, Server Optimization</p>
+                
+                <div class="about-content">
+                    <div class="about-text glass-card">
+                        <p>
+                            Hello! I'm Khoasoma, a passionate developer specializing in Minecraft plugin development 
+                            and server optimization. With 3+ years of experience, I create high-performance solutions 
+                            that deliver exceptional user experiences.
+                        </p>
+                        
+                        <p>
+                            My focus is on creating clean, efficient code that not only works well but also 
+                            scales beautifully. I believe in the power of modern technologies to create 
+                            amazing digital experiences.
+                        </p>
+                    </div>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-card glass-card">
+                            <div class="skill-icon">
+                                <i class="fab fa-java"></i>
+                            </div>
+                            <h3>Languages</h3>
+                            <div class="skill-list">
+                                <span class="skill-tag">Java</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">TypeScript</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card glass-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h3>Tools & Frameworks</h3>
+                            <div class="skill-list">
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">Docker</span>
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">Linux</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card glass-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h3>Specializations</h3>
+                            <div class="skill-list">
+                                <span class="skill-tag">Minecraft Development</span>
+                                <span class="skill-tag">Server Optimization</span>
+                                <span class="skill-tag">Performance Tuning</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects">
-            <h2><i class="fas fa-briefcase"></i> Featured Projects</h2>
-            <p class="text-center">Liquid-powered digital experiences that make a difference</p>
-            
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>🔥 XenonFolia</h3>
-                    <p>High-performance Minecraft server core with revolutionary optimizations. Built with modern Java practices for maximum performance.</p>
-                    <div style="margin-top: 1rem;">
-                        <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; padding: 0.25rem 0.75rem; border-radius: 16px; font-size: 0.875rem; margin-right: 0.5rem;">Java</span>
-                        <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; padding: 0.25rem 0.75rem; border-radius: 16px; font-size: 0.875rem; margin-right: 0.5rem;">Performance</span>
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-code"></i>
+                        Featured Projects
+                    </h2>
+                    <p class="section-subtitle">
+                        Liquid-powered digital experiences that make a difference
+                    </p>
+                </div>
+                
+                <div class="projects-grid">
+                    <div class="project-card glass-card">
+                        <div class="project-header">
+                            <div class="project-icon">🔥</div>
+                            <h3>XenonFolia</h3>
+                        </div>
+                        
+                        <p class="project-description">
+                            High-performance Minecraft server core with revolutionary optimizations. 
+                            Built with modern Java practices for maximum performance and scalability.
+                        </p>
+                        
+                        <div class="project-tags">
+                            <span class="tag tag-blue">Java</span>
+                            <span class="tag tag-blue">Performance</span>
+                            <span class="tag tag-blue">Minecraft</span>
+                        </div>
+                        
+                        <div class="project-actions">
+                            <a href="https://github.com/Khoasoma/xenonfolia" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                View on GitHub
+                            </a>
+                        </div>
                     </div>
-                    <div style="margin-top: 1rem;">
-                        <a href="https://github.com/Khoasoma/xenonfolia" target="_blank" style="text-decoration: none;">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
+                    
+                    <div class="project-card glass-card">
+                        <div class="project-header">
+                            <div class="project-icon">🎮</div>
+                            <h3>AsakaMC Network</h3>
+                        </div>
+                        
+                        <p class="project-description">
+                            Premium Minecraft gaming community with modern UX. 
+                            Serving 500+ active players with 99.9% uptime and advanced features.
+                        </p>
+                        
+                        <div class="project-tags">
+                            <span class="tag tag-green">Community</span>
+                            <span class="tag tag-green">Gaming</span>
+                            <span class="tag tag-green">Network</span>
+                        </div>
+                        
+                        <div class="project-actions">
+                            <a href="https://asakamc.vn" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Visit Website
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card glass-card">
+                        <div class="project-header">
+                            <div class="project-icon">🛠️</div>
+                            <h3>Development Tools</h3>
+                        </div>
+                        
+                        <p class="project-description">
+                            Collection of development tools and automation scripts 
+                            for optimal performance and enhanced developer experience.
+                        </p>
+                        
+                        <div class="project-tags">
+                            <span class="tag tag-yellow">Tools</span>
+                            <span class="tag tag-yellow">Automation</span>
+                            <span class="tag tag-yellow">DevOps</span>
+                        </div>
+                        
+                        <div class="project-actions">
+                            <a href="https://github.com/Khoasoma" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                View Repository
+                            </a>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="project-card">
-                    <h3>🎮 AsakaMC Network</h3>
-                    <p>Premium Minecraft gaming community with modern UX. Serving 500+ active players with 99.9% uptime.</p>
-                    <div style="margin-top: 1rem;">
-                        <span style="background: rgba(34, 197, 94, 0.2); color: #22c55e; padding: 0.25rem 0.75rem; border-radius: 16px; font-size: 0.875rem; margin-right: 0.5rem;">Community</span>
-                        <span style="background: rgba(34, 197, 94, 0.2); color: #22c55e; padding: 0.25rem 0.75rem; border-radius: 16px; font-size: 0.875rem; margin-right: 0.5rem;">Gaming</span>
-                    </div>
-                    <div style="margin-top: 1rem;">
-                        <a href="https://asakamc.vn" target="_blank" style="text-decoration: none;">
-                            <i class="fas fa-external-link-alt"></i> Visit Website
-                        </a>
-                    </div>
+                <div class="projects-cta">
+                    <a href="https://github.com/Khoasoma" target="_blank" class="btn btn-outline">
+                        <i class="fab fa-github"></i>
+                        View All Projects
+                    </a>
                 </div>
-                
-                <div class="project-card">
-                    <h3>🛠️ Custom Tools</h3>
-                    <p>Collection of development tools and automation scripts for optimal performance and developer experience.</p>
-                    <div style="margin-top: 1rem;">
-                        <span style="background: rgba(251, 191, 36, 0.2); color: #fbbf24; padding: 0.25rem 0.75rem; border-radius: 16px; font-size: 0.875rem; margin-right: 0.5rem;">Tools</span>
-                        <span style="background: rgba(251, 191, 36, 0.2); color: #fbbf24; padding: 0.25rem 0.75rem; border-radius: 16px; font-size: 0.875rem; margin-right: 0.5rem;">Automation</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center" style="margin-top: 3rem;">
-                <a href="https://github.com/Khoasoma" target="_blank" class="btn">
-                    <i class="fab fa-github"></i> View All Projects
-                </a>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact">
-            <h2><i class="fas fa-envelope"></i> Get In Touch</h2>
-            <p class="text-center">Let's create something amazing together</p>
-            
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem;">
-                <!-- Contact Form -->
-                <div>
-                    <h3>📝 Send Message</h3>
-                    <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="your@email.com" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Subject (Optional)">
-                        </div>
-                        <div class="form-group">
-                            <textarea rows="5" placeholder="Your message..." required></textarea>
-                        </div>
-                        <button type="submit">
-                            <i class="fas fa-paper-plane"></i> Send Message
-                        </button>
-                    </form>
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-envelope"></i>
+                        Get In Touch
+                    </h2>
+                    <p class="section-subtitle">
+                        Let's create something amazing together
+                    </p>
                 </div>
                 
-                <!-- Contact Info -->
-                <div>
-                    <h3>📞 Contact Information</h3>
-                    <div class="glass-effect" style="padding: 1.5rem; margin-bottom: 1rem;">
-                        <h4><i class="fas fa-envelope"></i> Email</h4>
-                        <a href="mailto:khoa@kh0a.site">khoa@kh0a.site</a>
-                        <p style="font-size: 0.875rem; margin-top: 0.5rem; color: #94a3b8;">Best for detailed discussions</p>
+                <div class="contact-content">
+                    <!-- Contact Form -->
+                    <div class="contact-form-wrapper">
+                        <form id="contact-form" class="contact-form glass-card">
+                            <h3>📝 Send Message</h3>
+                            
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                        </form>
                     </div>
                     
-                    <div class="glass-effect" style="padding: 1.5rem; margin-bottom: 1rem;">
-                        <h4><i class="fab fa-discord"></i> Discord</h4>
-                        <a href="https://discordapp.com/users/808974657994752050" target="_blank">Khoasoma#1337</a>
-                        <p style="font-size: 0.875rem; margin-top: 0.5rem; color: #94a3b8;">Quick chat & collaboration</p>
-                    </div>
-                    
-                    <div class="glass-effect" style="padding: 1.5rem; margin-bottom: 1rem;">
-                        <h4><i class="fas fa-clock"></i> Timezone</h4>
-                        <span>UTC+7 (Vietnam)</span>
-                        <p style="font-size: 0.875rem; margin-top: 0.5rem; color: #94a3b8;">Usually available 9AM - 11PM</p>
-                    </div>
-                    
-                    <div style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.2); border-radius: 12px; padding: 1rem; color: #22c55e; text-align: center;">
-                        <i class="fas fa-circle" style="font-size: 0.5rem; margin-right: 0.5rem;"></i>
-                        Available for new projects
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <div class="contact-card glass-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h4>Email</h4>
+                            <a href="mailto:khoa@kh0a.site">khoa@kh0a.site</a>
+                            <p>Best for detailed discussions</p>
+                        </div>
+                        
+                        <div class="contact-card glass-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-discord"></i>
+                            </div>
+                            <h4>Discord</h4>
+                            <a href="https://discordapp.com/users/808974657994752050" target="_blank">
+                                Khoasoma#1337
+                            </a>
+                            <p>Quick chat & collaboration</p>
+                        </div>
+                        
+                        <div class="contact-card glass-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h4>Timezone</h4>
+                            <span>UTC+7 (Vietnam)</span>
+                            <p>Usually available 9AM - 11PM</p>
+                        </div>
+                        
+                        <div class="status-card">
+                            <div class="status-indicator"></div>
+                            <span>Available for new projects</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -201,44 +409,58 @@
     </main>
 
     <!-- Footer -->
-    <footer>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 2rem;">
-            <div>
-                <h4>Navigation</h4>
-                <ul style="list-style: none; margin: 0;">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h4>🌊 Khoasoma</h4>
+                    <p>Crafting digital experiences with passion and modern technology.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h5>Navigation</h5>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h5>Projects</h5>
+                        <ul>
+                            <li><a href="https://github.com/Khoasoma/xenonfolia" target="_blank">XenonFolia</a></li>
+                            <li><a href="https://asakamc.vn" target="_blank">AsakaMC</a></li>
+                            <li><a href="https://github.com/Khoasoma" target="_blank">All Projects</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h5>Connect</h5>
+                        <ul>
+                            <li><a href="mailto:khoa@kh0a.site">Email</a></li>
+                            <li><a href="https://github.com/Khoasoma" target="_blank">GitHub</a></li>
+                            <li><a href="https://discordapp.com/users/808974657994752050" target="_blank">Discord</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             
-            <div>
-                <h4>Projects</h4>
-                <ul style="list-style: none; margin: 0;">
-                    <li><a href="https://github.com/Khoasoma/xenonfolia" target="_blank">XenonFolia</a></li>
-                    <li><a href="https://asakamc.vn" target="_blank">AsakaMC</a></li>
-                    <li><a href="https://github.com/Khoasoma" target="_blank">All Projects</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Khoasoma. All rights reserved.</p>
+                <p>Made with ❤️ and modern web technologies</p>
             </div>
-            
-            <div>
-                <h4>Connect</h4>
-                <ul style="list-style: none; margin: 0;">
-                    <li><a href="mailto:khoa@kh0a.site">Email</a></li>
-                    <li><a href="https://github.com/Khoasoma" target="_blank">GitHub</a></li>
-                    <li><a href="https://discordapp.com/users/808974657994752050" target="_blank">Discord</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem; text-align: center;">
-            <p>&copy; 2025 Khoasoma. Crafted with passion and modern web technologies.</p>
-            <p style="font-size: 0.875rem; color: #94a3b8;">Last updated: June 29, 2025</p>
         </div>
     </footer>
 
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
     <!-- Scripts -->
-    <script src="./assets/liquid-main.js"></script>
+    <script src="./assets/main.js"></script>
 </body>
 </html>
