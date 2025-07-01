@@ -1065,11 +1065,34 @@ a:focus {
   transform: translateZ(0);
 }
 
+/* Containment for better performance */
+.hero-section,
+.about-section,
+.projects-section,
+.contact-section {
+  contain: layout style;
+}
+
+.navbar {
+  contain: layout style paint;
+}
+
 /* Image optimization */
 img {
   max-width: 100%;
   height: auto;
   loading: lazy;
+}
+
+/* Optimize scroll performance */
+* {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto;
+  }
 }
 
 /* ========================================
