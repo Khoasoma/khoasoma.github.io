@@ -18,7 +18,7 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- Main Stylesheet -->
+    <!-- Optimized Stylesheet -->
     <link rel="stylesheet" href="./assets/liquid-style.css">
     
     <!-- Favicon -->
@@ -26,12 +26,12 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
+    <nav aria-label="Main navigation">
         <ul>
-            <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-            <li><a href="#projects"><i class="fas fa-briefcase"></i> Projects</a></li>
-            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="#home" aria-label="Go to home section"><i class="fas fa-home" aria-hidden="true"></i> <span>Home</span></a></li>
+            <li><a href="#about" aria-label="Go to about section"><i class="fas fa-user" aria-hidden="true"></i> <span>About</span></a></li>
+            <li><a href="#projects" aria-label="Go to projects section"><i class="fas fa-briefcase" aria-hidden="true"></i> <span>Projects</span></a></li>
+            <li><a href="#contact" aria-label="Go to contact section"><i class="fas fa-envelope" aria-hidden="true"></i> <span>Contact</span></a></li>
         </ul>
     </nav>
 
@@ -49,18 +49,18 @@
             </p>
             
             <!-- Quick Stats -->
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem;">
-                <div class="glass-effect" style="padding: 2rem; text-align: center;">
-                    <h3 style="color: #38bdf8; font-size: 2rem; margin: 0;">3+</h3>
-                    <p style="margin: 0; color: #cbd5e1;">Years Experience</p>
+            <div class="stats-grid">
+                <div class="stat-card glass-effect">
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">Years Experience</div>
                 </div>
-                <div class="glass-effect" style="padding: 2rem; text-align: center;">
-                    <h3 style="color: #38bdf8; font-size: 2rem; margin: 0;">47+</h3>
-                    <p style="margin: 0; color: #cbd5e1;">Projects</p>
+                <div class="stat-card glass-effect">
+                    <div class="stat-number">47+</div>
+                    <div class="stat-label">Projects</div>
                 </div>
-                <div class="glass-effect" style="padding: 2rem; text-align: center;">
-                    <h3 style="color: #38bdf8; font-size: 2rem; margin: 0;">1247+</h3>
-                    <p style="margin: 0; color: #cbd5e1;">Users</p>
+                <div class="stat-card glass-effect">
+                    <div class="stat-number">1247+</div>
+                    <div class="stat-label">Users</div>
                 </div>
             </div>
         </section>
@@ -75,17 +75,17 @@
             </p>
             
             <h3>🚀 Technical Skills</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
-                <div class="glass-effect" style="padding: 1.5rem;">
-                    <h4 style="color: #38bdf8;">Languages</h4>
+            <div class="skills-grid">
+                <div class="skill-card glass-effect">
+                    <h4>Languages</h4>
                     <p>Java, Python, JavaScript, TypeScript</p>
                 </div>
-                <div class="glass-effect" style="padding: 1.5rem;">
-                    <h4 style="color: #38bdf8;">Tools</h4>
+                <div class="skill-card glass-effect">
+                    <h4>Tools</h4>
                     <p>Node.js, Docker, Git, Linux</p>
                 </div>
-                <div class="glass-effect" style="padding: 1.5rem;">
-                    <h4 style="color: #38bdf8;">Specializations</h4>
+                <div class="skill-card glass-effect">
+                    <h4>Specializations</h4>
                     <p>Minecraft Development, Server Optimization</p>
                 </div>
             </div>
@@ -97,47 +97,47 @@
             <p class="text-center">Liquid-powered digital experiences that make a difference</p>
             
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card glass-effect">
                     <h3>🔥 XenonFolia</h3>
                     <p>High-performance Minecraft server core with revolutionary optimizations. Built with modern Java practices for maximum performance.</p>
-                    <div style="margin-top: 1rem;">
-                        <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; padding: 0.25rem 0.75rem; border-radius: 16px; font-size: 0.875rem; margin-right: 0.5rem;">Java</span>
-                        <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; padding: 0.25rem 0.75rem; border-radius: 16px; font-size: 0.875rem; margin-right: 0.5rem;">Performance</span>
+                    <div class="project-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Performance</span>
                     </div>
-                    <div style="margin-top: 1rem;">
-                        <a href="https://github.com/Khoasoma/xenonfolia" target="_blank" style="text-decoration: none;">
-                            <i class="fab fa-github"></i> View on GitHub
+                    <div>
+                        <a href="https://github.com/Khoasoma/xenonfolia" target="_blank" class="project-link" rel="noopener noreferrer">
+                            <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
                         </a>
                     </div>
                 </div>
                 
-                <div class="project-card">
+                <div class="project-card glass-effect">
                     <h3>🎮 AsakaMC Network</h3>
                     <p>Premium Minecraft gaming community with modern UX. Serving 500+ active players with 99.9% uptime.</p>
-                    <div style="margin-top: 1rem;">
-                        <span style="background: rgba(34, 197, 94, 0.2); color: #22c55e; padding: 0.25rem 0.75rem; border-radius: 16px; font-size: 0.875rem; margin-right: 0.5rem;">Community</span>
-                        <span style="background: rgba(34, 197, 94, 0.2); color: #22c55e; padding: 0.25rem 0.75rem; border-radius: 16px; font-size: 0.875rem; margin-right: 0.5rem;">Gaming</span>
+                    <div class="project-tags">
+                        <span class="tag">Community</span>
+                        <span class="tag">Gaming</span>
                     </div>
-                    <div style="margin-top: 1rem;">
-                        <a href="https://asakamc.vn" target="_blank" style="text-decoration: none;">
-                            <i class="fas fa-external-link-alt"></i> Visit Website
+                    <div>
+                        <a href="https://asakamc.vn" target="_blank" class="project-link" rel="noopener noreferrer">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Visit Website
                         </a>
                     </div>
                 </div>
                 
-                <div class="project-card">
+                <div class="project-card glass-effect">
                     <h3>🛠️ Custom Tools</h3>
                     <p>Collection of development tools and automation scripts for optimal performance and developer experience.</p>
-                    <div style="margin-top: 1rem;">
-                        <span style="background: rgba(251, 191, 36, 0.2); color: #fbbf24; padding: 0.25rem 0.75rem; border-radius: 16px; font-size: 0.875rem; margin-right: 0.5rem;">Tools</span>
-                        <span style="background: rgba(251, 191, 36, 0.2); color: #fbbf24; padding: 0.25rem 0.75rem; border-radius: 16px; font-size: 0.875rem; margin-right: 0.5rem;">Automation</span>
+                    <div class="project-tags">
+                        <span class="tag">Tools</span>
+                        <span class="tag">Automation</span>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center" style="margin-top: 3rem;">
-                <a href="https://github.com/Khoasoma" target="_blank" class="btn">
-                    <i class="fab fa-github"></i> View All Projects
+            <div class="text-center">
+                <a href="https://github.com/Khoasoma" target="_blank" class="btn" rel="noopener noreferrer">
+                    <i class="fab fa-github" aria-hidden="true"></i> View All Projects
                 </a>
             </div>
         </section>
@@ -147,52 +147,51 @@
             <h2><i class="fas fa-envelope"></i> Get In Touch</h2>
             <p class="text-center">Let's create something amazing together</p>
             
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem;">
+            <div class="contact-grid">
                 <!-- Contact Form -->
                 <div>
                     <h3>📝 Send Message</h3>
                     <form>
                         <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+                            <input type="text" placeholder="Your Name" required aria-label="Your name">
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="your@email.com" required>
+                            <input type="email" placeholder="your@email.com" required aria-label="Your email address">
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Subject (Optional)">
+                            <input type="text" placeholder="Subject (Optional)" aria-label="Message subject">
                         </div>
                         <div class="form-group">
-                            <textarea rows="5" placeholder="Your message..." required></textarea>
+                            <textarea rows="5" placeholder="Your message..." required aria-label="Your message"></textarea>
                         </div>
-                        <button type="submit">
-                            <i class="fas fa-paper-plane"></i> Send Message
+                        <button type="submit" class="btn">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message
                         </button>
                     </form>
                 </div>
                 
                 <!-- Contact Info -->
-                <div>
+                <div class="contact-info">
                     <h3>📞 Contact Information</h3>
-                    <div class="glass-effect" style="padding: 1.5rem; margin-bottom: 1rem;">
-                        <h4><i class="fas fa-envelope"></i> Email</h4>
+                    <div class="contact-item glass-effect">
+                        <h4><i class="fas fa-envelope" aria-hidden="true"></i> Email</h4>
                         <a href="mailto:khoa@kh0a.site">khoa@kh0a.site</a>
-                        <p style="font-size: 0.875rem; margin-top: 0.5rem; color: #94a3b8;">Best for detailed discussions</p>
+                        <p>Best for detailed discussions</p>
                     </div>
                     
-                    <div class="glass-effect" style="padding: 1.5rem; margin-bottom: 1rem;">
-                        <h4><i class="fab fa-discord"></i> Discord</h4>
-                        <a href="https://discordapp.com/users/808974657994752050" target="_blank">Khoasoma#1337</a>
-                        <p style="font-size: 0.875rem; margin-top: 0.5rem; color: #94a3b8;">Quick chat & collaboration</p>
+                    <div class="contact-item glass-effect">
+                        <h4><i class="fab fa-discord" aria-hidden="true"></i> Discord</h4>
+                        <a href="https://discordapp.com/users/808974657994752050" target="_blank" rel="noopener noreferrer">Khoasoma#1337</a>
+                        <p>Quick chat & collaboration</p>
                     </div>
                     
-                    <div class="glass-effect" style="padding: 1.5rem; margin-bottom: 1rem;">
-                        <h4><i class="fas fa-clock"></i> Timezone</h4>
+                    <div class="contact-item glass-effect">
+                        <h4><i class="fas fa-clock" aria-hidden="true"></i> Timezone</h4>
                         <span>UTC+7 (Vietnam)</span>
-                        <p style="font-size: 0.875rem; margin-top: 0.5rem; color: #94a3b8;">Usually available 9AM - 11PM</p>
+                        <p>Usually available 9AM - 11PM</p>
                     </div>
                     
-                    <div style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.2); border-radius: 12px; padding: 1rem; color: #22c55e; text-align: center;">
-                        <i class="fas fa-circle" style="font-size: 0.5rem; margin-right: 0.5rem;"></i>
+                    <div class="status-available">
                         Available for new projects
                     </div>
                 </div>
@@ -202,10 +201,10 @@
 
     <!-- Footer -->
     <footer>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 2rem;">
-            <div>
+        <div class="footer-grid">
+            <div class="footer-section">
                 <h4>Navigation</h4>
-                <ul style="list-style: none; margin: 0;">
+                <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
@@ -213,28 +212,28 @@
                 </ul>
             </div>
             
-            <div>
+            <div class="footer-section">
                 <h4>Projects</h4>
-                <ul style="list-style: none; margin: 0;">
-                    <li><a href="https://github.com/Khoasoma/xenonfolia" target="_blank">XenonFolia</a></li>
-                    <li><a href="https://asakamc.vn" target="_blank">AsakaMC</a></li>
-                    <li><a href="https://github.com/Khoasoma" target="_blank">All Projects</a></li>
+                <ul>
+                    <li><a href="https://github.com/Khoasoma/xenonfolia" target="_blank" rel="noopener noreferrer">XenonFolia</a></li>
+                    <li><a href="https://asakamc.vn" target="_blank" rel="noopener noreferrer">AsakaMC</a></li>
+                    <li><a href="https://github.com/Khoasoma" target="_blank" rel="noopener noreferrer">All Projects</a></li>
                 </ul>
             </div>
             
-            <div>
+            <div class="footer-section">
                 <h4>Connect</h4>
-                <ul style="list-style: none; margin: 0;">
+                <ul>
                     <li><a href="mailto:khoa@kh0a.site">Email</a></li>
-                    <li><a href="https://github.com/Khoasoma" target="_blank">GitHub</a></li>
-                    <li><a href="https://discordapp.com/users/808974657994752050" target="_blank">Discord</a></li>
+                    <li><a href="https://github.com/Khoasoma" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                    <li><a href="https://discordapp.com/users/808974657994752050" target="_blank" rel="noopener noreferrer">Discord</a></li>
                 </ul>
             </div>
         </div>
         
-        <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem; text-align: center;">
+        <div class="footer-bottom">
             <p>&copy; 2025 Khoasoma. Crafted with passion and modern web technologies.</p>
-            <p style="font-size: 0.875rem; color: #94a3b8;">Last updated: June 29, 2025</p>
+            <p>Last updated: June 29, 2025</p>
         </div>
     </footer>
 

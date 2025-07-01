@@ -1,0 +1,18 @@
+# Backup original files (can be removed later if desired)
+assets/liquid-style.css.backup
+assets/liquid-main.js.backup
+assets/style.css.backup
+assets/main.js.backup
+assets/theme.js.backup
+assets/autochangemood.js.backup
+assets/scroll-animated.js.backup
+
+# Development files
+.DS_Store
+.vscode/
+*.tmp
+*.log
+
+# Large image assets (already optimized)
+assets/IMG_0085.jpg
+assets/avatar.jpg
