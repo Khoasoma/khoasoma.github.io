@@ -3,6 +3,9 @@ assets/liquid-style.css.backup
 assets/liquid-main.js.backup
 assets/style.css.backup
 assets/main.js.backup
+assets/theme.js.backup
+assets/autochangemood.js.backup
+assets/scroll-animated.js.backup
 
 # Development files
 .DS_Store
@@ -13,8 +16,3 @@ assets/main.js.backup
 # Large image assets (already optimized)
 assets/IMG_0085.jpg
 assets/avatar.jpg
-
-# Old theme-related files 
-assets/theme.js
-assets/autochangemood.js
-assets/scroll-animated.js
