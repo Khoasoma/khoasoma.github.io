@@ -31,9 +31,7 @@ class LiquidPortfolio {
       this.initContactForm();
       this.initMobileMenu();
       this.initScrollToTop();
-      
-      // Hide loading screen
-      this.hideLoading();
+      this.initRippleEffects();
       
       // Start animations
       this.startAnimations();
@@ -43,22 +41,10 @@ class LiquidPortfolio {
       
     } catch (error) {
       console.error('❌ Error initializing portfolio:', error);
-      this.hideLoading();
     }
   }
 
-  // ========================================
-  // 🎬 LOADING MANAGEMENT
-  // ========================================
-  hideLoading() {
-    const loading = document.getElementById('loading');
-    if (loading) {
-      setTimeout(() => {
-        loading.classList.add('hidden');
-        setTimeout(() => loading.remove(), 500);
-      }, 1000);
-    }
-  }
+
 
   // ========================================
   // 🧭 NAVIGATION
@@ -256,6 +242,33 @@ class LiquidPortfolio {
   handleScroll() {
     this.scrollY = window.pageYOffset;
     this.updateScrollToTop();
+    this.updateGlassTint();
+  }
+
+  updateGlassTint() {
+    const scrollPercent = Math.min(this.scrollY / (document.documentElement.scrollHeight - window.innerHeight), 1);
+    const glassCards = document.querySelectorAll('.glass-card');
+    const navbar = document.querySelector('.nav-container');
+    
+    // Dynamic glass opacity and blur based on scroll
+    const baseOpacity = 0.08;
+    const maxOpacity = 0.15;
+    const dynamicOpacity = baseOpacity + (scrollPercent * (maxOpacity - baseOpacity));
+    
+    const baseBlur = 20;
+    const maxBlur = 30;
+    const dynamicBlur = baseBlur + (scrollPercent * (maxBlur - baseBlur));
+    
+    // Apply to all glass elements
+    glassCards.forEach(card => {
+      card.style.setProperty('--dynamic-glass-bg', `rgba(255, 255, 255, ${dynamicOpacity})`);
+      card.style.setProperty('--dynamic-glass-blur', `${dynamicBlur}px`);
+      card.style.backdropFilter = `blur(${dynamicBlur}px) saturate(1.8)`;
+    });
+    
+    if (navbar) {
+      navbar.style.backdropFilter = `blur(${dynamicBlur + 5}px) saturate(1.8)`;
+    }
   }
 
   initScrollAnimations() {
@@ -576,6 +589,56 @@ class LiquidPortfolio {
     if (!this.isMobile) {
       this.closeMobileMenu();
     }
+  }
+
+  // ========================================
+  // ✨ RIPPLE EFFECTS
+  // ========================================
+  initRippleEffects() {
+    const glassCards = document.querySelectorAll('.glass-card, .btn');
+    
+    glassCards.forEach(card => {
+      card.addEventListener('click', this.createRipple.bind(this));
+    });
+  }
+
+  createRipple(event) {
+    const button = event.currentTarget;
+    const rect = button.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = event.clientX - rect.left - size / 2;
+    const y = event.clientY - rect.top - size / 2;
+    
+    const ripple = document.createElement('span');
+    ripple.style.cssText = `
+      position: absolute;
+      width: ${size}px;
+      height: ${size}px;
+      left: ${x}px;
+      top: ${y}px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+      border-radius: 50%;
+      transform: scale(0);
+      animation: ripple 0.6s linear;
+      pointer-events: none;
+      z-index: 1;
+    `;
+    
+    // Ensure the parent has relative positioning
+    const computedStyle = window.getComputedStyle(button);
+    if (computedStyle.position === 'static') {
+      button.style.position = 'relative';
+    }
+    
+    // Add ripple to element
+    button.appendChild(ripple);
+    
+    // Remove ripple after animation
+    setTimeout(() => {
+      if (ripple.parentNode) {
+        ripple.parentNode.removeChild(ripple);
+      }
+    }, 600);
   }
 }
 
