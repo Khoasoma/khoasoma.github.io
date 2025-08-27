@@ -1,53 +1,180 @@
-/* ========================================
-   🌊 LIQUID GLASS PORTFOLIO - OPTIMIZED
-   Enhanced Glass Morphism & Performance
-   ======================================== */
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: rgb(32,28,28);
+    color: white;
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
 
-/* ========================================
-   📐 CSS CUSTOM PROPERTIES
-   ======================================== */
-:root {
-  /* Enhanced Color Palette */
-  --primary-blue: #00d4ff;
-  --primary-blue-dark: #0099cc;
-  --secondary-purple: #8b5cf6;
-  --accent-green: #00ff88;
-  --accent-yellow: #ffcc00;
-  --accent-red: #ff4444;
-  
-  /* Enhanced Glass Effects */
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-hover: rgba(255, 255, 255, 0.08);
-  --glass-active: rgba(255, 255, 255, 0.12);
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  --glass-shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.2);
-  
-  /* Dynamic Backdrop */
-  --backdrop-blur: 20px;
-  --backdrop-saturate: 180%;
-  --backdrop-brightness: 110%;
-  
-  /* Dark Theme */
-  --bg-primary: #0a0a0f;
-  --bg-secondary: #1a1a2e;
-  --bg-tertiary: #16213e;
-  --text-primary: #ffffff;
-  --text-secondary: #b3b3b3;
-  --text-muted: #666666;
-  
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
-  --gradient-secondary: linear-gradient(135deg, var(--accent-green), var(--primary-blue));
-  --gradient-bg: radial-gradient(ellipse at top, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
-  
-  /* Spacing */
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 1.5rem;
-  --space-lg: 2rem;
-  --space-xl: 3rem;
-  --space-2xl: 4rem;
+#background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    -o-filter: blur(15px);
+    filter: blur(15px);
+    z-index: -1;
+}
+
+.content {
+    max-width: 1000px;
+    margin: 20px auto;
+    position: relative;
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.bio-text {
+    margin-left: 20px;
+    margin-top: 0;
+    line-height: 10px;
+}
+
+.phone-warning {
+    display: block;
+}
+
+/* For large screens (PCs) */
+@media (min-width: 768px) {
+    .phone-warning {
+        display: none;
+    }
+    .bio {
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* For small screens (phones) */
+@media (max-width: 767px) {
+    .bio-text {
+        margin-left: 0px;
+        margin-top: 0;
+        line-height: 10px;
+    }
+}
+
+.bio-avatar {
+    position: relative;
+}
+
+#bio-status {
+    position: absolute;
+    left: 170px;
+    top: 75px;
+    font-size: 70px;
+}
+.online { color: #43b581; }
+.idle { color: #faa61a; }
+.dnd { color: #f04747; }
+.offline { color: #747f8d; }
+
+.bio-name {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.bio-description {
+    font-size: 20px;
+}
+
+.bio-pronoun {
+    font-weight: normal;
+    font-style: italic;
+    font-size: 20px;
+}
+
+.bio-social {
+    font-size: 20px;
+    word-spacing: 10px;
+}
+
+a:link {
+    color: white;
+}
+
+a:visited {
+    color: white;
+}
+
+.paragraph {
+    padding-bottom: 10px;
+}
+
+.icon-list {
+    word-spacing: 14px;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	background-color: #201c1c;
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #201c1c;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #373737;
+}
+
+.project-text {
+    margin-left: 20px;
+    margin-top: 0;
+    line-height: 20px;
+}
+
+@media (min-width: 768px) {
+    .project {
+        display: flex;
+        align-items: center;
+        background-color: #ffffff20;
+        border-radius: 10px;
+        padding: 10px;
+        width: 400px;
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .project {
+        background-color: #ffffff20;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 20px 0;
+    }
+
+    .project-text {
+        margin-left: 0px;
+        margin-top: 0;
+        line-height: 20px;
+    }
+}
+
+.project-title {
+    font-size: 20px;
+}
+
+.bio img {
+    border-radius: 10%;
+}
   --space-3xl: 6rem;
   
   /* Typography */
