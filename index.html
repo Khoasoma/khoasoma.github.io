@@ -1,121 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>Khoasoma</title>
-        <meta name="description" content="Khoasoma - dev chill." />
-        <!-- Preload avatar png -->
-        <link rel="preload" as="image" href="assets/kaoruko-waguri-waguri-kaoruko.png" />
-        <link rel="preload" as="image" href="assets/beautiful-anime-sakura-cityscape-cartoon-scene.jpg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./assets/chill.css" />
-    <link rel="icon" type="image/png" href="assets/avatar.jpg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Khoasoma - Developer & Minecraft Specialist">
+    <meta name="keywords" content="khoasoma, developer, minecraft, java, backend">
+    <meta name="author" content="Khoasoma">
+    <meta property="og:title" content="Khoasoma Profile">
+    <meta property="og:description" content="Developer specializing in Minecraft optimization and backend systems">
+    <meta property="og:type" content="website">
+    <title>Khoasoma's Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./assets/avatar.jpg" type="image/jpeg">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <main class="center-wrap">
-        <header class="card fade-in">
-            <!-- Use local file to avoid Discord expiring query params. Drop the gif in assets/kaoruko.gif -->
-            <img class="avatar" src="assets/kaoruko-waguri-waguri-kaoruko.png" alt="Khoasoma avatar" loading="lazy" decoding="async" onerror="this.classList.add('avatar-fallback');" />
-            <h1>Khoasoma</h1>
-            <p class="tagline">code • servers • minecraft • chill</p>
-            <div class="links">
-                <a href="mailto:khoa@kh0a.site" title="Email">Email</a>
-                <a href="https://github.com/Khoasoma" target="_blank" rel="noopener">GitHub</a>
-                <a href="https://discordapp.com/users/808974657994752050" target="_blank" rel="noopener">Discord</a>
+    <img id="background" src="assets/beautiful-anime-sakura-cityscape-cartoon-scene.jpg" alt="background" />
+    <div class="content">
+        <div class="bio">
+            <div class="bio-avatar">
+                <img style="border-radius: 10%;" src="assets/kaoruko-waguri-waguri-kaoruko.png" width="200" height="200" alt="Khoasoma avatar">
+                <p id="bio-status"></p>
             </div>
-        </header>
-            <link rel="stylesheet" href="./assets/chill.css" />
-            <link rel="stylesheet" href="./assets/profile.css" />
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width,initial-scale=1" />
-            <title>Khoasoma • Profile</title>
-            <meta name="description" content="Khoasoma profile & projects" />
-            <meta name="author" content="Khoasoma" />
-            <meta property="og:title" content="Khoasoma" />
-            <meta property="og:description" content="Developer • Minecraft • Infra" />
-            <meta property="og:type" content="website" />
-            <link rel="preconnect" href="https://fonts.googleapis.com" />
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-            <link rel="stylesheet" href="assets/site.css" />
-            <link rel="icon" href="assets/avatar.jpg" />
-            <link rel="preload" as="image" href="assets/kaoruko.gif" />
-            <script defer src="assets/site.js"></script>
-        </head>
-        <body>
-            <div id="bg"></div>
-            <div class="content">
-                    <header class="top-head">
-                        <img id="avatar" class="mini-avatar" src="assets/kaoruko.gif" alt="avatar" />
-                        <span id="status" class="status offline" title="offline"></span>
-                        <div class="top-text">
-                            <h1 class="site-name">Khoasoma <span id="age" class="age"></span></h1>
-                            <p class="tag"><span id="typed"></span><span class="cursor">_</span></p>
-                            <p class="links-inline">
-                                <a href="mailto:khoa@kh0a.site">Email</a>
-                                <a href="https://github.com/Khoasoma" target="_blank" rel="noopener">GitHub</a>
-                                <a href="https://discordapp.com/users/808974657994752050" target="_blank" rel="noopener">Discord</a>
-                            </p>
-                        </div>
-                    </header>
-
-                <section class="panel">
-                    <h2>About</h2>
-                    <p>Mình build & tối ưu các hệ thống Minecraft / backend. Ưu tiên hiệu năng, quan sát được (observable) và code gọn.</p>
-                    <p class="dim">Focus: tick performance, async IO, net pipeline, infra automation.</p>
-                </section>
-
-                <section class="panel">
-                    <h2>Stack / Tools</h2>
-                    <div class="icons-group">
-                        <img src="https://skillicons.dev/icons?i=java,python,nodejs,linux" alt="langs" />
-                        <img src="https://skillicons.dev/icons?i=docker,git,redis,nginx" alt="tools" />
-                        <img src="https://skillicons.dev/icons?i=cloudflare,idea,vscode,bash" alt="extra" />
-                    </div>
-                </section>
-
-                <section class="panel">
-                    <h2>Projects</h2>
-                    <div class="projects">
-                        <div class="project">
-                            <h3>XenonFolia</h3>
-                            <p>Fork server core tối ưu GC, region tick & scheduling.</p>
-                            <p><a href="https://github.com/Khoasoma/xenonfolia" target="_blank" rel="noopener">GitHub →</a></p>
-                        </div>
-                        <div class="project">
-                            <h3>AsakaMC</h3>
-                            <p>Network Minecraft multi-node với monitoring & auto deploy.</p>
-                            <p><a href="https://asakamc.vn" target="_blank" rel="noopener">Website →</a></p>
-                        </div>
-                        <div class="project">
-                            <h3>Sentinals Proxy</h3>
-                            <p>Proxy fork thêm filter & basic DoS mitigation pipeline.</p>
-                            <p><a href="https://github.com/Khoasoma" target="_blank" rel="noopener">Repos →</a></p>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="panel">
-                    <h2>Random Anime / LN I like</h2>
-                    <p id="anime" class="mono"></p>
-                </section>
-
-                <section class="panel" id="radioPanel">
-                    <h2>Chill Vibes</h2>
-                    <button id="radioBtn" class="btn">▶ play radio</button>
-                    <p id="nowPlaying" class="small dim">idle</p>
-                </section>
-
-                <footer>
-                    <p>&copy; 2025 Khoasoma. All rights reserved.</p>
-                    <p class="dim tiny">Layout inspired by community profile pages – rewritten from scratch.</p>
-                </footer>
+            <div class="bio-text">
+                <p class="bio-name">Khoasoma <span class="bio-pronoun">(he/him)</span></p>
+                <p class="bio-description">Developer & Minecraft Specialist</p>
+                <p id="countdown"></p>
+                <p class="bio-social">
+                    <a href="mailto:khoa@kh0a.site"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/Khoasoma"><i class="fab fa-github"></i></a>
+                    <a href="https://discordapp.com/users/808974657994752050"><i class="fab fa-discord"></i></a>
+                </p>
             </div>
-        </body>
-        </html>
+        </div>
+
+        <div class="paragraph">
+            <p>Who am I? I'm a <span id="name"></span></p>
+            <p><b>Status:</b> coding & optimizing.</p>
+            <h2>About Me</h2>
+            <p>Hello! I'm Khoasoma, a passionate developer specializing in Minecraft server optimization and backend systems. With years of experience, I create high-performance solutions that deliver exceptional user experiences.</p>
+            <p>My focus is on creating clean, efficient code that scales beautifully. I believe in the power of modern technologies to create amazing digital experiences, especially in the gaming infrastructure space.</p>
+            <p>So, if you want to explore the world of high-performance server development with me, let's journey together into the exciting realm of optimization and scalable systems!</p>
+        </div>
+
+        <div class="paragraph">
+            <h2>Current Work</h2>
+            <p><b>XenonFolia Core Development</b> (ongoing): Working on high-performance Minecraft server core optimizations.</p>
+            <p><b>AsakaMC Network</b> (ongoing): Managing and optimizing multi-node Minecraft network infrastructure.</p>
+        </div>
+
+        <div class="paragraph">
+            <h2>Programming Languages</h2>
+            <p class="icon-list">
+                <img src="https://skillicons.dev/icons?i=java,python,nodejs,bash,docker,git,linux,redis"></img>
+            </p>
+        </div>
+
+        <div class="paragraph">
+            <h2>Preferred IDEs</h2>
+            <p class="icon-list">
+                <img src="https://skillicons.dev/icons?i=idea,vscode,vim,github"></img>
+            </p>
+        </div>
+
+        <div class="paragraph">
+            <h2>Preferred Tools</h2>
+            <p class="icon-list">
+                <img src="https://skillicons.dev/icons?i=nginx,cloudflare,docker,redis"></img>
+            </p>
+        </div>
+
+        <div class="paragraph">
+            <h2>My Projects</h2>
+            <div class="project">
+                <div class="project-text">
+                    <p class="project-title">XenonFolia</p>
+                    <p>High-performance Minecraft server core with revolutionary optimizations and modern Java practices.</p>
+                    <a href="https://github.com/Khoasoma/xenonfolia" target="_blank">GitHub →</a>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-text">
+                    <p class="project-title">AsakaMC Network</p>
+                    <p>Premium Minecraft gaming community serving 500+ active players with 99.9% uptime.</p>
+                    <a href="https://asakamc.vn" target="_blank">Website →</a>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-text">
+                    <p class="project-title">Sentinals Proxy</p>
+                    <p>Velocity fork with enhanced security and DoS filtering for proxy TCP and UDP traffic.</p>
+                    <a href="https://github.com/Khoasoma" target="_blank">Repository →</a>
+                </div>
+            </div>
+            <p>See all of my projects on <a href="https://github.com/Khoasoma">my GitHub page</a>.</p>
+            <p>Contact me <a href="https://discordapp.com/users/808974657994752050">through Discord</a> or <a href="mailto:khoa@kh0a.site">via email</a>.</p>
+        </div>
+
+        <hr/>
+        <p>Copyright © Khoasoma. All rights reserved.</p>
+        <p>Some cool anime series I enjoy: <span id="anime"></span></p>
+    </div>
+</body>
+</html>
