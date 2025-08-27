@@ -3,7 +3,7 @@
   --bg:#201c1c; --bg-alt:#ffffff20; --panel:#ffffff20; --border:#ffffff30; --text:#ffffff; --text-dim:#cccccc; --accent:#5aa8ff; --radius:10px;
 }
 *{box-sizing:border-box;}body,html{margin:0;padding:0;font-family:"Inter",system-ui,sans-serif;background-color:#201c1c;color:var(--text);-webkit-font-smoothing:antialiased;}
-#bg{position:fixed;right:0;bottom:0;min-width:100%;min-height:100%;background-image:url('https://images.alphacoders.com/135/1357322.jpeg');background-size:cover;background-position:center;filter:blur(15px);-webkit-filter:blur(15px);z-index:-1;} 
+#bg{position:fixed;right:0;bottom:0;min-width:100%;min-height:100%;background-image:url('beautiful-anime-sakura-cityscape-cartoon-scene.jpg');background-size:cover;background-position:center;filter:blur(15px);-webkit-filter:blur(15px);z-index:-1;} 
 .content{width:100%;max-width:1080px;margin:0 auto;padding:56px clamp(16px,3vw,56px) 120px;position:relative;animation:fadeIn 1s ease forwards;}
 @keyframes fadeIn{0%{opacity:0;}100%{opacity:1;}}
 #avatar.mini-avatar{width:120px;height:120px;border-radius:10%;object-fit:cover;border:2px solid #ffffff40;box-shadow:0 6px 18px -6px #000;}
