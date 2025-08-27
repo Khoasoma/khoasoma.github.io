@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Khoasoma</title>
-    <meta name="description" content="Khoasoma - dev chill." />
+        <title>Khoasoma</title>
+        <meta name="description" content="Khoasoma - dev chill." />
+        <!-- Preload avatar gif (place your kaoruko.gif into assets folder) -->
+        <link rel="preload" as="image" href="assets/kaoruko.gif" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -14,7 +16,8 @@
 <body>
     <main class="center-wrap">
         <header class="card fade-in">
-            <img class="avatar" src="https://media.discordapp.net/attachments/1245333127660961903/1409386459831734272/kaoruko-waguri-waguri-kaoruko.gif" alt="Khoasoma avatar" loading="lazy" decoding="async" />
+            <!-- Use local file to avoid Discord expiring query params. Drop the gif in assets/kaoruko.gif -->
+            <img class="avatar" src="assets/kaoruko.gif" alt="Khoasoma avatar" loading="lazy" decoding="async" onerror="this.classList.add('avatar-fallback');" />
             <h1>Khoasoma</h1>
             <p class="tagline">code • servers • minecraft • chill</p>
             <div class="links">

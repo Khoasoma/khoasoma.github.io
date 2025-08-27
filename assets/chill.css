@@ -36,7 +36,9 @@ body {
 }
 .card:before { content:""; position:absolute; inset:0; background:linear-gradient(120deg,rgba(90,168,255,0.08),transparent 40%,rgba(90,168,255,0.06)); pointer-events:none; }
 header.card { text-align:center; }
-.avatar { width:140px; height:140px; border-radius:50%; object-fit:cover; border:2px solid #27303b; box-shadow:0 0 0 4px #12161c,0 4px 20px -4px #000; display:block; margin:-100px auto 12px; animation:float 6s ease-in-out infinite; }
+.avatar { width:140px; height:140px; border-radius:50%; object-fit:cover; border:2px solid #27303b; box-shadow:0 0 0 4px #12161c,0 4px 20px -4px #000; display:block; margin:-100px auto 12px; animation:float 6s ease-in-out infinite; background:#13181e radial-gradient(circle at 35% 35%,#1f2730,#0f1216 70%); }
+.avatar-fallback { filter:grayscale(.4) brightness(.8); background:#13181e repeating-conic-gradient(from 0deg,#182028 0 15deg,#14191f 15deg 30deg); }
+@media (prefers-reduced-motion:reduce){ .avatar{ animation:none; } }
 @media (max-width:700px){ .avatar{ margin:-80px auto 8px; width:120px; height:120px;} }
 header.card { padding-top:120px; }
 header.card h1 { margin:4px 0 4px; font-size:clamp(1.9rem,5vw,2.6rem); letter-spacing:1px; }
