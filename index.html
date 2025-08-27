@@ -26,36 +26,90 @@
                 <a href="https://discordapp.com/users/808974657994752050" target="_blank" rel="noopener">Discord</a>
             </div>
         </header>
-
+            <link rel="stylesheet" href="./assets/chill.css" />
+            <link rel="stylesheet" href="./assets/profile.css" />
         <section class="card fade-in delay-1">
             <h2>About</h2>
             <p>Dev Việt Nam. Thích tối giản, tối ưu hiệu năng và làm mấy thứ liên quan Minecraft & hạ tầng. Giữ mọi thứ nhẹ, rõ ràng và yên tĩnh.</p>
-        </section>
+            <div class="bg-noise"></div>
+            <main class="profile-shell">
+                <div class="hero-grid">
+                    <div class="hero-left card fade-in">
+                        <div class="avatar-wrap">
+                            <img class="avatar" src="assets/kaoruko.gif" alt="Khoasoma avatar" loading="lazy" decoding="async" onerror="this.classList.add('avatar-fallback');" />
+                            <span id="status-dot" class="status offline" title="status"></span>
+                        </div>
+                        <h1 class="name">Khoasoma <span class="age-badge" id="ageBadge"></span></h1>
+                        <p class="roles" id="rolesTyper" aria-label="roles"></p>
+                        <p id="countdown" class="countdown"></p>
+                        <div class="socials">
+                            <a href="mailto:khoa@kh0a.site" aria-label="email">✉️</a>
+                            <a href="https://github.com/Khoasoma" target="_blank" rel="noopener" aria-label="GitHub">🐙</a>
+                            <a href="https://discordapp.com/users/808974657994752050" target="_blank" rel="noopener" aria-label="Discord">💬</a>
+                        </div>
+                    </div>
+                    <div class="hero-right card fade-in delay-1">
+                        <h2>About</h2>
+                        <p>Dev Việt Nam chuyên về hạ tầng, tối ưu server Minecraft & backend. Ưu tiên code gọn, tránh phức tạp thừa và giữ trải nghiệm mượt nhẹ.</p>
+                        <p>Tôn chỉ: small surface • strong core • measurable impact.</p>
+                    </div>
+                </div>
 
-        <section class="card fade-in delay-2">
-            <h2>Projects</h2>
-            <ul class="project-list">
-                <li>
-                    <strong>XenonFolia</strong>
-                    <span class="meta">server core tối ưu</span>
-                    <a href="https://github.com/Khoasoma/xenonfolia" target="_blank" rel="noopener">repo</a>
-                </li>
-                <li>
-                    <strong>AsakaMC</strong>
-                    <span class="meta">minecraft network</span>
-                    <a href="https://asakamc.vn" target="_blank" rel="noopener">site</a>
-                </li>
-                <li>
-                    <strong>Sentinals Proxy</strong>
-                    <span class="meta">velocity fork security</span>
-                    <a href="https://github.com/Khoasoma" target="_blank" rel="noopener">repos</a>
-                </li>
-            </ul>
-        </section>
+                <section class="card fade-in delay-2">
+                    <h2>Stack</h2>
+                    <div class="icon-rows">
+                        <div>
+                            <h3>Languages</h3>
+                            <img src="https://skillicons.dev/icons?i=java,python,nodejs,bash" alt="languages" />
+                        </div>
+                        <div>
+                            <h3>Tools</h3>
+                            <img src="https://skillicons.dev/icons?i=docker,git,linux,redis" alt="tools" />
+                        </div>
+                        <div>
+                            <h3>Infra / Other</h3>
+                            <img src="https://skillicons.dev/icons?i=nginx,cloudflare,github,idea" alt="infra" />
+                        </div>
+                    </div>
+                </section>
 
-        <footer class="fade-in delay-3 small">
-            <p>&copy; 2025 Khoasoma · stay chill</p>
-        </footer>
-    </main>
-</body>
-</html>
+                <section class="card fade-in delay-3">
+                    <h2>Selected Projects</h2>
+                    <div class="proj-grid">
+                        <article class="proj">
+                            <header>
+                                <h3>XenonFolia</h3>
+                                <span class="chip">Java</span>
+                            </header>
+                                <p>High-perf Minecraft server core fork tối ưu GC & tick pipeline.</p>
+                                <a class="proj-link" href="https://github.com/Khoasoma/xenonfolia" target="_blank" rel="noopener">repo →</a>
+                        </article>
+                        <article class="proj">
+                            <header>
+                                <h3>AsakaMC</h3>
+                                <span class="chip">Network</span>
+                            </header>
+                                <p>Multi-node Minecraft network với monitoring & autoscale scripts.</p>
+                                <a class="proj-link" href="https://asakamc.vn" target="_blank" rel="noopener">site →</a>
+                        </article>
+                        <article class="proj">
+                            <header>
+                                <h3>Sentinals Proxy</h3>
+                                <span class="chip">Security</span>
+                            </header>
+                                <p>Velocity fork thêm layer filter & basic DoS mitigation.</p>
+                                <a class="proj-link" href="https://github.com/Khoasoma" target="_blank" rel="noopener">repos →</a>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="card fade-in delay-4" id="vibes">
+                    <h2>Chill Vibes</h2>
+                    <p id="vibeLine">Loading...</p>
+                </section>
+
+                <footer class="site-footer fade-in delay-5">
+                    <p>&copy; 2025 Khoasoma · inspired layout, original code.</p>
+                </footer>
+            </main>
+            <script src="assets/profile.js" defer></script>

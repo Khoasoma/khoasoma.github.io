@@ -1,0 +1,40 @@
+/* Additional profile layout inspired by reference, implemented uniquely */
+:root { --fade: 80ms; }
+.bg-noise { position:fixed; inset:0; background:radial-gradient(circle at 25% 20%,#162029,#0c0f12 55%); pointer-events:none; }
+.profile-shell { width:100%; max-width:1180px; margin:0 auto; padding:54px clamp(16px,3vw,48px) 120px; display:flex; flex-direction:column; gap:42px; }
+.hero-grid { display:grid; gap:32px; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); align-items:start; }
+.hero-left { text-align:center; }
+.avatar-wrap { position:relative; width:160px; margin:-120px auto 8px; }
+.avatar-wrap .avatar { width:160px; height:160px; }
+#status-dot { position:absolute; right:10px; bottom:12px; width:20px; height:20px; border-radius:50%; border:3px solid #11161c; box-shadow:0 0 0 2px #12161c,0 0 14px -2px #000; }
+.status.online { background:#43b581; }
+.status.idle { background:#faa61a; }
+.status.dnd { background:#f04747; }
+.status.offline { background:#4a5662; }
+.name { font-size:clamp(1.8rem,4.2vw,2.7rem); margin:.5rem 0 .3rem; }
+.age-badge { background:#1d2730; border:1px solid #2a3541; padding:2px 8px 3px; font-size:.65rem; letter-spacing:.8px; border-radius:6px; vertical-align:middle; }
+.roles { min-height:22px; font-size:.9rem; color:#7e8c9a; letter-spacing:.5px; }
+.countdown { font-size:.75rem; color:#546171; margin:6px 0 14px; }
+.socials { display:flex; gap:14px; justify-content:center; }
+.socials a { width:40px; height:40px; display:grid; place-items:center; background:#182027; border:1px solid #242f39; border-radius:14px; text-decoration:none; font-size:1.1rem; transition:.25s; }
+.socials a:hover { background:#22303b; transform:translateY(-2px); }
+.card h2 { margin:0 0 16px; font-size:1.15rem; letter-spacing:.5px; }
+.icon-rows { display:grid; gap:28px; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); }
+.icon-rows img { max-width:100%; filter:grayscale(.15) contrast(1.05); }
+.proj-grid { display:grid; gap:22px; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); }
+.proj { background:#14191e; border:1px solid #212a33; border-radius:16px; padding:18px 18px 24px; display:flex; flex-direction:column; gap:8px; position:relative; overflow:hidden; }
+.proj:before { content:""; position:absolute; inset:0; background:linear-gradient(130deg,rgba(90,168,255,.07),transparent 55%); pointer-events:none; }
+.proj header { display:flex; align-items:center; gap:10px; }
+.proj h3 { flex:1; font-size:1rem; margin:0; letter-spacing:.5px; }
+.chip { font-size:.55rem; text-transform:uppercase; letter-spacing:1px; background:#1b232b; padding:4px 8px; border-radius:8px; border:1px solid #28323c; }
+.proj p { font-size:.78rem; color:#8895a3; line-height:1.35; margin:0 0 2px; }
+.proj-link { align-self:flex-start; font-size:.7rem; text-decoration:none; color:#5aa8ff; border:1px solid rgba(90,168,255,.4); padding:6px 12px 6px; border-radius:10px; background:rgba(90,168,255,.08); letter-spacing:.7px; transition:.25s; }
+.proj-link:hover { background:rgba(90,168,255,.16); }
+#vibes p { margin:0; font-size:.85rem; color:#96a5b4; }
+.site-footer { text-align:center; font-size:.65rem; color:#596676; margin-top:20px; }
+.fade-in { animation:fadeUp .7s cubic-bezier(.4,.2,.2,1) forwards; opacity:0; transform:translateY(10px); }
+.delay-4 { animation-delay:.45s; }
+.delay-5 { animation-delay:.6s; }
+@keyframes fadeUp { to { opacity:1; transform:none; } }
+@media (max-width:680px){ .avatar-wrap{margin:-90px auto 8px; width:130px;} .avatar-wrap .avatar{width:130px;height:130px;} .hero-grid{gap:24px;} }
+/* Reuse existing .card styles from chill.css for consistency */
