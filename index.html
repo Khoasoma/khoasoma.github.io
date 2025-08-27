@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>Khoasoma</title>
         <meta name="description" content="Khoasoma - dev chill." />
-        <!-- Preload avatar gif (place your kaoruko.gif into assets folder) -->
-        <link rel="preload" as="image" href="assets/kaoruko.gif" />
+        <!-- Preload avatar png -->
+        <link rel="preload" as="image" href="assets/kaoruko-waguri-waguri-kaoruko.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -17,7 +17,7 @@
     <main class="center-wrap">
         <header class="card fade-in">
             <!-- Use local file to avoid Discord expiring query params. Drop the gif in assets/kaoruko.gif -->
-            <img class="avatar" src="assets/kaoruko.gif" alt="Khoasoma avatar" loading="lazy" decoding="async" onerror="this.classList.add('avatar-fallback');" />
+            <img class="avatar" src="assets/kaoruko-waguri-waguri-kaoruko.png" alt="Khoasoma avatar" loading="lazy" decoding="async" onerror="this.classList.add('avatar-fallback');" />
             <h1>Khoasoma</h1>
             <p class="tagline">code • servers • minecraft • chill</p>
             <div class="links">
@@ -50,22 +50,19 @@
         <body>
             <div id="bg"></div>
             <div class="content">
-                <section class="bio">
-                    <div class="bio-avatar">
-                        <img id="avatar" src="assets/kaoruko.gif" alt="avatar" />
+                    <header class="top-head">
+                        <img id="avatar" class="mini-avatar" src="assets/kaoruko.gif" alt="avatar" />
                         <span id="status" class="status offline" title="offline"></span>
-                    </div>
-                    <div class="bio-text">
-                        <h1 class="bio-name">Khoasoma <span id="age" class="age"></span></h1>
-                        <p class="bio-line"><span id="typed"></span><span class="cursor">_</span></p>
-                        <p id="countdown" class="small sub"></p>
-                        <p class="social">
-                            <a href="mailto:khoa@kh0a.site">Email</a>
-                            <a href="https://github.com/Khoasoma" target="_blank" rel="noopener">GitHub</a>
-                            <a href="https://discordapp.com/users/808974657994752050" target="_blank" rel="noopener">Discord</a>
-                        </p>
-                    </div>
-                </section>
+                        <div class="top-text">
+                            <h1 class="site-name">Khoasoma <span id="age" class="age"></span></h1>
+                            <p class="tag"><span id="typed"></span><span class="cursor">_</span></p>
+                            <p class="links-inline">
+                                <a href="mailto:khoa@kh0a.site">Email</a>
+                                <a href="https://github.com/Khoasoma" target="_blank" rel="noopener">GitHub</a>
+                                <a href="https://discordapp.com/users/808974657994752050" target="_blank" rel="noopener">Discord</a>
+                            </p>
+                        </div>
+                    </header>
 
                 <section class="panel">
                     <h2>About</h2>
