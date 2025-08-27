@@ -1,463 +1,58 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khoasoma | Infomation</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Khoasoma - Creative Developer với liquid glass interface tối ưu và hiện đại">
-    <meta name="keywords" content="Khoasoma, Developer, Minecraft, Plugin, Java, Portfolio, Liquid Glass">
-    <meta name="author" content="Khoasoma">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Khoasoma | Portfolio">
-    <meta property="og:description" content="Creative Developer với liquid glass interface">
-    <meta property="og:type" content="website">
-    
-    <!-- Critical CSS Preload -->
-    <link rel="preload" href="./assets/style.css" as="style">
-    <link rel="preload" href="./assets/main.js" as="script">
-    
-    <!-- Optimized Font Loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="./assets/style.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Khoasoma</title>
+    <meta name="description" content="Khoasoma - dev chill." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/chill.css" />
+    <link rel="icon" type="image/png" href="assets/avatar.jpg" />
 </head>
 <body>
-    <!-- Enhanced Liquid Background -->
-    <div class="liquid-bg">
-        <div class="liquid-orb orb-1"></div>
-        <div class="liquid-orb orb-2"></div>
-        <div class="liquid-orb orb-3"></div>
-        <div class="liquid-orb orb-4"></div>
-        <div class="gradient-overlay"></div>
-    </div>
-
-    <!-- Navigation -->
-    <nav id="navbar" class="navbar">
-        <div class="nav-container glass-morphism">
-            <div class="nav-brand">
-                <span class="brand-icon">🌊</span>
-                <span class="brand-text">Khoasoma</span>
+    <main class="center-wrap">
+        <header class="card fade-in">
+            <img class="avatar" src="https://media.discordapp.net/attachments/1245333127660961903/1409386459831734272/kaoruko-waguri-waguri-kaoruko.gif" alt="Khoasoma avatar" loading="lazy" decoding="async" />
+            <h1>Khoasoma</h1>
+            <p class="tagline">code • servers • minecraft • chill</p>
+            <div class="links">
+                <a href="mailto:khoa@kh0a.site" title="Email">Email</a>
+                <a href="https://github.com/Khoasoma" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://discordapp.com/users/808974657994752050" target="_blank" rel="noopener">Discord</a>
             </div>
-            
-            <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link active">
-                        <i class="fas fa-home"></i>
-                        <span>Home</span>
-                    </a>
+        </header>
+
+        <section class="card fade-in delay-1">
+            <h2>About</h2>
+            <p>Dev Việt Nam. Thích tối giản, tối ưu hiệu năng và làm mấy thứ liên quan Minecraft & hạ tầng. Giữ mọi thứ nhẹ, rõ ràng và yên tĩnh.</p>
+        </section>
+
+        <section class="card fade-in delay-2">
+            <h2>Projects</h2>
+            <ul class="project-list">
+                <li>
+                    <strong>XenonFolia</strong>
+                    <span class="meta">server core tối ưu</span>
+                    <a href="https://github.com/Khoasoma/xenonfolia" target="_blank" rel="noopener">repo</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">
-                        <i class="fas fa-user"></i>
-                        <span>About</span>
-                    </a>
+                <li>
+                    <strong>AsakaMC</strong>
+                    <span class="meta">minecraft network</span>
+                    <a href="https://asakamc.vn" target="_blank" rel="noopener">site</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#projects" class="nav-link">
-                        <i class="fas fa-code"></i>
-                        <span>Projects</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">
-                        <i class="fas fa-envelope"></i>
-                        <span>Contact</span>
-                    </a>
+                <li>
+                    <strong>Sentinals Proxy</strong>
+                    <span class="meta">velocity fork security</span>
+                    <a href="https://github.com/Khoasoma" target="_blank" rel="noopener">repos</a>
                 </li>
             </ul>
-            
-            <!-- Theme Toggle -->
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-                <i class="fas fa-moon"></i>
-            </button>
-            
-            <!-- Mobile Menu Toggle -->
-            <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Hero Section -->
-        <section id="home" class="hero-section">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text fade-in-up">
-                        <h1 class="hero-title">
-                            <span class="wave">🌊</span>
-                            <span class="text-gradient shimmer">Khoasoma</span>
-                        </h1>
-                        
-                        <p class="hero-subtitle">
-                            <span id="typing-text">Creative Developer</span>
-                            <span class="cursor">|</span>
-                        </p>
-                        
-                        <p class="hero-description">
-                            Crafting digital experiences with modern technology and liquid-smooth interfaces. 
-                            Specializing in Minecraft plugin development and server optimization.
-                        </p>
-                        
-                        <div class="hero-actions">
-                            <a href="#projects" class="btn btn-primary ripple-effect">
-                                <i class="fas fa-rocket"></i>
-                                View Projects
-                            </a>
-                            <a href="#contact" class="btn btn-outline ripple-effect">
-                                <i class="fas fa-envelope"></i>
-                                Get In Touch
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Enhanced Stats -->
-                    <div class="stats-grid">
-                        <div class="stat-card glass-morphism shimmer-card">
-                            <div class="stat-number" data-target="3">3,719</div>
-                            <div class="stat-label">Years Experience</div>
-                            <div class="stat-glow"></div>
-                        </div>
-                        <div class="stat-card glass-morphism shimmer-card">
-                            <div class="stat-number" data-target="47">19</div>
-                            <div class="stat-label">Projects Completed</div>
-                            <div class="stat-glow"></div>
-                        </div>
-                        <div class="stat-card glass-morphism shimmer-card">
-                            <div class="stat-number" data-target="1247">32</div>
-                            <div class="stat-label">Good Feedback</div>
-                            <div class="stat-glow"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="about-section">
-            <div class="container">
-                <div class="section-header fade-in-up">
-                    <h2 class="section-title shimmer">
-                        <i class="fas fa-user"></i>
-                        About Me
-                    </h2>
-                    <p class="section-subtitle">
-                        Passionate developer creating high-performance solutions
-                    </p>
-                </div>
-                
-                <div class="about-content">
-                    <div class="about-text glass-morphism shimmer-card">
-                        <p>
-                            Hello! I'm Khoasoma, a passionate developer specializing in Minecraft plugin development 
-                            and server optimization. With 3+ years of experience, I create high-performance solutions 
-                            that deliver exceptional user experiences.
-                        </p>
-                        
-                        <p>
-                            My focus is on creating clean, efficient code that not only works well but also 
-                            scales beautifully. I believe in the power of modern technologies to create 
-                            amazing digital experiences.
-                        </p>
-                    </div>
-                    
-                    <div class="skills-grid">
-                        <div class="skill-card glass-morphism shimmer-card">
-                            <div class="skill-icon">
-                                <i class="fab fa-java"></i>
-                            </div>
-                            <h3>Languages</h3>
-                            <div class="skill-list">
-                                <span class="skill-tag glass-tag">Java</span>
-                                <span class="skill-tag glass-tag">Python</span>
-                                <span class="skill-tag glass-tag">NodeJs</span>
-                                <span class="skill-tag glass-tag">Docker</span>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-card glass-morphism shimmer-card">
-                            <div class="skill-icon">
-                                <i class="fas fa-tools"></i>
-                            </div>
-                            <h3>Tools & Frameworks</h3>
-                            <div class="skill-list">
-                                <span class="skill-tag glass-tag">Node.js</span>
-                                <span class="skill-tag glass-tag">Docker</span>
-                                <span class="skill-tag glass-tag">Git</span>
-                                <span class="skill-tag glass-tag">Linux</span>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-card glass-morphism shimmer-card">
-                            <div class="skill-icon">
-                                <i class="fas fa-server"></i>
-                            </div>
-                            <h3>Specializations</h3>
-                            <div class="skill-list">
-                                <span class="skill-tag glass-tag">Minecraft Development</span>
-                                <span class="skill-tag glass-tag">Server Optimization</span>
-                                <span class="skill-tag glass-tag">Performance Tuning</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="projects-section">
-            <div class="container">
-                <div class="section-header fade-in-up">
-                    <h2 class="section-title shimmer">
-                        <i class="fas fa-code"></i>
-                        Featured Projects
-                    </h2>
-                    <p class="section-subtitle">
-                        Liquid-powered digital experiences that make a difference
-                    </p>
-                </div>
-                
-                <div class="projects-grid">
-                    <div class="project-card glass-morphism shimmer-card ripple-container">
-                        <div class="project-header">
-                            <div class="project-icon">🔥</div>
-                            <h3>XenonFolia</h3>
-                        </div>
-                        
-                        <p class="project-description">
-                            High-performance Minecraft server core with revolutionary optimizations. 
-                            Built with modern Java practices for maximum performance and scalability.
-                        </p>
-                        
-                        <div class="project-tags">
-                            <span class="tag tag-blue glass-tag">Java</span>
-                            <span class="tag tag-blue glass-tag">Performance</span>
-                            <span class="tag tag-blue glass-tag">Minecraft</span>
-                        </div>
-                        
-                        <div class="project-actions">
-                            <a href="https://github.com/Khoasoma/xenonfolia" target="_blank" class="project-link ripple-effect">
-                                <i class="fab fa-github"></i>
-                                View on GitHub
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card glass-morphism shimmer-card ripple-container">
-                        <div class="project-header">
-                            <div class="project-icon">🎮</div>
-                            <h3>AsakaMC Network</h3>
-                        </div>
-                        
-                        <p class="project-description">
-                            Premium Minecraft gaming community with modern UX. 
-                            Serving 500+ active players with 99.9% uptime and advanced features.
-                        </p>
-                        
-                        <div class="project-tags">
-                            <span class="tag tag-green glass-tag">Community</span>
-                            <span class="tag tag-green glass-tag">Gaming</span>
-                            <span class="tag tag-green glass-tag">Network</span>
-                        </div>
-                        
-                        <div class="project-actions">
-                            <a href="https://asakamc.vn" target="_blank" class="project-link ripple-effect">
-                                <i class="fas fa-external-link-alt"></i>
-                                Visit Website
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card glass-morphism shimmer-card ripple-container">
-                        <div class="project-header">
-                            <div class="project-icon">🛠️</div>
-                            <h3>Sentinals Proxy</h3>
-                        </div>
-                        
-                        <p class="project-description">
-                            Fork Of Velocity but give you more security and DoS Filtering
-                            for Proxy Tcp And Udp. Indev Project.
-                        </p>
-                        
-                        <div class="project-tags">
-                            <span class="tag tag-yellow glass-tag">Tools</span>
-                            <span class="tag tag-yellow glass-tag">Automation</span>
-                            <span class="tag tag-yellow glass-tag">DevOps</span>
-                        </div>
-                        
-                        <div class="project-actions">
-                            <a href="https://github.com/Khoasoma" target="_blank" class="project-link ripple-effect">
-                                <i class="fab fa-github"></i>
-                                View Repository
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="projects-cta">
-                    <a href="https://github.com/Khoasoma" target="_blank" class="btn btn-outline ripple-effect">
-                        <i class="fab fa-github"></i>
-                        View All Projects
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <div class="section-header fade-in-up">
-                    <h2 class="section-title shimmer">
-                        <i class="fas fa-envelope"></i>
-                        Get In Touch
-                    </h2>
-                    <p class="section-subtitle">
-                        Let's create something amazing together
-                    </p>
-                </div>
-                
-                <div class="contact-content">
-                    <!-- Contact Form -->
-                    <div class="contact-form-wrapper">
-                        <form id="contact-form" class="contact-form glass-morphism shimmer-card">
-                            <h3>📝 Send Message</h3>
-                            
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" class="glass-input" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" class="glass-input" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <input type="text" id="subject" name="subject" class="glass-input">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="5" class="glass-input" required></textarea>
-                            </div>
-                            
-                            <button type="submit" class="btn btn-primary ripple-effect">
-                                <i class="fas fa-paper-plane"></i>
-                                Send Message
-                            </button>
-                        </form>
-                    </div>
-                    
-                    <!-- Contact Info -->
-                    <div class="contact-info">
-                        <div class="contact-card glass-morphism shimmer-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <h4>Email</h4>
-                            <a href="mailto:khoa@kh0a.site">khoa@kh0a.site</a>
-                            <p>Best for detailed discussions</p>
-                        </div>
-                        
-                        <div class="contact-card glass-morphism shimmer-card">
-                            <div class="contact-icon">
-                                <i class="fab fa-discord"></i>
-                            </div>
-                            <h4>Discord</h4>
-                            <a href="https://discordapp.com/users/808974657994752050" target="_blank">
-                                Khoasoma
-                            </a>
-                            <p>Quick chat & collaboration</p>
-                        </div>
-                        
-                        <div class="contact-card glass-morphism shimmer-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <h4>Timezone</h4>
-                            <span>UTC+7 (Vietnam)</span>
-                            <p>Usually available 9AM - 11PM</p>
-                        </div>
-                        
-                        <div class="status-card glass-morphism">
-                            <div class="status-indicator"></div>
-                            <span>Available for new projects</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <footer class="fade-in delay-3 small">
+            <p>&copy; 2025 Khoasoma · stay chill</p>
+        </footer>
     </main>
-
-    <!-- Footer -->
-    <footer class="footer glass-morphism">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h4>🌊 Khoasoma</h4>
-                    <p>Crafting digital experiences with passion and modern technology.</p>
-                </div>
-                
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h5>Navigation</h5>
-                        <ul>
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#projects">Projects</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h5>Projects</h5>
-                        <ul>
-                            <li><a href="https://github.com/Khoasoma/xenonfolia" target="_blank">XenonFolia</a></li>
-                            <li><a href="https://asakamc.vn" target="_blank">AsakaMC</a></li>
-                            <li><a href="https://github.com/Khoasoma" target="_blank">All Projects</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h5>Connect</h5>
-                        <ul>
-                            <li><a href="mailto:khoa@kh0a.site">Email</a></li>
-                            <li><a href="https://github.com/Khoasoma" target="_blank">GitHub</a></li>
-                            <li><a href="https://discordapp.com/users/808974657994752050" target="_blank">Discord</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Khoasoma. All rights reserved.</p>
-                <p>Made with ❤️ and technology</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scroll to Top Button -->
-    <button id="scroll-top" class="scroll-top glass-morphism" aria-label="Scroll to top">
-        <i class="fas fa-chevron-up"></i>
-    </button>
-
-    <!-- Scripts -->
-    <script src="./assets/main.js"></script>
 </body>
 </html>
