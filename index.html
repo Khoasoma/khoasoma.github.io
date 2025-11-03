@@ -1,58 +1,377 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Khoasoma - Developer & Backend Specialist | Docker Expert">
+    <meta name="keywords" content="khoasoma, developer, docker, java, javascript, backend, devops">
+    <meta name="author" content="Khoasoma">
+    <meta property="og:title" content="Khoasoma - Developer Portfolio">
+    <meta property="og:description" content="Backend Developer specializing in Docker, Java & Microservices">
+    <meta property="og:type" content="website">
+    <title>Khoasoma - Developer Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./assets/avatar.jpg" type="image/jpeg">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">&lt;Khoasoma/&gt;</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
     </nav>
-    <section id="hero">
-        <h1>Welcome to My Portfolio</h1>
-        <p>A showcase of my work and skills.</p>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <p class="hero-greeting">Xin chào, tớ là</p>
+                <h1 class="hero-name">Khoasoma</h1>
+                <h2 class="hero-title">
+                    <span class="typing-text"></span>
+                </h2>
+                <p class="hero-description">
+                    Backend Developer chuyên về Docker, Java & Microservices Architecture
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">Xem Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Liên hệ</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/Khoasoma" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://discordapp.com/users/808974657994752050" target="_blank" class="social-icon">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a href="mailto:khoa@kh0a.site" class="social-icon">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-container">
+                    <img src="assets/kaoruko-waguri-waguri-kaoruko.png" alt="Khoasoma Avatar">
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        Available for work
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a passionate developer with a love for creating modern web applications.</p>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Về tớ</h2>
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <p class="about-paragraph">
+                        <span class="highlight">Hello!</span> Tớ là <strong>Khoasoma</strong>, một developer 14 tuổi đam mê công nghệ.
+                        Tớ chuyên về backend development với focus vào Docker containerization và Java microservices.
+                    </p>
+                    <p class="about-paragraph">
+                        Với hơn <strong>467 triệu milliseconds</strong> trên đời này (sinh ngày 03/02/2011), 
+                        tớ đã dành phần lớn thời gian để học và phát triển kỹ năng lập trình.
+                    </p>
+                    <p class="about-paragraph">
+                        Tớ tin rằng code tốt không chỉ hoạt động được, mà còn phải dễ đọc, dễ maintain và có khả năng scale.
+                        Mục tiêu của tớ là tạo ra những giải pháp hiệu quả và bền vững.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h3 class="stat-number">14</h3>
+                            <p class="stat-label">Tuổi</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="stat-number">10+</h3>
+                            <p class="stat-label">Projects</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="stat-number">5</h3>
+                            <p class="stat-label">Technologies</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image" data-aos="fade-left">
+                    <div class="code-window">
+                        <div class="window-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <pre class="code-content"><code class="language-java">public class Developer {
+    private String name = "Khoasoma";
+    private int age = 14;
+    private String[] skills = {
+        "Docker (79%)",
+        "Java (72%)",
+        "JavaScript (51%)",
+        "C++ (45%)",
+        "PHP (41%)"
+    };
+    
+    public void code() {
+        while (alive) {
+            learn();
+            build();
+            optimize();
+        }
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>Docker: 79%</li>
-            <li>Java: 72%</li>
-            <li>JavaScript: 51%</li>
-            <li>C++: 45%</li>
-            <li>PHP: 41%</li>
-        </ul>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Kỹ năng & Công nghệ</h2>
+            <div class="skills-container">
+                <div class="skill-category" data-aos="fade-up">
+                    <h3 class="category-title">
+                        <i class="fas fa-code"></i> Programming Languages
+                    </h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Docker</span>
+                                <span class="skill-percent">79%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-percent="79" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Java</span>
+                                <span class="skill-percent">72%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-percent="72" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-percent">51%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-percent="51" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">C++</span>
+                                <span class="skill-percent">45%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-percent="45" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">PHP</span>
+                                <span class="skill-percent">41%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-percent="41" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-icons" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="category-title">
+                        <i class="fas fa-tools"></i> Technologies & Tools
+                    </h3>
+                    <div class="icon-grid">
+                        <div class="tech-item" data-tooltip="Docker">
+                            <i class="fab fa-docker"></i>
+                        </div>
+                        <div class="tech-item" data-tooltip="Java">
+                            <i class="fab fa-java"></i>
+                        </div>
+                        <div class="tech-item" data-tooltip="JavaScript">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <div class="tech-item" data-tooltip="Node.js">
+                            <i class="fab fa-node"></i>
+                        </div>
+                        <div class="tech-item" data-tooltip="React">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <div class="tech-item" data-tooltip="Git">
+                            <i class="fab fa-git-alt"></i>
+                        </div>
+                        <div class="tech-item" data-tooltip="Linux">
+                            <i class="fab fa-linux"></i>
+                        </div>
+                        <div class="tech-item" data-tooltip="Database">
+                            <i class="fas fa-database"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <section id="projects">
-        <h2>Projects</h2>
-        <ul>
-            <li>XenonFolia</li>
-            <li>AsakaMC Network</li>
-            <li>Sentinals Proxy</li>
-        </ul>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Dự án nổi bật</h2>
+            <div class="projects-grid">
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-header">
+                        <i class="fas fa-cube project-icon"></i>
+                        <div class="project-links">
+                            <a href="https://github.com/Khoasoma/xenonfolia" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">XenonFolia</h3>
+                    <p class="project-description">
+                        High-performance Minecraft server core với các tối ưu hóa cách mạng và modern Java practices.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Performance</span>
+                        <span class="tech-tag">Minecraft</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-header">
+                        <i class="fas fa-server project-icon"></i>
+                        <div class="project-links">
+                            <a href="https://asakamc.vn" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">AsakaMC Network</h3>
+                    <p class="project-description">
+                        Premium Minecraft gaming community phục vụ 500+ active players với 99.9% uptime.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Infrastructure</span>
+                        <span class="tech-tag">DevOps</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-header">
+                        <i class="fas fa-shield-alt project-icon"></i>
+                        <div class="project-links">
+                            <a href="https://github.com/Khoasoma" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Sentinals Proxy</h3>
+                    <p class="project-description">
+                        Velocity fork với enhanced security và DoS filtering cho proxy TCP và UDP traffic.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Security</span>
+                        <span class="tech-tag">Proxy</span>
+                        <span class="tech-tag">Java</span>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more" data-aos="fade-up">
+                <a href="https://github.com/Khoasoma?tab=repositories" target="_blank" class="btn btn-outline">
+                    Xem tất cả projects <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
     </section>
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Feel free to reach out via:</p>
-        <ul>
-            <li>Discord: your_discord_username</li>
-            <li>Facebook: your_facebook_profile</li>
-            <li>Email: your_email@example.com</li>
-        </ul>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Liên hệ với tớ</h2>
+            <p class="contact-description" data-aos="fade-up">
+                Bạn có dự án thú vị hoặc muốn hợp tác? Hãy liên hệ với tớ!
+            </p>
+            <div class="contact-content">
+                <div class="contact-cards">
+                    <div class="contact-card" data-aos="fade-up">
+                        <i class="fas fa-envelope card-icon"></i>
+                        <h3>Email</h3>
+                        <p>khoa@kh0a.site</p>
+                        <a href="mailto:khoa@kh0a.site" class="contact-link">Gửi email</a>
+                    </div>
+                    <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fab fa-discord card-icon"></i>
+                        <h3>Discord</h3>
+                        <p>khoasoma</p>
+                        <a href="https://discordapp.com/users/808974657994752050" target="_blank" class="contact-link">Nhắn tin</a>
+                    </div>
+                    <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fab fa-github card-icon"></i>
+                        <h3>GitHub</h3>
+                        <p>@Khoasoma</p>
+                        <a href="https://github.com/Khoasoma" target="_blank" class="contact-link">Xem profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <footer>
-        <p>&copy; 2023 Your Name. All rights reserved.</p>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">
+                    Designed & Built by <strong>Khoasoma</strong>
+                </p>
+                <p class="footer-copyright">
+                    © 2025 Khoasoma. All rights reserved.
+                </p>
+                <div class="footer-social">
+                    <a href="https://github.com/Khoasoma" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://discordapp.com/users/808974657994752050" target="_blank"><i class="fab fa-discord"></i></a>
+                    <a href="mailto:khoa@kh0a.site"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
