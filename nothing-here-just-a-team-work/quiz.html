@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 12: Career Choice Quiz</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Màu chủ đạo tím xanh tạo cảm giác hiện đại, chuyên nghiệp (Career) */
+            --primary: #4834d4; 
+            --secondary: #686de0;
+            --success: #6ab04c;
+            --danger: #eb4d4b;
+            --text: #130f40;
+            --bg-card: #ffffff;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .quiz-card {
+            background: var(--bg-card);
+            width: 90%;
+            max-width: 850px; /* Rộng hơn để chứa câu hỏi tiếng Anh dài */
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 10px 0 #c7ecee, 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            border: 4px solid #30336b;
+        }
+
+        .header-deco {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-weight: 900;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px dashed #dff9fb;
+            padding-bottom: 10px;
+        }
+
+        h2#question {
+            color: var(--text);
+            margin: 20px 0 30px;
+            font-weight: 800;
+            font-size: 1.8rem; /* Chữ to rõ */
+            line-height: 1.4;
+        }
+
+        .btn-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .btn {
+            background-color: #f7f1e3;
+            border: 3px solid #30336b;
+            border-radius: 15px;
+            padding: 20px;
+            font-size: 1.2rem;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            color: var(--text);
+            cursor: pointer;
+            position: relative;
+            transition: all 0.1s;
+            box-shadow: 0 5px 0 #30336b;
+            top: 0;
+        }
+
+        .btn:hover:not([disabled]) {
+            background-color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 7px 0 #30336b;
+        }
+
+        .btn:active:not([disabled]) {
+            transform: translateY(5px);
+            box-shadow: 0 0 0 #30336b;
+        }
+
+        .btn.correct {
+            background-color: var(--success) !important;
+            color: #fff !important;
+            border-color: #273c75 !important;
+            box-shadow: 0 5px 0 #1e3799 !important;
+        }
+
+        .btn.wrong {
+            background-color: var(--danger) !important;
+            color: #fff !important;
+            border-color: #273c75 !important;
+            box-shadow: 0 5px 0 #b33939 !important;
+            opacity: 0.6;
+            animation: shake 0.4s;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            50% { transform: translateX(10px); }
+            75% { transform: translateX(-10px); }
+            100% { transform: translateX(0); }
+        }
+
+        .btn:disabled { cursor: no-drop; }
+
+        #next-btn, #restart-btn {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 40px;
+            border: 3px solid #30336b;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 900;
+            cursor: pointer;
+            display: none;
+            margin: 30px auto 0;
+            box-shadow: 0 5px 0 #130f40;
+            transition: all 0.1s;
+        }
+
+        #next-btn:active { transform: translateY(5px); box-shadow: 0 0 0 #130f40; }
+
+        #feedback-msg {
+            min-height: 35px;
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin-top: 15px;
+        }
+        
+        @media (max-width: 600px) {
+            .btn-grid { grid-template-columns: 1fr; }
+            h2#question { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="quiz-card">
+        <div class="header-deco">
+            <span>UNIT 12: CAREER CHOICE</span>
+            <span id="question-counter">1 / 5</span>
+        </div>
+
+        <h2 id="question">Loading...</h2>
+        
+        <div id="answer-buttons" class="btn-grid"></div>
+        
+        <div id="feedback-msg"></div>
+        
+        <button id="next-btn" onclick="nextQuestion()">NEXT QUESTION ▶</button>
+        <button id="restart-btn" onclick="startQuiz()">PLAY AGAIN ↻</button>
+    </div>
+
+    <script>
+        /* --- DỮ LIỆU CÂU HỎI THEO SGK UNIT 12 --- */
+        const questions = [
+            {
+                question: "A person whose job is to design buildings is called an ______.",
+                answers: [
+                    { text: "Engineer", correct: false },
+                    { text: "Architect", correct: true }, // Kiến trúc sư
+                    { text: "Mechanic", correct: false },
+                    { text: "Electrician", correct: false }
+                ]
+            },
+            {
+                question: "Education that prepares people for specific jobs like a mechanic or electrician is ______.",
+                answers: [
+                    { text: "Higher education", correct: false },
+                    { text: "Academic study", correct: false },
+                    { text: "Vocational training", correct: true }, // Đào tạo nghề
+                    { text: "Primary school", correct: false }
+                ]
+            },
+            {
+                question: "If you want to become a doctor, you should be good at ______.",
+                answers: [
+                    { text: "Biology and Chemistry", correct: true },
+                    { text: "Literature and History", correct: false },
+                    { text: "Music and Art", correct: false },
+                    { text: "Geography and Physics", correct: false }
+                ]
+            },
+            {
+                question: "Choose the correct phrase: 'My brother wants to _____ a mechanic.'",
+                answers: [
+                    { text: "work as", correct: true },
+                    { text: "work like", correct: false },
+                    { text: "make as", correct: false },
+                    { text: "do as", correct: false }
+                ]
+            },
+            {
+                question: "Which quality is very important for a craftsman?",
+                answers: [
+                    { text: "Impatient", correct: false },
+                    { text: "Careless", correct: false },
+                    { text: "Skilful", correct: true }, // Khéo léo
+                    { text: "Talkative", correct: false }
+                ]
+            }
+        ];
+
+        /* --- LOGIC XỬ LÝ (Không thay đổi) --- */
+        const questionElement = document.getElementById("question");
+        const answerButtons = document.getElementById("answer-buttons");
+        const nextButton = document.getElementById("next-btn");
+        const restartButton = document.getElementById("restart-btn");
+        const feedbackMsg = document.getElementById("feedback-msg");
+        const counterElement = document.getElementById("question-counter");
+
+        let currentQuestionIndex = 0;
+
+        function startQuiz() {
+            currentQuestionIndex = 0;
+            nextButton.style.display = "none";
+            restartButton.style.display = "none";
+            showQuestion();
+        }
+
+        function showQuestion() {
+            resetState();
+            let currentQuestion = questions[currentQuestionIndex];
+            
+            counterElement.innerText = `QUESTION ${currentQuestionIndex + 1} / ${questions.length}`;
+            questionElement.innerText = currentQuestion.question;
+
+            currentQuestion.answers.forEach(answer => {
+                const button = document.createElement("button");
+                button.innerText = answer.text;
+                button.classList.add("btn");
+                button.dataset.correct = answer.correct;
+                button.addEventListener("click", selectAnswer);
+                answerButtons.appendChild(button);
+            });
+        }
+
+        function resetState() {
+            nextButton.style.display = "none";
+            feedbackMsg.innerText = "";
+            while (answerButtons.firstChild) {
+                answerButtons.removeChild(answerButtons.firstChild);
+            }
+        }
+
+        function selectAnswer(e) {
+            const selectedBtn = e.target;
+            const isCorrect = selectedBtn.dataset.correct === "true";
+            
+            if (isCorrect) {
+                selectedBtn.classList.add("correct");
+                feedbackMsg.innerHTML = "<span style='color: var(--success)'>Correct! Well done! 🎉</span>";
+                shootConfetti();
+                
+                // Khóa tất cả
+                Array.from(answerButtons.children).forEach(button => {
+                    button.disabled = true;
+                });
+
+                if(questions.length > currentQuestionIndex + 1) {
+                    nextButton.style.display = "block";
+                } else {
+                    feedbackMsg.innerHTML = "<br>✨ CONGRATULATIONS! ✨";
+                    restartButton.style.display = "block";
+                    shootConfetti();
+                }
+
+            } else {
+                selectedBtn.classList.add("wrong");
+                feedbackMsg.innerHTML = "<span style='color: var(--danger)'>Oops! Try again! 😅</span>";
+                selectedBtn.disabled = true; 
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            }
+        }
+
+        function shootConfetti() {
+            var count = 200;
+            var defaults = { origin: { y: 0.7 } };
+            function fire(particleRatio, opts) {
+                confetti(Object.assign({}, defaults, opts, {
+                    particleCount: Math.floor(count * particleRatio)
+                }));
+            }
+            fire(0.25, { spread: 26, startVelocity: 55, });
+            fire(0.2, { spread: 60, });
+            fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+            fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+            fire(0.1, { spread: 120, startVelocity: 45, });
+        }
+
+        startQuiz();
+    </script>
+</body>
+</html>
