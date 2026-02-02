@@ -55,3 +55,48 @@ const navObserver = new IntersectionObserver((entries) => {
 sections.forEach(section => {
     navObserver.observe(section);
 });
+
+// Feedback Loading & Marquee Logic
+document.addEventListener('DOMContentLoaded', async () => {
+    const feedbackMarquee = document.getElementById('feedback-marquee');
+    if (!feedbackMarquee) return;
+
+    try {
+        const response = await fetch('./assets/feedback.json');
+        if (!response.ok) throw new Error('Failed to load feedback');
+
+        const feedbackData = await response.json();
+
+        // Function to create a feedback card
+        const createCard = (data) => {
+            const date = new Date(data.date).toLocaleDateString();
+            return `
+                <div class="feedback-card">
+                    <div class="feedback-header">
+                        <img src="${data.avatar}" alt="${data.author}" class="feedback-avatar" onerror="this.src='https://ui-avatars.com/api/?name=${data.author}&background=random'">
+                        <span class="feedback-author">${data.author}</span>
+                        <span class="feedback-date">${date}</span>
+                    </div>
+                    <div class="feedback-content" title="${data.content}">
+                        "${data.content}"
+                    </div>
+                </div>
+            `;
+        };
+
+        // Generate cards
+        const cardsHTML = feedbackData.map(item => createCard(item)).join('');
+
+        // Inject original cards
+        feedbackMarquee.innerHTML = cardsHTML;
+
+        // Duplicate for seamless infinite scroll
+        // We need enough duplicates to fill the screen width + buffer
+        // For simplicity, we'll just duplicate the entire set once or twice
+        feedbackMarquee.innerHTML += cardsHTML + cardsHTML;
+
+    } catch (error) {
+        console.error('Error loading feedback:', error);
+        feedbackMarquee.innerHTML = '<p style="color: var(--text-secondary); padding: 1rem;">Unable to load feedback at this time.</p>';
+    }
+});
