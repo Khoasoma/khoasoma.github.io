@@ -1,3 +1,24 @@
+// Auto Language Detection
+(function() {
+    const currentPage = window.location.pathname;
+    const isEnglishPage = currentPage.includes('index_en');
+    const hasVisited = localStorage.getItem('lang_selected');
+    
+    // Only auto-redirect on first visit
+    if (!hasVisited) {
+        const browserLang = navigator.language || navigator.userLanguage;
+        const isVietnamese = browserLang.toLowerCase().startsWith('vi');
+        
+        // If browser is not Vietnamese and we're on Vietnamese page, redirect to English
+        if (!isVietnamese && !isEnglishPage && !currentPage.includes('index_en')) {
+            localStorage.setItem('lang_selected', 'en');
+            window.location.href = './index_en.html' + window.location.hash;
+        } else {
+            localStorage.setItem('lang_selected', isVietnamese ? 'vi' : 'en');
+        }
+    }
+})();
+
 // Animation Observer
 const observerOptions = {
     threshold: 0.15,
