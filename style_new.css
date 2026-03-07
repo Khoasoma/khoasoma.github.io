@@ -16,10 +16,10 @@
     --text-secondary: #a0a0b0;
     --text-muted: #6b6b7b;
     
-    --accent: #6366f1;
-    --accent-light: #818cf8;
-    --accent-dark: #4f46e5;
-    --gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+    --accent: #3b82f6;
+    --accent-light: #60a5fa;
+    --accent-dark: #2563eb;
+    --gradient: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 50%, #06b6d4 100%);
     
     --border: rgba(255, 255, 255, 0.08);
     --border-hover: rgba(255, 255, 255, 0.15);
@@ -872,7 +872,7 @@ section {
 
 /* ===== PARTNERS ===== */
 .partners {
-    padding: 80px 0;
+    padding: 100px 0;
     background: var(--bg-secondary);
     border-top: 1px solid var(--border);
 }
@@ -883,7 +883,7 @@ section {
 }
 
 .partners-label {
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--text-muted);
     letter-spacing: 2px;
@@ -909,7 +909,7 @@ section {
 }
 
 .partner-item img {
-    height: 40px;
+    height: 60px;
     width: auto;
     object-fit: contain;
 }
@@ -921,7 +921,7 @@ section {
 }
 
 .partner-item.viettel .viettel-text {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--text-primary);
     text-transform: lowercase;
