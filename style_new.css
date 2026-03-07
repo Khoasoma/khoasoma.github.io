@@ -909,9 +909,17 @@ section {
 }
 
 .partner-item img {
-    height: 80px;
+    height: 60px;
     width: auto;
     object-fit: contain;
+}
+
+.partner-item.nvidia img {
+    height: 100px;
+}
+
+.partner-item.viettel img {
+    height: 100px;
 }
 
 .partner-item.viettel .viettel-logo {
