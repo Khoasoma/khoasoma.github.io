@@ -110,9 +110,15 @@ sections.forEach(section => {
     navObserver.observe(section);
 });
 
-// Feedback Loading & Marquee Logic
+// Feedback Loading & Interactive Carousel
 document.addEventListener('DOMContentLoaded', async () => {
     const feedbackMarquee = document.getElementById('feedback-marquee');
+    const feedbackContainer = document.getElementById('feedback-container');
+    const pauseBtn = document.getElementById('feedback-pause');
+    const dotsContainer = document.getElementById('feedback-dots');
+    const prevBtn = document.querySelector('.feedback-prev');
+    const nextBtn = document.querySelector('.feedback-next');
+    
     if (!feedbackMarquee) return;
 
     // Fallback data for local file testing
@@ -133,7 +139,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         const response = await fetch('./assets/feedback.json');
         if (response.ok) {
             const rawData = await response.json();
-            // Filter out empty/useless feedback
             feedbackData = rawData.filter(item => 
                 item.content && 
                 item.content.trim().length > 10 && 
@@ -145,10 +150,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     // Function to create a feedback card
-    const createCard = (data) => {
+    const createCard = (data, index) => {
         const date = new Date(data.date).toLocaleDateString();
         return `
-            <div class="feedback-card">
+            <div class="feedback-card" data-index="${index}">
                 <div class="feedback-header">
                     <img src="${data.avatar}" alt="${data.author}" class="feedback-avatar" onerror="this.src='https://ui-avatars.com/api/?name=${data.author}&background=random'">
                     <span class="feedback-author">${data.author}</span>
@@ -162,11 +167,290 @@ document.addEventListener('DOMContentLoaded', async () => {
     };
 
     // Generate cards
-    const cardsHTML = feedbackData.map(item => createCard(item)).join('');
-
-    // Inject original cards
+    const cardsHTML = feedbackData.map((item, i) => createCard(item, i)).join('');
     feedbackMarquee.innerHTML = cardsHTML;
-
     // Duplicate for seamless infinite scroll
     feedbackMarquee.innerHTML += cardsHTML + cardsHTML;
+
+    // Create dot indicators
+    if (dotsContainer) {
+        const dotsHTML = feedbackData.map((_, i) => 
+            `<div class="feedback-dot${i === 0 ? ' active' : ''}" data-index="${i}"></div>`
+        ).join('');
+        dotsContainer.innerHTML = dotsHTML;
+    }
+
+    // State
+    let isPaused = false;
+    let currentIndex = 0;
+    const cardWidth = 350 + 24; // card width + gap
+    const totalCards = feedbackData.length;
+
+    // Drag state
+    let isDragging = false;
+    let startX = 0;
+    let scrollLeft = 0;
+    let currentTranslate = 0;
+
+    // Pause/Play functionality
+    function togglePause() {
+        isPaused = !isPaused;
+        feedbackContainer.classList.toggle('paused', isPaused);
+        
+        if (pauseBtn) {
+            const icon = pauseBtn.querySelector('i');
+            const text = pauseBtn.querySelector('span');
+            if (isPaused) {
+                pauseBtn.classList.add('paused');
+                pauseBtn.classList.remove('playing');
+                icon.className = 'fas fa-play';
+                text.textContent = document.documentElement.lang === 'vi' ? 'Tiếp tục' : 'Play';
+            } else {
+                pauseBtn.classList.remove('paused');
+                pauseBtn.classList.add('playing');
+                icon.className = 'fas fa-pause';
+                text.textContent = document.documentElement.lang === 'vi' ? 'Tạm dừng' : 'Pause';
+            }
+        }
+    }
+
+    // Navigate to specific card
+    function goToCard(index) {
+        currentIndex = index;
+        const offset = -index * cardWidth;
+        feedbackMarquee.style.animation = 'none';
+        feedbackMarquee.style.transform = `translateX(${offset}px)`;
+        
+        // Update dots
+        document.querySelectorAll('.feedback-dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+
+        // Pause auto-scroll when manually navigating
+        if (!isPaused) {
+            togglePause();
+        }
+    }
+
+    // Navigate prev/next
+    function navigatePrev() {
+        const newIndex = (currentIndex - 1 + totalCards) % totalCards;
+        goToCard(newIndex);
+    }
+
+    function navigateNext() {
+        const newIndex = (currentIndex + 1) % totalCards;
+        goToCard(newIndex);
+    }
+
+    // Event Listeners
+    if (pauseBtn) {
+        pauseBtn.addEventListener('click', togglePause);
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', navigatePrev);
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', navigateNext);
+    }
+
+    // Dot navigation
+    document.querySelectorAll('.feedback-dot').forEach(dot => {
+        dot.addEventListener('click', () => {
+            const index = parseInt(dot.dataset.index);
+            goToCard(index);
+        });
+    });
+
+    // Drag to scroll
+    if (feedbackContainer) {
+        feedbackContainer.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            feedbackMarquee.classList.add('dragging');
+            startX = e.pageX - feedbackContainer.offsetLeft;
+            
+            // Get current transform
+            const style = window.getComputedStyle(feedbackMarquee);
+            const matrix = new DOMMatrix(style.transform);
+            currentTranslate = matrix.m41;
+        });
+
+        feedbackContainer.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - feedbackContainer.offsetLeft;
+            const walk = (x - startX) * 1.5;
+            feedbackMarquee.style.animation = 'none';
+            feedbackMarquee.style.transform = `translateX(${currentTranslate + walk}px)`;
+        });
+
+        feedbackContainer.addEventListener('mouseup', () => {
+            isDragging = false;
+            feedbackMarquee.classList.remove('dragging');
+            
+            // Snap to nearest card
+            const style = window.getComputedStyle(feedbackMarquee);
+            const matrix = new DOMMatrix(style.transform);
+            const currentPos = matrix.m41;
+            const nearestIndex = Math.round(-currentPos / cardWidth);
+            const clampedIndex = Math.max(0, Math.min(nearestIndex, totalCards - 1));
+            goToCard(clampedIndex);
+        });
+
+        feedbackContainer.addEventListener('mouseleave', () => {
+            if (isDragging) {
+                isDragging = false;
+                feedbackMarquee.classList.remove('dragging');
+            }
+        });
+
+        // Touch events for mobile
+        feedbackContainer.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            feedbackMarquee.classList.add('dragging');
+            startX = e.touches[0].pageX - feedbackContainer.offsetLeft;
+            
+            const style = window.getComputedStyle(feedbackMarquee);
+            const matrix = new DOMMatrix(style.transform);
+            currentTranslate = matrix.m41;
+        }, { passive: true });
+
+        feedbackContainer.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            const x = e.touches[0].pageX - feedbackContainer.offsetLeft;
+            const walk = (x - startX) * 1.5;
+            feedbackMarquee.style.animation = 'none';
+            feedbackMarquee.style.transform = `translateX(${currentTranslate + walk}px)`;
+        }, { passive: true });
+
+        feedbackContainer.addEventListener('touchend', () => {
+            isDragging = false;
+            feedbackMarquee.classList.remove('dragging');
+            
+            const style = window.getComputedStyle(feedbackMarquee);
+            const matrix = new DOMMatrix(style.transform);
+            const currentPos = matrix.m41;
+            const nearestIndex = Math.round(-currentPos / cardWidth);
+            const clampedIndex = Math.max(0, Math.min(nearestIndex, totalCards - 1));
+            goToCard(clampedIndex);
+        });
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        const feedbackSection = document.getElementById('feedback');
+        const rect = feedbackSection?.getBoundingClientRect();
+        if (rect && rect.top < window.innerHeight && rect.bottom > 0) {
+            if (e.key === 'ArrowLeft') navigatePrev();
+            if (e.key === 'ArrowRight') navigateNext();
+            if (e.key === ' ') {
+                e.preventDefault();
+                togglePause();
+            }
+        }
+    });
 });
+
+/* ===== SMOOTH MOTION BLUR (lerp-based) ===== */
+(function() {
+    const mainEl = document.querySelector('.main-container');
+    const bgImage = document.querySelector('.bg-image');
+
+    // Remove all CSS transitions from mainEl so JS drives it entirely
+    if (mainEl) mainEl.style.transition = 'none';
+
+    let lastScrollY    = window.scrollY;
+    let currentBlur    = 0;   // rendered blur
+    let targetBlur     = 0;   // desired blur
+    let currentParallax = 0;  // rendered parallax offset
+    let targetParallax  = 0;  // desired parallax offset
+    let rafId;
+
+    const BLUR_LERP      = 0.10;  // how fast blur eases back to 0 (lower = smoother)
+    const PARALLAX_LERP  = 0.06;  // bg parallax eases slowest for cinematic feel
+    const MAX_BLUR       = 4;     // max px of blur
+    const VEL_SCALE      = 0.20;  // how much velocity maps to blur px
+
+    function lerp(a, b, t) {
+        return a + (b - a) * t;
+    }
+
+    function onScroll() {
+        const scrollY    = window.scrollY;
+        const velocity   = Math.abs(scrollY - lastScrollY);
+        lastScrollY      = scrollY;
+
+        // Target blur spikes with velocity, target parallax follows scroll position
+        targetBlur     = Math.min(velocity * VEL_SCALE, MAX_BLUR);
+        targetParallax = scrollY * 0.10;
+    }
+
+    function tick() {
+        // Smoothly interpolate both values
+        currentBlur     = lerp(currentBlur,     targetBlur,     BLUR_LERP);
+        currentParallax = lerp(currentParallax, targetParallax, PARALLAX_LERP);
+
+        // Target blur decays to 0 every frame (velocity is a spike, not sustained)
+        targetBlur = lerp(targetBlur, 0, 0.18);
+
+        // Apply blur to content
+        if (mainEl) {
+            const b = currentBlur.toFixed(3);
+            mainEl.style.filter    = currentBlur > 0.04 ? `blur(${b}px)` : '';
+        }
+
+        // Apply parallax to background
+        if (bgImage) {
+            const p = currentParallax.toFixed(2);
+            bgImage.style.transform = `scale(1.05) translateY(${p}px)`;
+        }
+
+        rafId = requestAnimationFrame(tick);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Start the loop
+    rafId = requestAnimationFrame(tick);
+})();
+
+/* ===== SMOOTH SCROLL WITH SPRING EASING ===== */
+(function() {
+    // Intercept anchor clicks for buttery smooth section transitions
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            const target = document.querySelector(targetId);
+            if (!target) return;
+
+            e.preventDefault();
+
+            const startY = window.scrollY;
+            const targetY = target.getBoundingClientRect().top + window.scrollY - 70;
+            const distance = targetY - startY;
+            const duration = Math.min(Math.max(Math.abs(distance) * 0.5, 500), 1200);
+            let startTime = null;
+
+            // Spring easing function
+            function easeInOutQuart(t) {
+                return t < 0.5
+                    ? 8 * t * t * t * t
+                    : 1 - Math.pow(-2 * t + 2, 4) / 2;
+            }
+
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const elapsed = timestamp - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = easeInOutQuart(progress);
+                window.scrollTo(0, startY + distance * eased);
+                if (progress < 1) requestAnimationFrame(step);
+            }
+
+            requestAnimationFrame(step);
+        });
+    });
+})();

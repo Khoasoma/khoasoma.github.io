@@ -409,10 +409,25 @@
                     <span class="section-number">06</span>
                     <h2 class="section-heading">Feedback</h2>
                 </div>
-                <div class="feedback-container fade-up delay-1">
-                    <div class="feedback-marquee" id="feedback-marquee">
-                        <!-- Feedback items will be injected here by JS -->
+                <div class="feedback-wrapper fade-up delay-1">
+                    <button class="feedback-nav feedback-prev" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="feedback-container" id="feedback-container">
+                        <div class="feedback-marquee" id="feedback-marquee">
+                            <!-- Feedback items will be injected here by JS -->
+                        </div>
                     </div>
+                    <button class="feedback-nav feedback-next" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="feedback-controls fade-up delay-2">
+                    <button class="feedback-pause-btn" id="feedback-pause" aria-label="Pause/Play">
+                        <i class="fas fa-pause"></i>
+                        <span>Pause</span>
+                    </button>
+                    <div class="feedback-dots" id="feedback-dots"></div>
                 </div>
             </div>
         </section>
@@ -513,6 +528,7 @@
 
     </main>
 
+    <script src="./assets/scroll-animated.js"></script>
     <script src="./script.js"></script>
 </body>
 
