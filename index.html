@@ -1,21 +1,246 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Khoasoma - Software Engineering & Server Operation" />
-  <meta name="keywords" content="khoasoma, developer, docker, java, nekotech, backend, devops, minecraft server" />
-  <meta name="author" content="Khoasoma" />
-  <title>Khoasoma | Software Engineer</title>
-  <link rel="icon" href="/assets/kaoruko-waguri-waguri-kaoruko-BmIAUHHb.png" type="image/png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <script type="module" crossorigin src="/assets/index-B7z9cJGL.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/vendor-Dg0PI6Pz.js">
-  <link rel="stylesheet" crossorigin href="/assets/index-DKAt5NMy.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Khoasoma — Software engineer xây dựng backend, hạ tầng và hệ thống vận hành ổn định.">
+  <meta name="keywords" content="Khoasoma, software engineer, backend, DevOps, Java, Docker, server infrastructure">
+  <meta name="author" content="Khoasoma">
+  <meta name="theme-color" content="#f3f5f2">
+  <title>Khoasoma — Software & Systems Engineer</title>
+  <link rel="icon" href="./assets/kaoruko-waguri-waguri-kaoruko.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./semiconductor.css">
+  <script src="./semiconductor.js" defer></script>
 </head>
 <body>
-  <div id="app"></div>
+  <a class="skip-link" href="#main">Bỏ qua điều hướng</a>
+
+  <header class="site-header" data-header>
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Khoasoma — về đầu trang">
+        <svg class="brand-mark" viewBox="0 0 28 28" aria-hidden="true">
+          <rect x="1" y="1" width="26" height="26" rx="2"></rect>
+          <path d="M7 7v14M21 7 12 16m2-2 7 7"></path>
+          <circle cx="21" cy="7" r="1.5"></circle>
+        </svg>
+        <span>KHOASOMA</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Điều hướng chính">
+        <a href="#expertise">Chuyên môn</a>
+        <a href="#work">Dự án</a>
+        <a href="#experience">Kinh nghiệm</a>
+        <a href="#contact">Liên hệ</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="lang-link" href="./index_en.html" lang="en" hreflang="en">EN</a>
+        <a class="header-contact" href="mailto:kh0a@hcmdev.cloud">Kết nối <span aria-hidden="true">↗</span></a>
+        <button class="menu-button" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="mobile-nav" data-menu-button>
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Điều hướng di động" data-mobile-nav>
+      <a href="#expertise">Chuyên môn</a>
+      <a href="#work">Dự án</a>
+      <a href="#experience">Kinh nghiệm</a>
+      <a href="#contact">Liên hệ</a>
+      <a href="./index_en.html" lang="en">English version</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="live-dot"></span> Software &amp; systems engineer · Vietnam</p>
+        <h1 id="hero-title">Engineering systems,<br><span>down to the smallest detail.</span></h1>
+        <p class="hero-intro">Tôi là <strong>Khoasoma</strong>. Tôi thiết kế backend, vận hành hạ tầng và tối ưu hệ thống với tư duy chính xác: mỗi lớp đều có mục đích, mỗi quyết định đều có thể đo lường.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#work">Xem dự án <span aria-hidden="true">↓</span></a>
+          <a class="text-link" href="https://github.com/Khoasoma" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+        <dl class="hero-meta" aria-label="Thông tin nhanh">
+          <div><dt>FOCUS</dt><dd>Backend · DevOps</dd></div>
+          <div><dt>CORE</dt><dd>Java · Docker · Linux</dd></div>
+          <div><dt>STATUS</dt><dd>Available for selected work</dd></div>
+        </dl>
+      </div>
+
+      <div class="wafer-stage reveal" aria-label="Minh họa wafer bán dẫn tương tác">
+        <div class="wafer-notes wafer-note-top"><span>PROCESS MAP</span><b>KS—26.08</b></div>
+        <div class="wafer-shell" data-wafer>
+          <div class="wafer-grid" aria-hidden="true"></div>
+          <div class="wafer-core">
+            <span>SYSTEM</span>
+            <strong>ONLINE</strong>
+            <small>28 / 28 nodes</small>
+          </div>
+          <span class="wafer-axis axis-x" aria-hidden="true"></span>
+          <span class="wafer-axis axis-y" aria-hidden="true"></span>
+        </div>
+        <div class="wafer-legend" aria-hidden="true">
+          <span><i class="legend-ready"></i> ready</span>
+          <span><i class="legend-active"></i> active path</span>
+          <span>Ø 300 mm</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="signal-strip" aria-label="Quy trình kỹ thuật">
+      <p class="signal-label">SYSTEM FLOW / 04 STAGES</p>
+      <ol class="signal-flow">
+        <li><span>01</span><b>Define</b><small>Yêu cầu rõ</small></li>
+        <li><span>02</span><b>Architect</b><small>Biên giới đúng</small></li>
+        <li><span>03</span><b>Ship</b><small>Triển khai an toàn</small></li>
+        <li><span>04</span><b>Observe</b><small>Tối ưu bằng dữ liệu</small></li>
+      </ol>
+    </section>
+
+    <section class="section expertise" id="expertise" aria-labelledby="expertise-title">
+      <div class="section-heading reveal">
+        <p class="section-kicker">CAPABILITY MATRIX</p>
+        <h2 id="expertise-title">Từ logic ứng dụng<br>đến hạ tầng vận hành.</h2>
+        <p>Không chỉ viết code chạy được. Tôi xây hệ thống dễ hiểu, dễ triển khai và bền khi lưu lượng tăng.</p>
+      </div>
+
+      <div class="capability-grid">
+        <article class="capability reveal">
+          <div class="capability-index">L01</div>
+          <div class="trace-icon" aria-hidden="true"><span></span><i></i><span></span></div>
+          <h3>Backend systems</h3>
+          <p>API, business logic và kiến trúc dịch vụ tập trung vào độ tin cậy, hiệu năng và khả năng bảo trì.</p>
+          <ul><li>Java / Spring</li><li>Node.js</li><li>REST &amp; event-driven</li></ul>
+        </article>
+        <article class="capability reveal">
+          <div class="capability-index">L02</div>
+          <div class="trace-icon trace-icon-stack" aria-hidden="true"><span></span><i></i><span></span></div>
+          <h3>Infrastructure</h3>
+          <p>Môi trường triển khai nhất quán, quy trình tự động và quan sát được từ development đến production.</p>
+          <ul><li>Docker / Linux</li><li>CI/CD</li><li>Nginx &amp; Cloudflare</li></ul>
+        </article>
+        <article class="capability reveal">
+          <div class="capability-index">L03</div>
+          <div class="trace-icon trace-icon-pulse" aria-hidden="true"><span></span><i></i><span></span></div>
+          <h3>Performance engineering</h3>
+          <p>Đo bottleneck, kiểm soát tài nguyên và tinh chỉnh luồng xử lý cho workload thời gian thực.</p>
+          <ul><li>Profiling</li><li>Caching</li><li>Server optimization</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section work" id="work" aria-labelledby="work-title">
+      <div class="section-heading reveal">
+        <p class="section-kicker">SELECTED OUTPUT</p>
+        <h2 id="work-title">Dự án đã đưa<br>vào vận hành.</h2>
+      </div>
+
+      <div class="project-list">
+        <a class="project reveal" href="https://github.com/Khoasoma/xenonfolia" target="_blank" rel="noreferrer">
+          <div class="project-code">PRJ—01</div>
+          <div class="project-main">
+            <p>OPEN SOURCE / SERVER ENGINEERING</p>
+            <h3>XenonFolia</h3>
+            <span>Một nhánh Folia/Paper tập trung vào hiệu năng và workload server có độ đồng thời cao.</span>
+          </div>
+          <ul class="project-stack" aria-label="Công nghệ"><li>Java</li><li>Folia</li><li>Performance</li></ul>
+          <span class="project-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="project reveal" href="https://www.nekofoundation.tech/" target="_blank" rel="noreferrer">
+          <div class="project-code">PRJ—02</div>
+          <div class="project-main">
+            <p>FOUNDATION / TECHNOLOGY</p>
+            <h3>Nekotech</h3>
+            <span>Đồng sáng lập, phát triển và vận hành nền tảng cung cấp giải pháp công nghệ cho cộng đồng.</span>
+          </div>
+          <ul class="project-stack" aria-label="Công nghệ"><li>Full-stack</li><li>Infrastructure</li><li>Operations</li></ul>
+          <span class="project-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <article class="project reveal">
+          <div class="project-code">PRJ—03</div>
+          <div class="project-main">
+            <p>CLIENT SYSTEMS / INFRASTRUCTURE</p>
+            <h3>Production infrastructure</h3>
+            <span>Thiết kế, triển khai và tối ưu máy chủ cho web service cùng hệ thống game thời gian thực.</span>
+          </div>
+          <ul class="project-stack" aria-label="Công nghệ"><li>Docker</li><li>Linux</li><li>Monitoring</li></ul>
+          <span class="project-arrow project-arrow-static" aria-hidden="true">■</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="stack-section" aria-labelledby="stack-title">
+      <div class="stack-intro reveal">
+        <p class="section-kicker">TOOLCHAIN / REV. 4</p>
+        <h2 id="stack-title">A precise stack.<br>No ornamental complexity.</h2>
+      </div>
+      <div class="stack-map reveal">
+        <div class="stack-row"><span>LANGUAGE</span><p>Java</p><p>JavaScript</p><p>Python</p><p>PHP</p></div>
+        <div class="stack-row"><span>RUNTIME</span><p>Spring</p><p>Node.js</p><p>Vue</p><p>React</p></div>
+        <div class="stack-row"><span>DATA</span><p>PostgreSQL</p><p>MySQL</p><p>MongoDB</p><p>Redis</p></div>
+        <div class="stack-row"><span>OPERATE</span><p>Docker</p><p>Linux</p><p>Nginx</p><p>Cloudflare</p></div>
+      </div>
+    </section>
+
+    <section class="section experience" id="experience" aria-labelledby="experience-title">
+      <div class="section-heading reveal">
+        <p class="section-kicker">OPERATING HISTORY</p>
+        <h2 id="experience-title">Kinh nghiệm được<br>xây theo từng lớp.</h2>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <time>2024 — NOW</time>
+          <div><h3>Nekotech Foundation</h3><p>Co-Founder &amp; Lead Developer</p></div>
+          <span>Phát triển sản phẩm, kiến trúc kỹ thuật và điều phối vận hành.</span>
+        </article>
+        <article class="timeline-item reveal">
+          <time>2023 — NOW</time>
+          <div><h3>Independent</h3><p>Full-stack &amp; DevOps Engineer</p></div>
+          <span>Backend, website và hạ tầng cho khách hàng cá nhân, doanh nghiệp.</span>
+        </article>
+        <article class="timeline-item reveal">
+          <time>2022 — 2023</time>
+          <div><h3>ZynHost / AsakaCloud</h3><p>Technical Support</p></div>
+          <span>Phân tích sự cố hosting, hỗ trợ server và trải nghiệm khách hàng.</span>
+        </article>
+        <article class="timeline-item reveal">
+          <time>2021 — 2022</time>
+          <div><h3>Kingora Network</h3><p>Verified Developer</p></div>
+          <span>Plugin development và tối ưu hệ thống Minecraft network.</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact-chip" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+        <div>K/S</div>
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <div class="contact-copy reveal">
+        <p class="section-kicker">OPEN CHANNEL</p>
+        <h2 id="contact-title">Có một hệ thống<br>cần được làm đúng?</h2>
+        <p>Chia sẻ bài toán. Tôi sẽ phản hồi với hướng tiếp cận rõ ràng, phạm vi thực tế và bước tiếp theo.</p>
+      </div>
+      <div class="contact-links reveal">
+        <a href="mailto:kh0a@hcmdev.cloud"><span>Email</span><b>kh0a@hcmdev.cloud</b><i aria-hidden="true">↗</i></a>
+        <a href="https://discordapp.com/users/808974657994752050" target="_blank" rel="noreferrer"><span>Discord</span><b>@khoasoma</b><i aria-hidden="true">↗</i></a>
+        <a href="https://github.com/Khoasoma" target="_blank" rel="noreferrer"><span>GitHub</span><b>@Khoasoma</b><i aria-hidden="true">↗</i></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Khoasoma</p>
+    <p>Designed with precision · Built for the open web</p>
+    <a href="#top">TOP ↑</a>
+  </footer>
 </body>
 </html>
