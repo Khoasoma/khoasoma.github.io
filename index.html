@@ -6,7 +6,7 @@
   <meta name="description" content="Khoasoma — Software engineer xây dựng backend, hạ tầng và hệ thống vận hành ổn định.">
   <meta name="keywords" content="Khoasoma, software engineer, backend, DevOps, Java, Docker, server infrastructure">
   <meta name="author" content="Khoasoma">
-  <meta name="theme-color" content="#f3f5f2">
+  <meta name="theme-color" content="#0a0f0e">
   <title>Khoasoma — Software & Systems Engineer</title>
   <link rel="icon" href="./assets/kaoruko-waguri-waguri-kaoruko.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +16,11 @@
   <script src="./semiconductor.js" defer></script>
 </head>
 <body>
+  <div id="boot" role="presentation" aria-hidden="true">
+    <pre></pre>
+    <span class="boot-hint">Nhấn phím bất kỳ để bỏ qua</span>
+  </div>
+
   <a class="skip-link" href="#main">Bỏ qua điều hướng</a>
 
   <header class="site-header" data-header>
@@ -107,7 +112,7 @@
       <div class="section-heading reveal">
         <p class="section-kicker">DEVICE DATASHEET / REV. 26.08</p>
         <h2 id="profile-title">Thông số<br>vận hành.</h2>
-        <p>Dữ liệu định danh và trạng thái hoạt động. Phần presence lấy trực tiếp từ Discord, cập nhật mỗi 60 giây.</p>
+        <p>Dữ liệu định danh và trạng thái hoạt động. Hồ sơ Discord — banner, bio, huy hiệu, tài khoản liên kết — lấy trực tiếp, presence cập nhật mỗi 60 giây.</p>
       </div>
 
       <div class="datasheet-grid">
@@ -124,19 +129,27 @@
           </tbody>
         </table>
 
-        <div class="presence reveal" data-presence="vi">
-          <div class="presence-bar"><span>Live presence</span><span>Discord</span></div>
-          <div class="presence-body">
-            <div class="presence-avatar">
-              <img data-presence-avatar alt="" hidden>
+        <div class="dcard reveal" data-dcard="vi">
+          <div class="dcard-bar"><span>Live presence</span><span>Discord</span></div>
+          <div class="dcard-banner" data-dc-banner></div>
+          <div class="dcard-head">
+            <div class="dcard-avatar">
+              <img data-dc-avatar alt="" hidden>
+              <img class="dcard-deco" data-dc-deco alt="" hidden>
               <span class="status-led" data-status="offline"></span>
             </div>
-            <div class="presence-copy">
-              <b data-presence-name>khoasoma</b>
-              <span data-presence-state>Đang tải…</span>
+            <div class="dcard-id">
+              <b data-dc-name>khoasoma</b>
+              <span class="dcard-tag" data-dc-tag hidden></span>
+              <span data-dc-state>Đang tải…</span>
             </div>
           </div>
-          <p class="presence-activity" data-presence-activity>Đang tải hoạt động…</p>
+          <p class="dcard-status" data-dc-custom hidden></p>
+          <p class="dcard-bio" data-dc-bio hidden></p>
+          <p class="dcard-meta" data-dc-meta hidden></p>
+          <ul class="dcard-badges" data-dc-badges hidden></ul>
+          <ul class="dcard-links" data-dc-links hidden></ul>
+          <p class="dcard-activity" data-dc-activity>Đang tải hoạt động…</p>
         </div>
       </div>
     </section>
