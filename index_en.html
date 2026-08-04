@@ -1,535 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Khoasoma - Freelance Developer & System Builder">
-    <meta name="keywords" content="khoasoma, developer, docker, java, nekotech, backend, devops, freelancer, website">
-    <meta name="author" content="Khoasoma">
-    <title>Khoasoma | Freelance Developer</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./assets/kaoruko-waguri-waguri-kaoruko.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Khoasoma — freelance software engineer building backends, infrastructure and reliable operating systems.">
+  <meta name="keywords" content="Khoasoma, software engineer, backend, DevOps, Java, Docker, server infrastructure, freelancer">
+  <meta name="author" content="Khoasoma">
+  <meta name="theme-color" content="#f3f5f2">
+  <title>Khoasoma — Software &amp; Systems Engineer</title>
+  <link rel="icon" href="./assets/kaoruko-waguri-waguri-kaoruko.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./semiconductor.css">
+  <script src="./semiconductor.js" defer></script>
 </head>
-
 <body>
-    <!-- Background -->
-    <div class="bg-wrapper">
-        <div class="bg-image"></div>
-        <div class="bg-overlay"></div>
-        <div class="bg-grid"></div>
-    </div>
+  <a class="skip-link" href="#main">Skip navigation</a>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo">Khoasoma<span class="dot">.</span></a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <a href="./index.html" class="lang-switch" title="Chuyển sang Tiếng Việt">
-                <i class="fas fa-globe"></i>
-                <span>VI</span>
-            </a>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+  <header class="site-header" data-header>
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Khoasoma — back to top">
+        <svg class="brand-mark" viewBox="0 0 28 28" aria-hidden="true">
+          <rect x="1" y="1" width="26" height="26" rx="2"></rect>
+          <path d="M7 7v14M21 7 12 16m2-2 7 7"></path>
+          <circle cx="21" cy="7" r="1.5"></circle>
+        </svg>
+        <span>KHOASOMA</span>
+      </a>
 
-    <div class="mobile-menu">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#skills">Skills</a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#profile">Profile</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#work">Work</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
-        <a href="./index.html" class="mobile-lang-switch"><i class="fas fa-globe"></i> Tiếng Việt</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="lang-link" href="./index.html" lang="vi" hreflang="vi">VI</a>
+        <a class="header-contact" href="mailto:kh0a@hcmdev.cloud">Get in touch <span aria-hidden="true">↗</span></a>
+        <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav" data-menu-button>
+          <span></span><span></span>
+        </button>
+      </div>
     </div>
 
-    <main class="main-container">
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" data-mobile-nav>
+      <a href="#profile">Profile</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+      <a href="./index.html" lang="vi">Phiên bản Tiếng Việt</a>
+    </nav>
+  </header>
 
-        <!-- Hero Section -->
-        <section id="home" class="section hero">
-            <div class="content-wrapper">
-                <div class="hero-grid">
-                    <!-- Avatar on top/left -->
-                    <div class="hero-visual fade-up">
-                        <div class="avatar-wrapper">
-                            <div class="avatar-glow"></div>
-                            <img src="./assets/about_avatar.jpg" alt="Khoasoma" class="hero-avatar">
-                            <div class="avatar-status">
-                                <span class="status-dot"></span>
-                                Available
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hero-content fade-up delay-1">
-                        <span class="subtitle">Hello, I'm</span>
-                        <h1 class="title">Khoasoma</h1>
-                        <h2 class="role">Freelance Developer & System Builder</h2>
-                        <p class="company">Partner of <a href="https://www.nekofoundation.tech/" target="_blank"
-                                class="company-link">Nekotech Foundation</a></p>
-                        <p class="description">
-                            Freelancer specializing in website systems, backend services, and server infrastructure.
-                            Ready to take on projects of any scale with commitment to high quality.
-                        </p>
-                        <div class="cta-group">
-                            <a href="#services" class="btn btn-primary">
-                                <span>Services</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                            <a href="#contact" class="btn btn-glass">Get in Touch</a>
-                        </div>
-                    </div>
-                </div>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="live-dot"></span> Freelancer · Ready for job · Vietnam</p>
+        <h1 id="hero-title">Engineering systems,<br><span>down to the smallest detail.</span></h1>
+        <p class="hero-intro">I'm <strong>Khoasoma</strong>, <span data-age>15</span>, from Hanoi, currently working as a <strong>freelancer</strong> on backend and infrastructure. Every layer has a purpose; every decision is measurable.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#work">See the work <span aria-hidden="true">↓</span></a>
+          <a class="text-link" href="https://github.com/Khoasoma" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+        <dl class="hero-meta" aria-label="Quick facts">
+          <div><dt>FOCUS</dt><dd>Backend · DevOps</dd></div>
+          <div><dt>CORE</dt><dd>Java · Docker · Linux</dd></div>
+          <div><dt>STATUS</dt><dd>Freelancer · Ready for job</dd></div>
+        </dl>
+      </div>
+
+      <div class="wafer-stage reveal" aria-label="Interactive semiconductor wafer illustration">
+        <div class="wafer-notes wafer-note-top"><span>PROCESS MAP</span><b>KS—26.08</b></div>
+        <div class="wafer-shell" data-wafer>
+          <div class="wafer-grid" aria-hidden="true"></div>
+          <div class="wafer-core">
+            <span>SYSTEM</span>
+            <strong>ONLINE</strong>
+            <small>28 / 28 nodes</small>
+          </div>
+          <span class="wafer-axis axis-x" aria-hidden="true"></span>
+          <span class="wafer-axis axis-y" aria-hidden="true"></span>
+        </div>
+        <div class="wafer-legend" aria-hidden="true">
+          <span><i class="legend-ready"></i> ready</span>
+          <span><i class="legend-active"></i> active path</span>
+          <span>Ø 300 mm</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="signal-strip" aria-label="Engineering process">
+      <p class="signal-label">SYSTEM FLOW / 04 STAGES</p>
+      <ol class="signal-flow">
+        <li><span>01</span><b>Define</b><small>Clear requirements</small></li>
+        <li><span>02</span><b>Architect</b><small>Right boundaries</small></li>
+        <li><span>03</span><b>Ship</b><small>Safe rollout</small></li>
+        <li><span>04</span><b>Observe</b><small>Tune with data</small></li>
+      </ol>
+    </section>
+
+    <section class="section datasheet" id="profile" aria-labelledby="profile-title">
+      <div class="section-heading reveal">
+        <p class="section-kicker">DEVICE DATASHEET / REV. 26.08</p>
+        <h2 id="profile-title">Operating<br>parameters.</h2>
+        <p>Identity data and live operating state. Presence is pulled straight from Discord and refreshes every 60 seconds.</p>
+      </div>
+
+      <div class="datasheet-grid">
+        <table class="spec-table reveal">
+          <caption class="visually-hidden">Personal specifications</caption>
+          <tbody>
+            <tr><th scope="row">Identity</th><td>Khoasoma<small>Software &amp; systems engineer</small></td></tr>
+            <tr><th scope="row">Date of birth</th><td>03 / 02 / 2011<small><span data-age>15</span> years old</small></td></tr>
+            <tr><th scope="row">Hometown</th><td>Hanoi, Vietnam</td></tr>
+            <tr><th scope="row">Studying at</th><td>Dinh Tien Hoang High School<small>Vung Tau</small></td></tr>
+            <tr><th scope="row">Next</th><td>Le Quy Don High School for the Gifted<small>Upcoming</small></td></tr>
+            <tr><th scope="row">Work</th><td class="spec-live">Freelancer<small>Ready for job</small></td></tr>
+            <tr><th scope="row">Domain</th><td>Backend · Infrastructure · Performance</td></tr>
+          </tbody>
+        </table>
+
+        <div class="presence reveal" data-presence="en">
+          <div class="presence-bar"><span>Live presence</span><span>Discord</span></div>
+          <div class="presence-body">
+            <div class="presence-avatar">
+              <img data-presence-avatar alt="" hidden>
+              <span class="status-led" data-status="offline"></span>
             </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="section about">
-            <div class="content-wrapper">
-                <div class="section-header fade-up">
-                    <span class="section-number">01</span>
-                    <h2 class="section-heading">About Me</h2>
-                </div>
-                <div class="about-grid fade-up delay-1">
-                    <div class="about-content glass-card">
-                        <p>
-                            I'm a <strong>freelancer</strong> with experience building website systems, 
-                            <strong>backend services</strong>, and <strong>server infrastructure</strong>.
-                            I've delivered numerous projects ranging from simple landing pages to complex microservices systems.
-                        </p>
-                        <p>
-                            Currently targeting projects of all sizes from individual clients to businesses.
-                            Partner of <strong>Nekotech Foundation</strong> - ready to accompany you on any project.
-                        </p>
-                    </div>
-                    <div class="about-code glass-card">
-                        <div class="code-header">
-                            <div class="code-dots">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <span class="file-name">profile.yml</span>
-                        </div>
-                        <pre><code><span class="code-key">name:</span> Khoasoma
-<span class="code-key">role:</span> Freelance Developer
-<span class="code-key">expertise:</span>
-  <span class="code-value">- Website Systems</span>
-  <span class="code-value">- Backend Development</span>
-  <span class="code-value">- Server Infrastructure</span>
-<span class="code-key">projects:</span>
-  <span class="code-value">- Small to Large Scale</span>
-<span class="code-key">status:</span> <span class="code-highlight">Available for hire ✓</span></code></pre>
-                    </div>
-                </div>
+            <div class="presence-copy">
+              <b data-presence-name>khoasoma</b>
+              <span data-presence-state>Loading…</span>
             </div>
-        </section>
+          </div>
+          <p class="presence-activity" data-presence-activity>Loading activity…</p>
+        </div>
+      </div>
+    </section>
 
-        <!-- Services Section -->
-        <section id="services" class="section services">
-            <div class="content-wrapper">
-                <div class="section-header fade-up">
-                    <span class="section-number">02</span>
-                    <h2 class="section-heading">Services</h2>
-                </div>
-                <div class="services-grid">
-                    <div class="service-card glass-card fade-up delay-1">
-                        <div class="service-icon-wrapper">
-                            <i class="fas fa-server"></i>
-                        </div>
-                        <h3>Server Operation</h3>
-                        <p>Administration, operation, and monitoring of server systems ensuring stable uptime and performance.</p>
-                    </div>
-                    <div class="service-card glass-card fade-up delay-2">
-                        <div class="service-icon-wrapper">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3>Custom Development</h3>
-                        <p>Website development, anticheat configuration/setup for Minecraft servers, custom plugin development.</p>
-                    </div>
-                    <div class="service-card glass-card fade-up delay-3">
-                        <div class="service-icon-wrapper">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>Security & Optimization</h3>
-                        <p>Performance tuning and system security for Minecraft servers.</p>
-                    </div>
-                    <div class="service-card glass-card fade-up delay-4">
-                        <div class="service-icon-wrapper">
-                            <i class="fas fa-layer-group"></i>
-                        </div>
-                        <h3>Web System</h3>
-                        <p>Full-stack website development, API integration, and microservices architecture.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="section expertise" id="expertise" aria-labelledby="expertise-title">
+      <div class="section-heading reveal">
+        <p class="section-kicker">CAPABILITY MATRIX</p>
+        <h2 id="expertise-title">From application logic<br>to running infrastructure.</h2>
+        <p>Not just code that runs. Systems that are legible, deployable and hold up when traffic grows.</p>
+      </div>
 
-        <!-- Skills Section -->
-        <section id="skills" class="section skills">
-            <div class="content-wrapper">
-                <div class="section-header fade-up">
-                    <span class="section-number">03</span>
-                    <h2 class="section-heading">Technical Skills</h2>
-                </div>
-                
-                <!-- Skill Charts Grid -->
-                <div class="skills-charts-grid">
-                    <!-- Radial Charts -->
-                    <div class="skill-chart-card glass-card fade-up delay-1">
-                        <h3><i class="fas fa-cubes"></i> Minecraft & Server</h3>
-                        <div class="radial-charts">
-                            <div class="radial-item">
-                                <div class="radial-progress" data-progress="95">
-                                    <svg viewBox="0 0 100 100">
-                                        <circle class="bg" cx="50" cy="50" r="45"/>
-                                        <circle class="progress" cx="50" cy="50" r="45"/>
-                                    </svg>
-                                    <span class="radial-value">95%</span>
-                                </div>
-                                <span class="radial-label">Server Setup</span>
-                            </div>
-                            <div class="radial-item">
-                                <div class="radial-progress" data-progress="90">
-                                    <svg viewBox="0 0 100 100">
-                                        <circle class="bg" cx="50" cy="50" r="45"/>
-                                        <circle class="progress" cx="50" cy="50" r="45"/>
-                                    </svg>
-                                    <span class="radial-value">90%</span>
-                                </div>
-                                <span class="radial-label">Anticheat</span>
-                            </div>
-                            <div class="radial-item">
-                                <div class="radial-progress" data-progress="88">
-                                    <svg viewBox="0 0 100 100">
-                                        <circle class="bg" cx="50" cy="50" r="45"/>
-                                        <circle class="progress" cx="50" cy="50" r="45"/>
-                                    </svg>
-                                    <span class="radial-value">88%</span>
-                                </div>
-                                <span class="radial-label">Optimization</span>
-                            </div>
-                        </div>
-                    </div>
+      <div class="capability-grid">
+        <article class="capability reveal">
+          <div class="capability-index">L01</div>
+          <div class="trace-icon" aria-hidden="true"><span></span><i></i><span></span></div>
+          <h3>Backend systems</h3>
+          <p>APIs, business logic and service architecture built around reliability, performance and maintainability.</p>
+          <ul><li>Java / Spring</li><li>Node.js</li><li>REST &amp; event-driven</li></ul>
+        </article>
+        <article class="capability reveal">
+          <div class="capability-index">L02</div>
+          <div class="trace-icon trace-icon-stack" aria-hidden="true"><span></span><i></i><span></span></div>
+          <h3>Infrastructure</h3>
+          <p>Consistent deploy environments, automated pipelines and observability from development to production.</p>
+          <ul><li>Docker / Linux</li><li>CI/CD</li><li>Nginx &amp; Cloudflare</li></ul>
+        </article>
+        <article class="capability reveal">
+          <div class="capability-index">L03</div>
+          <div class="trace-icon trace-icon-pulse" aria-hidden="true"><span></span><i></i><span></span></div>
+          <h3>Performance engineering</h3>
+          <p>Measuring bottlenecks, controlling resources and tuning hot paths for real-time workloads.</p>
+          <ul><li>Profiling</li><li>Caching</li><li>Server optimization</li></ul>
+        </article>
+      </div>
+    </section>
 
-                    <div class="skill-chart-card glass-card fade-up delay-2">
-                        <h3><i class="fas fa-hdd"></i> Infrastructure</h3>
-                        <div class="bar-charts">
-                            <div class="bar-item">
-                                <div class="bar-header">
-                                    <span>Docker & Containerization</span>
-                                    <span>92%</span>
-                                </div>
-                                <div class="bar-track">
-                                    <div class="bar-fill" data-progress="92"></div>
-                                </div>
-                            </div>
-                            <div class="bar-item">
-                                <div class="bar-header">
-                                    <span>System Configuration</span>
-                                    <span>88%</span>
-                                </div>
-                                <div class="bar-track">
-                                    <div class="bar-fill" data-progress="88"></div>
-                                </div>
-                            </div>
-                            <div class="bar-item">
-                                <div class="bar-header">
-                                    <span>Network Management</span>
-                                    <span>85%</span>
-                                </div>
-                                <div class="bar-track">
-                                    <div class="bar-fill" data-progress="85"></div>
-                                </div>
-                            </div>
-                            <div class="bar-item">
-                                <div class="bar-header">
-                                    <span>Server Hardware</span>
-                                    <span>60%</span>
-                                </div>
-                                <div class="bar-track">
-                                    <div class="bar-fill learning" data-progress="60"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <section class="section work" id="work" aria-labelledby="work-title">
+      <div class="section-heading reveal">
+        <p class="section-kicker">SELECTED OUTPUT</p>
+        <h2 id="work-title">Projects that<br>went to production.</h2>
+      </div>
 
-                    <div class="skill-chart-card glass-card fade-up delay-3">
-                        <h3><i class="fas fa-laptop-code"></i> Web Development</h3>
-                        <div class="bar-charts">
-                            <div class="bar-item">
-                                <div class="bar-header">
-                                    <span>HTML / CSS / JS</span>
-                                    <span>90%</span>
-                                </div>
-                                <div class="bar-track">
-                                    <div class="bar-fill" data-progress="90"></div>
-                                </div>
-                            </div>
-                            <div class="bar-item">
-                                <div class="bar-header">
-                                    <span>React / Vue.js</span>
-                                    <span>75%</span>
-                                </div>
-                                <div class="bar-track">
-                                    <div class="bar-fill" data-progress="75"></div>
-                                </div>
-                            </div>
-                            <div class="bar-item">
-                                <div class="bar-header">
-                                    <span>PHP & API</span>
-                                    <span>80%</span>
-                                </div>
-                                <div class="bar-track">
-                                    <div class="bar-fill" data-progress="80"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      <div class="project-list">
+        <a class="project reveal" href="https://github.com/Khoasoma/xenonfolia" target="_blank" rel="noreferrer">
+          <div class="project-code">PRJ—01</div>
+          <div class="project-main">
+            <p>OPEN SOURCE / SERVER ENGINEERING</p>
+            <h3>XenonFolia</h3>
+            <span>A Folia/Paper fork focused on performance and highly concurrent server workloads.</span>
+          </div>
+          <ul class="project-stack" aria-label="Technologies"><li>Java</li><li>Folia</li><li>Performance</li></ul>
+          <span class="project-arrow" aria-hidden="true">↗</span>
+        </a>
 
-                    <div class="skill-chart-card glass-card fade-up delay-4">
-                        <h3><i class="fas fa-terminal"></i> Languages & Tools</h3>
-                        <div class="tech-grid">
-                            <div class="tech-item" data-level="expert">
-                                <i class="fab fa-java"></i>
-                                <span>Java</span>
-                            </div>
-                            <div class="tech-item" data-level="expert">
-                                <i class="fab fa-js-square"></i>
-                                <span>JavaScript</span>
-                            </div>
-                            <div class="tech-item" data-level="advanced">
-                                <i class="fab fa-docker"></i>
-                                <span>Docker</span>
-                            </div>
-                            <div class="tech-item" data-level="advanced">
-                                <i class="fab fa-git-alt"></i>
-                                <span>Git</span>
-                            </div>
-                            <div class="tech-item" data-level="intermediate">
-                                <i class="fas fa-database"></i>
-                                <span>SQL</span>
-                            </div>
-                            <div class="tech-item" data-level="learning">
-                                <i class="fas fa-code"></i>
-                                <span>C++</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <a class="project reveal" href="https://www.nekofoundation.tech/" target="_blank" rel="noreferrer">
+          <div class="project-code">PRJ—02</div>
+          <div class="project-main">
+            <p>FOUNDATION / TECHNOLOGY · 2024—2026</p>
+            <h3>Nekotech</h3>
+            <span>Co-founded, built and operated a community technology platform. Handed over.</span>
+          </div>
+          <ul class="project-stack" aria-label="Technologies"><li>Full-stack</li><li>Infrastructure</li><li>Operations</li></ul>
+          <span class="project-arrow" aria-hidden="true">↗</span>
+        </a>
 
-        <!-- Experience Section -->
-        <section id="experience" class="section experience">
-            <div class="content-wrapper">
-                <div class="section-header fade-up">
-                    <span class="section-number">04</span>
-                    <h2 class="section-heading">Experience</h2>
-                </div>
-                <div class="experience-grid">
-                    <div class="timeline glass-card fade-up delay-1">
-                        <div class="timeline-item">
-                            <div class="timeline-marker active"></div>
-                            <div class="timeline-content">
-                                <span class="timeline-date">Present</span>
-                                <h3>Nekotech Foundation</h3>
-                                <p class="role">Software Engineering & Server Operation</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-marker active"></div>
-                            <div class="timeline-content">
-                                <span class="timeline-date">Present</span>
-                                <h3>HCM Development</h3>
-                                <p class="role">Developer</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <span class="timeline-date">Past</span>
-                                <h3>Kingora</h3>
-                                <p class="role">Verified Developer</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <span class="timeline-date">Past</span>
-                                <h3>AsakaCloud (ZynHost)</h3>
-                                <p class="role">Regular Support Staff (Unofficial)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <article class="project reveal">
+          <div class="project-code">PRJ—03</div>
+          <div class="project-main">
+            <p>CLIENT SYSTEMS / INFRASTRUCTURE</p>
+            <h3>Production infrastructure</h3>
+            <span>Designing, deploying and tuning servers for web services and real-time game systems.</span>
+          </div>
+          <ul class="project-stack" aria-label="Technologies"><li>Docker</li><li>Linux</li><li>Monitoring</li></ul>
+          <span class="project-arrow project-arrow-static" aria-hidden="true">■</span>
+        </article>
+      </div>
+    </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="section projects">
-            <div class="content-wrapper">
-                <div class="section-header fade-up">
-                    <span class="section-number">05</span>
-                    <h2 class="section-heading">Projects</h2>
-                </div>
-                <div class="projects-list">
-                    <article class="project-item glass-card fade-up">
-                        <div class="project-info">
-                            <h3>XenonFolia</h3>
-                            <p class="project-sub">Java / Performance</p>
-                            <p>High-performance Minecraft Server Core with revolutionary optimizations.</p>
-                        </div>
-                        <a href="https://github.com/Khoasoma/xenonfolia" target="_blank" class="project-link-icon"><i
-                                class="fab fa-github"></i></a>
-                    </article>
-                </div>
-            </div>
-        </section>
+    <section class="stack-section" aria-labelledby="stack-title">
+      <div class="stack-intro reveal">
+        <p class="section-kicker">TOOLCHAIN / REV. 4</p>
+        <h2 id="stack-title">A precise stack.<br>No ornamental complexity.</h2>
+      </div>
+      <div class="stack-map reveal">
+        <div class="stack-row"><span>LANGUAGE</span><p>Java</p><p>JavaScript</p><p>Python</p><p>PHP</p></div>
+        <div class="stack-row"><span>RUNTIME</span><p>Spring</p><p>Node.js</p><p>Vue</p><p>React</p></div>
+        <div class="stack-row"><span>DATA</span><p>PostgreSQL</p><p>MySQL</p><p>MongoDB</p><p>Redis</p></div>
+        <div class="stack-row"><span>OPERATE</span><p>Docker</p><p>Linux</p><p>Nginx</p><p>Cloudflare</p></div>
+      </div>
+    </section>
 
-        <!-- Feedback Section -->
-        <section id="feedback" class="section feedback">
-            <div class="content-wrapper">
-                <div class="section-header fade-up">
-                    <span class="section-number">06</span>
-                    <h2 class="section-heading">Feedback</h2>
-                </div>
-                <div class="feedback-wrapper fade-up delay-1">
-                    <button class="feedback-nav feedback-prev" aria-label="Previous">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <div class="feedback-container" id="feedback-container">
-                        <div class="feedback-marquee" id="feedback-marquee">
-                            <!-- Feedback items will be injected here by JS -->
-                        </div>
-                    </div>
-                    <button class="feedback-nav feedback-next" aria-label="Next">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-                <div class="feedback-controls fade-up delay-2">
-                    <button class="feedback-pause-btn" id="feedback-pause" aria-label="Pause/Play">
-                        <i class="fas fa-pause"></i>
-                        <span>Pause</span>
-                    </button>
-                    <div class="feedback-dots" id="feedback-dots"></div>
-                </div>
-            </div>
-        </section>
+    <section class="lattice" aria-labelledby="lattice-title">
+      <p class="section-kicker">DESIGN RULES / MATHEMATICS</p>
+      <h2 id="lattice-title">Three inequalities<br>that govern every system.</h2>
+      <div class="formula-grid">
+        <article class="formula reveal">
+          <em>EQ—01 / LITTLE'S LAW</em>
+          <code>L = λ · W</code>
+          <p>Queue length is arrival rate times service time. Want a shorter queue? Cut W — don't just add workers.</p>
+        </article>
+        <article class="formula reveal">
+          <em>EQ—02 / AMDAHL</em>
+          <code>S = 1 / (1 − p + p/n)</code>
+          <p>The serial fraction caps every parallel effort. Measure p before you scale n.</p>
+        </article>
+        <article class="formula reveal">
+          <em>EQ—03 / AVAILABILITY</em>
+          <code>A = MTBF / (MTBF + MTTR)</code>
+          <p>Uptime is a recovery-speed problem, not a never-fail problem.</p>
+        </article>
+      </div>
+    </section>
 
-        <!-- Partners Section -->
-        <section id="partners" class="section partners">
-            <div class="content-wrapper">
-                <div class="section-header fade-up">
-                    <span class="section-number">07</span>
-                    <h2 class="section-heading">Partners</h2>
-                </div>
-                <div class="partners-marquee-wrapper fade-up delay-1">
-                    <div class="partners-marquee">
-                        <a href="https://www.zyndata.vn" target="_blank" class="partner-logo">
-                            <img src="./assets/partners/zyndata.svg" alt="ZynData">
-                        </a>
-                        <a href="https://www.nekofoundation.tech/" target="_blank" class="partner-logo">
-                            <img src="https://www.nekofoundation.tech/_next/static/media/nekotech-logo.4892c977.png" alt="NekoTech Foundation">
-                        </a>
-                        <a href="https://viettel.vn" target="_blank" class="partner-logo viettel-container">
-                            <div class="viettel-logo">
-                                <span class="viettel-text">viettel</span>
-                                <span class="viettel-slogan">Your way</span>
-                            </div>
-                        </a>
-                        <div class="partner-logo">
-                            <img src="./assets/partners/amd.svg" alt="AMD">
-                        </div>
-                        <div class="partner-logo">
-                            <img src="./assets/partners/nvidia.svg" alt="NVIDIA">
-                        </div>
-                        <!-- Duplicate for seamless loop -->
-                        <a href="https://www.zyndata.vn" target="_blank" class="partner-logo">
-                            <img src="./assets/partners/zyndata.svg" alt="ZynData">
-                        </a>
-                        <a href="https://www.nekofoundation.tech/" target="_blank" class="partner-logo">
-                            <img src="https://www.nekofoundation.tech/_next/static/media/nekotech-logo.4892c977.png" alt="NekoTech Foundation">
-                        </a>
-                        <a href="https://viettel.vn" target="_blank" class="partner-logo viettel-container">
-                            <div class="viettel-logo">
-                                <span class="viettel-text">viettel</span>
-                                <span class="viettel-slogan">Your way</span>
-                            </div>
-                        </a>
-                        <div class="partner-logo">
-                            <img src="./assets/partners/amd.svg" alt="AMD">
-                        </div>
-                        <div class="partner-logo">
-                            <img src="./assets/partners/nvidia.svg" alt="NVIDIA">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="section experience" id="experience" aria-labelledby="experience-title">
+      <div class="section-heading reveal">
+        <p class="section-kicker">OPERATING HISTORY</p>
+        <h2 id="experience-title">Experience built<br>layer by layer.</h2>
+      </div>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section contact">
-            <div class="content-wrapper">
-                <div class="contact-container glass-card fade-up">
-                    <div class="contact-header">
-                        <span class="section-number">08</span>
-                        <h2 class="section-heading">Contact</h2>
-                    </div>
-                    <p class="contact-text">
-                        Ready to discuss technology, projects, or collaboration.
-                    </p>
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <time>2023 — NOW</time>
+          <div><h3>Freelance</h3><p>Backend &amp; DevOps Engineer</p></div>
+          <span>Backend, websites and infrastructure for individual and business clients. Taking new projects.</span>
+        </article>
+        <article class="timeline-item reveal">
+          <time>2026 — NOW</time>
+          <div><h3>Le Quy Don High School for the Gifted</h3><p>Upcoming student</p></div>
+          <span>Preparing to enrol. Currently studying at Dinh Tien Hoang High School, Vung Tau.</span>
+        </article>
+        <article class="timeline-item reveal">
+          <time>2024 — 2026</time>
+          <div><h3>Nekotech Foundation</h3><p>Co-Founder &amp; Lead Developer (ended)</p></div>
+          <span>Product development, technical architecture and operations coordination.</span>
+        </article>
+        <article class="timeline-item reveal">
+          <time>2022 — 2023</time>
+          <div><h3>ZynHost / AsakaCloud</h3><p>Technical Support</p></div>
+          <span>Hosting incident analysis, server support and customer experience.</span>
+        </article>
+        <article class="timeline-item reveal">
+          <time>2021 — 2022</time>
+          <div><h3>Kingora Network</h3><p>Verified Developer</p></div>
+          <span>Plugin development and Minecraft network optimization.</span>
+        </article>
+      </div>
+    </section>
 
-                    <div class="contact-methods">
-                        <a href="mailto:kh0a@hcmdev.cloud" class="contact-method">
-                            <i class="fas fa-envelope"></i>
-                            <div class="method-info">
-                                <span class="method-label">Email</span>
-                                <span class="method-value">kh0a@hcmdev.cloud</span>
-                            </div>
-                        </a>
-                        <a href="https://discordapp.com/users/808974657994752050" target="_blank" class="contact-method">
-                            <i class="fab fa-discord"></i>
-                            <div class="method-info">
-                                <span class="method-label">Discord</span>
-                                <span class="method-value">khoasoma</span>
-                            </div>
-                        </a>
-                        <a href="https://github.com/Khoasoma" target="_blank" class="contact-method">
-                            <i class="fab fa-github"></i>
-                            <div class="method-info">
-                                <span class="method-label">GitHub</span>
-                                <span class="method-value">@Khoasoma</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                
-                <footer class="minimal-footer fade-up delay-1">
-                    <p>© 2025 Khoasoma. Built with passion.</p>
-                </footer>
-            </div>
-        </section>
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact-chip" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+        <div>K/S</div>
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <div class="contact-copy reveal">
+        <p class="section-kicker">OPEN CHANNEL</p>
+        <h2 id="contact-title">Got a system<br>that needs doing right?</h2>
+        <p>Share the problem. You'll get a clear approach, a realistic scope and a concrete next step.</p>
+      </div>
+      <div class="contact-links reveal">
+        <a href="mailto:kh0a@hcmdev.cloud"><span>Email</span><b>kh0a@hcmdev.cloud</b><i aria-hidden="true">↗</i></a>
+        <a href="https://discordapp.com/users/808974657994752050" target="_blank" rel="noreferrer"><span>Discord</span><b>@khoasoma</b><i aria-hidden="true">↗</i></a>
+        <a href="https://github.com/Khoasoma" target="_blank" rel="noreferrer"><span>GitHub</span><b>@Khoasoma</b><i aria-hidden="true">↗</i></a>
+      </div>
+    </section>
+  </main>
 
-    </main>
-
-    <script src="./assets/scroll-animated.js"></script>
-    <script src="./script.js"></script>
+  <footer class="site-footer">
+    <p>© 2026 Khoasoma</p>
+    <p>Designed with precision · Built for the open web</p>
+    <a href="#top">TOP ↑</a>
+  </footer>
 </body>
-
 </html>

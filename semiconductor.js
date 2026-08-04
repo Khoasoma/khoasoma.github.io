@@ -55,3 +55,57 @@ if (wafer && !reduceMotion && window.matchMedia('(pointer: fine)').matches) {
     wafer.style.transform = '';
   });
 }
+
+const BIRTH = new Date(2011, 1, 3);
+document.querySelectorAll('[data-age]').forEach((node) => {
+  const now = new Date();
+  let age = now.getFullYear() - BIRTH.getFullYear();
+  const beforeBirthday = now.getMonth() < BIRTH.getMonth()
+    || (now.getMonth() === BIRTH.getMonth() && now.getDate() < BIRTH.getDate());
+  node.textContent = String(beforeBirthday ? age - 1 : age);
+});
+
+// Discord presence via Lanyard (needs the account to be in discord.gg/lanyard).
+// ponytail: 60s REST poll, switch to the Lanyard websocket if instant updates matter.
+const presence = document.querySelector('[data-presence]');
+if (presence) {
+  const DISCORD_ID = '808974657994752050';
+  const led = presence.querySelector('.status-led');
+  const avatar = presence.querySelector('[data-presence-avatar]');
+  const name = presence.querySelector('[data-presence-name]');
+  const state = presence.querySelector('[data-presence-state]');
+  const activity = presence.querySelector('[data-presence-activity]');
+  const labels = presence.dataset.presence === 'en'
+    ? { online: 'Online', idle: 'Idle', dnd: 'Do not disturb', offline: 'Offline', none: 'No activity', fail: 'Presence unavailable' }
+    : { online: 'Đang trực tuyến', idle: 'Tạm vắng', dnd: 'Không làm phiền', offline: 'Ngoại tuyến', none: 'Không có hoạt động', fail: 'Không lấy được trạng thái' };
+
+  const render = (data) => {
+    const status = data.discord_status || 'offline';
+    led.dataset.status = status;
+    name.textContent = data.discord_user?.display_name || data.discord_user?.username || 'khoasoma';
+    state.textContent = labels[status] || labels.offline;
+
+    if (data.discord_user?.avatar) {
+      avatar.src = `https://cdn.discordapp.com/avatars/${DISCORD_ID}/${data.discord_user.avatar}.png?size=128`;
+      avatar.hidden = false;
+    }
+
+    const current = (data.activities || []).find((item) => item.type !== 4);
+    activity.innerHTML = current
+      ? `<b>${current.name}</b>${current.details ? ` — ${current.details}` : ''}`
+      : labels.none;
+  };
+
+  const fail = () => {
+    led.dataset.status = 'offline';
+    state.textContent = labels.fail;
+  };
+
+  const load = () => fetch(`https://api.lanyard.rest/v1/users/${DISCORD_ID}`)
+    .then((res) => res.json())
+    .then((body) => (body.success ? render(body.data) : fail()))
+    .catch(fail);
+
+  load();
+  setInterval(load, 60000);
+}
